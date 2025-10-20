@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- Meta Etiketler -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KOBİ'ler için 5 dakikada siber güvenlik risk değerlendirme testi. İşletmenizin güvenlik durumunu test edin.">
+    <meta name="keywords" content="Risk Testi, Siber Güvenlik, KOBİ, GRC, Risk Değerlendirme">
+    <meta name="author" content="Mustafa Eren Dinç">
+    
+    <!-- Sayfa Başlığı -->
+    <title>5 Dakikada Risk Testi - GRCKobi</title>
+    
+    <!-- Google Fonts - Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Dosyası -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Üst Başlık (Header) Bölümü -->
+    <header>
+        <div class="container">
+            <!-- Site Logosu/Başlığı -->
+            <a href="index.html" class="logo">GRCKobi</a>
+            
+            <!-- Ana Navigasyon Menüsü -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="grc-nedir.html">GRC Nedir?</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Ana İçerik (Main) Bölümü -->
+    <main class="container">
+        <h1>5 Dakikada Risk Testi</h1>
+        <p>İşletmenizin temel siber güvenlik risklerini hızlıca değerlendirin. Lütfen aşağıdaki soruları dürüstçe yanıtlayın.</p>
+        
+        <form id="riskTestForm">
+            
+            <h3>1. Veri Yedekleme</h3>
+            <p>Verilerinizi düzenli olarak (örn: haftalık) yedekliyor ve bu yedekleri test ediyor musunuz?</p>
+            <input type="radio" name="q1" value="yes" required> Evet
+            <input type="radio" name="q1" value="no"> Hayır
+            
+            <h3>2. Erişim ve Parola Güvenliği</h3>
+            <p>Tüm çalışanlar için güçlü parola politikaları ve mümkün olan yerlerde Çok Faktörlü Kimlik Doğrulama (MFA) kullanıyor musunuz?</p>
+            <input type="radio" name="q2" value="yes" required> Evet
+            <input type="radio" name="q2" value="no"> Hayır
+            
+            <h3>3. Yasal Uyum (KVKK)</h3>
+            <p>Müşteri ve çalışan verilerini toplarken KVKK kapsamında gerekli aydınlatma ve onay metinlerini kullanıyor musunuz?</p>
+            <input type="radio" name="q3" value="yes" required> Evet
+            <input type="radio" name="q3" value="no"> Hayır
+            
+            <h3>4. Çalışan Farkındalığı</h3>
+            <p>Çalışanlarınıza oltalama (phishing) e-postaları gibi siber güvenlik tehditleri hakkında düzenli eğitim veriyor musunuz?</p>
+            <input type="radio" name="q4" value="yes" required> Evet
+            <input type="radio" name="q4" value="no"> Hayır
+            
+            <h3>5. Yazılım Güncellemeleri</h3>
+            <p>Şirketinizdeki tüm bilgisayar ve sunucuların yazılımlarını (işletim sistemi, antivirüs) düzenli olarak güncelliyor musunuz?</p>
+            <input type="radio" name="q5" value="yes" required> Evet
+            <input type="radio" name="q5" value="no"> Hayır
+            
+            <br><br>
+            <button type="button" id="submitButton" onclick="calculateRisk()">Testi Bitir ve Sonucu Gör</button>
+        </form>
+        
+        <div id="resultArea">
+            <h2 id="resultText"></h2>
+        </div>
+    </main>
+    
+    <!-- Alt Bilgi (Footer) Bölümü -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <!-- Telif Hakkı Metni -->
+                © 2025 GRCKobi - Mustafa Eren Dinç tarafından yönetilmektedir.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Dosyası -->
+    <script src="test.js"></script>
+</body>
+</html>
