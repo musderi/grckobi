@@ -81,7 +81,7 @@ body::before {
     background-position: top left; /* Başlangıç noktası */
     
     /* Transparanlık efekti */
-    opacity: 0.35; /* %35 transparanlık */
+    opacity: 0.15; /* %35 transparanlık */
     
     /* Performans için */
     pointer-events: none; /* Mouse olaylarını engelleme */
@@ -336,5 +336,6 @@ nav a:hover {
     background-color: var(--color-secondary);
     color: var(--color-white);
 }
+
 
 
