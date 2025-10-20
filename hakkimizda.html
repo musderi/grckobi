@@ -4,58 +4,97 @@
     <!-- Meta Etiketler -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GRCKobi hakkında bilgiler. KOBİ'ler için ücretsiz GRC bilgi platformu.">
-    <meta name="keywords" content="GRCKobi, Hakkımızda, Mustafa Eren Dinç, KOBİ, GRC">
+    <meta name="description" content="GRCKobi hakkında detaylı bilgi. Projenin amacı ve kurucu Mustafa Eren Dinç hakkında.">
+    <meta name="keywords" content="GRCKobi, Hakkımızda, Mustafa Eren Dinç, KOBİ, GRC, Bilgi Güvenliği">
     <meta name="author" content="Mustafa Eren Dinç">
     
     <!-- Sayfa Başlığı -->
     <title>Hakkımızda - GRCKobi</title>
     
-    <!-- Google Fonts - Open Sans -->
+    <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- CSS Dosyası -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Üst Başlık (Header) Bölümü -->
-<header>
-    <div class="container">
-        <!-- Site Logosu/Başlığı -->
-        <a href="index.html" class="logo">GRCKobi</a>
-        
-        <!-- Ana Navigasyon Menüsü -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="grc-nedir.html">GRC Nedir?</a></li>
-                <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                <li><a href="risk-testi.html">Risk Testi</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-    
-    <!-- Ana İçerik (Main) Bölümü -->
+    <!-- ===================================
+         HEADER - Yapışkan Transparan Menü
+         =================================== -->
+    <header>
+        <div class="container">
+            <!-- Site Logosu -->
+            <a href="index.html" class="logo">GRCKobi</a>
+            
+            <!-- Ana Navigasyon Menüsü -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="index.html#grc">GRC Nedir?</a></li>
+                    <li><a href="index.html#kvkk">KVKK Rehberi</a></li>
+                    <li><a href="risk-testi.html">Risk Testi</a></li>
+                    <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===================================
+         MAIN - Ana İçerik Alanı
+         =================================== -->
     <main class="container">
+        <!-- Sayfa Başlığı -->
         <h1>Hakkımızda</h1>
         
-        <h2>Proje Hakkında: GRCKobi Nedir?</h2>
-        <p>GRCKobi, Türkiye'deki Küçük ve Orta Büyüklükteki İşletmelerin (KOBİ) dijital dünyada karşılaştıkları riskleri anlamalarına yardımcı olmak için doğmuş, kâr amacı gütmeyen bir bilgi paylaşım platformudur. Amacımız, karmaşık Yönetişim, Risk ve Uyum (GRC) konularını herkesin anlayabileceği sade bir dille sunarak bilgi güvenliği farkındalığını artırmaktır.</p>
+        <!-- Giriş Paragrafı -->
+        <p>
+            GRCKobi, KOBİ'lerin dijital dayanıklılığını artırma misyonuyla yola çıkmış bir bilgi paylaşım platformudur.
+        </p>
+
+        <!-- ===================================
+             HAKKIMIZDA KARTLARI
+             =================================== -->
         
-        <h2>Kurucu Hakkında</h2>
-        <p>Bu proje, GRC alanına tutku duyan ve bu alanda uzmanlaşmayı hedefleyen Eskişehir Teknik Üniversitesi Bilgi Güvenliği Teknolojisi öğrencisi <strong>Mustafa Eren Dinç</strong> tarafından yönetilmektedir. Amacı, edindiği teknik bilgileri KOBİ'lerin siber dayanıklılığını artırmak için paylaşmaktır.</p>
+        <!-- Kart 1: Proje Hakkında -->
+        <div class="card">
+            <h3>Proje Hakkında: GRCKobi Nedir?</h3>
+            <p>
+                GRCKobi, Türkiye'deki Küçük ve Orta Büyüklükteki İşletmelerin (KOBİ) dijital dünyada 
+                karşılaştıkları riskleri anlamalarına yardımcı olmak için doğmuş, kâr amacı gütmeyen 
+                bir bilgi paylaşım platformudur.
+            </p>
+            <p>
+                Amacımız, karmaşık Yönetişim, Risk ve Uyum (GRC) konularını herkesin anlayabileceği 
+                sade bir dille sunarak bilgi güvenliği farkındalığını artırmaktır.
+            </p>
+        </div>
+
+        <!-- Kart 2: Kurucu Hakkında -->
+        <div class="card">
+            <h3>Kurucu Hakkında</h3>
+            <p>
+                Bu proje, GRC alanına tutku duyan ve bu alanda uzmanlaşmayı hedefleyen Eskişehir Teknik 
+                Üniversitesi Bilgi Güvenliği Teknolojisi öğrencisi <strong>Mustafa Eren Dinç</strong> 
+                tarafından yönetilmektedir.
+            </p>
+            <p>
+                Amacı, edindiği teknik bilgileri KOBİ'lerin siber dayanıklılığını artırmak için paylaşmaktır. 
+                Profesyonel profili için <a href="https://www.linkedin.com/in/musderi" target="_blank" rel="noopener noreferrer">LinkedIn</a> 
+                adresini ziyaret edebilirsiniz.
+            </p>
+        </div>
     </main>
-    
-    <!-- Alt Bilgi (Footer) Bölümü -->
+
+    <!-- ===================================
+         FOOTER - Alt Bilgi Alanı
+         =================================== -->
     <footer>
         <div class="container">
-            <div class="footer-bottom">
-                <!-- Telif Hakkı Metni -->
-                © 2025 GRCKobi - Mustafa Eren Dinç tarafından yönetilmektedir.
+            <div class="footer-content">
+                <p>© 2025 GRCKobi - Tüm Hakları Saklıdır.</p>
             </div>
         </div>
     </footer>
