@@ -1,124 +1,225 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <!-- Meta Etiketler -->
+    <!-- Meta Etiketleri -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="KOBİ'ler için 5 dakikada siber güvenlik risk değerlendirme testi. İşletmenizin güvenlik seviyesini test edin.">
-    <meta name="keywords" content="Risk Testi, Siber Güvenlik, KOBİ, GRC, Risk Değerlendirme">
-    <meta name="author" content="Mustafa Eren Dinç">
+    <meta name="description" content="KOBİ'niz için GRC ve KVKK risk değerlendirme testi. Mevcut durumunuzu hızlıca analiz edin.">
+    <meta name="keywords" content="GRC, KVKK, risk değerlendirme, risk testi, KOBİ, kontrol listesi">
+    <meta name="author" content="GRCKobi">
     
     <!-- Sayfa Başlığı -->
-    <title>5 Dakikada Risk Testi - GRCKobi</title>
+    <title>Risk Testi - GRCKobi</title>
     
-    <!-- Google Fonts - Inter -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS Dosyası -->
     <link rel="stylesheet" href="style.css">
     
     <!-- JavaScript Dosyası -->
-    <script src="test.js" defer></script>
+    <script src="site-scripts.js" defer></script>
 </head>
+
 <body>
-    <!-- ===================================
-         HEADER - Yapışkan Transparan Menü
-         =================================== -->
+    <!-- Header Bölümü -->
     <header>
         <div class="container">
-            <!-- Site Logosu -->
-            <a href="index.html" class="logo">GRCKobi</a>
-            
-            <!-- Ana Navigasyon Menüsü -->
-            <nav>
-                <ul>
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="index.html#grc">GRC Nedir?</a></li>
-                    <li><a href="index.html#kvkk">KVKK Rehberi</a></li>
-                    <li><a href="risk-testi.html">Risk Testi</a></li>
-                    <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
-                    <li><a href="iletisim.html">İletişim</a></li>
-                </ul>
-            </nav>
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">GRCKobi</a>
+                </div>
+                
+                <!-- Navigasyon Menüsü -->
+                <nav class="main-navigation">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="grc-nedir.html">GRC Nedir?</a></li>
+                        <li><a href="kvkk-rehberi.html">KVKK Rehberi</a></li>
+                        <li><a href="risk-testi.html" class="active">Risk Testi</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Dark Mode Toggle Butonu -->
+                <button id="theme-toggle-button" class="dark-mode-toggle" aria-label="Tema değiştir" title="Tema değiştir">
+                    🌙
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- ===================================
-         MAIN - Ana İçerik Alanı
-         =================================== -->
-    <main class="container">
-        <!-- Sayfa Başlığı -->
-        <h1>5 Dakikada Risk Testi</h1>
-        
-        <!-- Giriş Paragrafı -->
-        <p>
-            İşletmenizin temel siber güvenlik risklerini hızlıca değerlendirin. Lütfen aşağıdaki soruları dürüstçe yanıtlayın.
-        </p>
-
-        <!-- Risk Testi Formu -->
-        <form id="riskTestForm" class="card">
-            
-            <!-- Soru 1: Veri Yedekleme -->
-            <div class="form-question">
-                <h3>1. Veri Yedekleme</h3>
-                <p>Verilerinizi düzenli olarak (örn: haftalık) yedekliyor ve bu yedekleri test ediyor musunuz?</p>
-                <label><input type="radio" name="q1" value="yes" required> Evet</label>
-                <label><input type="radio" name="q1" value="no"> Hayır</label>
-            </div>
-
-            <!-- Soru 2: Erişim ve Parola Güvenliği -->
-            <div class="form-question">
-                <h3>2. Erişim ve Parola Güvenliği</h3>
-                <p>Tüm çalışanlar için güçlü parola politikaları ve mümkün olan yerlerde Çok Faktörlü Kimlik Doğrulama (MFA) kullanıyor musunuz?</p>
-                <label><input type="radio" name="q2" value="yes" required> Evet</label>
-                <label><input type="radio" name="q2" value="no"> Hayır</label>
-            </div>
-
-            <!-- Soru 3: Yasal Uyum (KVKK) -->
-            <div class="form-question">
-                <h3>3. Yasal Uyum (KVKK)</h3>
-                <p>Müşteri ve çalışan verilerini toplarken KVKK kapsamında gerekli aydınlatma ve onay metinlerini kullanıyor musunuz?</p>
-                <label><input type="radio" name="q3" value="yes" required> Evet</label>
-                <label><input type="radio" name="q3" value="no"> Hayır</label>
-            </div>
-
-            <!-- Soru 4: Çalışan Farkındalığı -->
-            <div class="form-question">
-                <h3>4. Çalışan Farkındalığı</h3>
-                <p>Çalışanlarınıza oltalama (phishing) e-postaları gibi siber güvenlik tehditleri hakkında düzenli eğitim veriyor musunuz?</p>
-                <label><input type="radio" name="q4" value="yes" required> Evet</label>
-                <label><input type="radio" name="q4" value="no"> Hayır</label>
-            </div>
-
-            <!-- Soru 5: Yazılım Güncellemeleri -->
-            <div class="form-question">
-                <h3>5. Yazılım Güncellemeleri</h3>
-                <p>Şirketinizdeki tüm bilgisayar ve sunucuların yazılımlarını (işletim sistemi, antivirüs) düzenli olarak güncelliyor musunuz?</p>
-                <label><input type="radio" name="q5" value="yes" required> Evet</label>
-                <label><input type="radio" name="q5" value="no"> Hayır</label>
-            </div>
-
-            <!-- Gönder Butonu -->
-            <button type="button" id="submitButton" class="button-primary">Testi Bitir ve Sonucu Gör</button>
-        </form>
-
-        <!-- Sonuç Alanı (Başlangıçta Gizli) -->
-        <div id="resultArea" class="card" style="display:none;">
-            <h2 id="resultText"></h2>
-        </div>
-    </main>
-
-    <!-- ===================================
-         FOOTER - Alt Bilgi Alanı
-         =================================== -->
-    <footer>
+    <!-- Ana İçerik Alanı -->
+    <main>
         <div class="container">
-            <div class="footer-content">
-                <p>© 2025 GRCKobi - Tüm Hakları Saklıdır.</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+            <!-- Ana İçerik Kutusu -->
+            <div class="content-box">
+                <!-- Sayfa Başlığı -->
+                <h1>KOBİ GRC & KVKK Risk Değerlendirmesi</h1>
+                
+                <!-- Açıklama Paragrafı -->
+                <p class="lead">Aşağıdaki soruları 'Evet' veya 'Hayır' olarak yanıtlayarak işletmenizin mevcut risk durumunu hızlıca değerlendirin. Bu kontrol listesi, GRC ve KVKK uyum sürecinizde öncelik vermeniz gereken alanları belirlemenize yardımcı olacaktır.</p>
+                
+                <!-- Risk Değerlendirme Uyarısı -->
+                <div class="alert-box mt-4 mb-4">
+                    <p><strong>📋 Değerlendirme Yöntemi:</strong> Her "Hayır" cevabı potansiyel bir risk alanını gösterir. Test sonunda, "Hayır" dediğiniz alanları önceliklendirerek iyileştirme planınızı oluşturabilirsiniz.</p>
+                </div>
+
+                <!-- Kontrol Listesi -->
+                <div class="checklist-section">
+                    <h2>Risk Değerlendirme Kontrol Listesi</h2>
+                    
+                    <!-- 1. Veri Sınıflandırması -->
+                    <div class="checklist-item">
+                        <h3>1. Veri Sınıflandırması</h3>
+                        <p>İşletmenizde işlenen kişisel verileri (hassas, gizli, genel) sınıflandırdınız mı?</p>
+                        <div class="check-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="risk-checkbox">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Evet</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="risk-checkbox">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Hayır</span>
+                            </label>
+                        </div>
+                        <div class="risk-note">
+                            <small><strong>Neden Önemli:</strong> Veri sınıflandırması, hangi verilerin daha güçlü koruma gerektirdiğini belirlemenizi sağlar.</small>
+                        </div>
+                    </div>
+
+                    <!-- 2. Erişim Kontrolü -->
+                    <div class="checklist-item">
+                        <h3>2. Erişim Kontrolü</h3>
+                        <p>Çalışanların verilere erişim yetkileri 'bilmesi gereken' prensibine göre kısıtlandı mı?</p>
+                        <div class="check-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="risk-checkbox">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Evet</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="risk-checkbox">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Hayır</span>
+                            </label>
+                        </div>
+                        <div class="risk-note">
+                            <small><strong>Neden Önemli:</strong> Gereksiz erişim yetkileri, veri ihlali riskini artırır ve KVKK'ya aykırıdır.</small>
+                        </div>
+                    </div>
+
+                    <!-- 3. Yedekleme ve Kurtarma -->
+                    <div class="checklist-item">
+                        <h3>3. Yedekleme ve Kurtarma</h3>
+                        <p>Kritik verilerin düzenli yedekleme ve kurtarma prosedürleri var mı?</p>
+                        <div class="check-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="risk-checkbox">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Evet</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="risk-checkbox">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Hayır</span>
+                            </label>
+                        </div>
+                        <div class="risk-note">
+                            <small><strong>Neden Önemli:</strong> Veri kaybı durumunda iş sürekliliğinizi ve KVKK yükümlülüklerinizi yerine getirme kabiliyetinizi korur.</small>
+                        </div>
+                    </div>
+
+                    <!-- 4. KVKK Aydınlatma Metni -->
+                    <div class="checklist-item">
+                        <h3>4. KVKK Aydınlatma Metni</h3>
+                        <p>Web sitenizde ve veri toplama noktalarında güncel KVKK aydınlatma metni bulunuyor mu?</p>
+                        <div class="check-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="risk-checkbox">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Evet</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="risk-checkbox">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Hayır</span>
+                            </label>
+                        </div>
+                        <div class="risk-note">
+                            <small><strong>Neden Önemli:</strong> KVKK'nın 10. maddesi gereği aydınlatma yükümlülüğü yasal bir zorunluluktur.</small>
+                        </div>
+                    </div>
+
+                    <!-- 5. Siber Güvenlik Politikası -->
+                    <div class="checklist-item">
+                        <h3>5. Siber Güvenlik Politikası</h3>
+                        <p>Yazılı bir siber güvenlik politikanız ve çalışan eğitim programınız var mı?</p>
+                        <div class="check-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="risk-checkbox">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Evet</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="risk-checkbox">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Hayır</span>
+                            </label>
+                        </div>
+                        <div class="risk-note">
+                            <small><strong>Neden Önemli:</strong> İnsan faktörü, siber güvenlik ihlallerinin %90'ından fazlasının nedenidir.</small>
+                        </div>
+                    </div>
+
+                    <!-- 6. Veri İhlal Prosedürü -->
+                    <div class="checklist-item">
+                        <h3>6. Veri İhlal Prosedürü</h3>
+                        <p>Olası bir veri ihlali durumunda izlenecek yazılı prosedürünüz var mı?</p>
+                        <div class="check-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="risk-checkbox">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Evet</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" class="risk-checkbox">
+                                <span class="checkmark"></span>
+                                <span class="option-text">Hayır</span>
+                            </label>
+                        </div>
+                        <div class="risk-note">
+                            <small><strong>Neden Önemli:</strong> KVKK gereği veri ihlalleri 72 saat içinde Kurul'a bildirilmelidir.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sonuç ve Öneriler -->
+                <div class="result-section mt-4">
+                    <h2>Sonraki Adımlar</h2>
+                    <div class="result-box">
+                        <h4>🟢 "Evet" Cevapları</h4>
+                        <p>Bu alanlarda temel koruma önlemlerine sahipsiniz. Mevcut uygulamalarınızı düzenli olarak gözden geçirin ve güncelleyin.</p>
+                    </div>
+                    <div class="result-box mt-3">
+                        <h4>🔴 "Hayır" Cevapları</h4>
+                        <p>Bu alanlar öncelikli iyileştirme gerektiriyor. Her bir alan için:</p>
+                        <ul>
+                            <li>Mevcut durumu detaylı analiz edin</li>
+                            <li>Gerekli politika ve prosedürleri oluşturun</li>
+                            <li>Uygulama planı hazırlayın</li>
+                            <li>Çalışanları eğitin ve bilinçlendirin</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CTA Bölümü -->
+                <div class="cta-section text-center mt-4">
+                    <h3>Detaylı Destek İçin</h3>
+                    <p>Risk değerlendirme sonuçlarınızı daha detaylı analiz etmek ve özelleştirilmiş çözüm
