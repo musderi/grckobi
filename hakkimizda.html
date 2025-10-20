@@ -1,102 +1,185 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <!-- Meta Etiketler -->
+    <!-- Meta Etiketleri -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GRCKobi hakkında detaylı bilgi. Projenin amacı ve kurucu Mustafa Eren Dinç hakkında.">
-    <meta name="keywords" content="GRCKobi, Hakkımızda, Mustafa Eren Dinç, KOBİ, GRC, Bilgi Güvenliği">
-    <meta name="author" content="Mustafa Eren Dinç">
+    <meta name="description" content="GRCKobi hakkında - KOBİ'ler için GRC ve KVKK danışmanlık rehberi. Vizyonumuz, misyonumuz ve yaklaşımımız.">
+    <meta name="keywords" content="GRCKobi, hakkımızda, vizyon, misyon, GRC, KVKK, KOBİ">
+    <meta name="author" content="GRCKobi">
     
     <!-- Sayfa Başlığı -->
     <title>Hakkımızda - GRCKobi</title>
     
-    <!-- Google Fonts - Inter -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS Dosyası -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- JavaScript Dosyası -->
+    <script src="site-scripts.js" defer></script>
 </head>
+
 <body>
-    <!-- ===================================
-         HEADER - Yapışkan Transparan Menü
-         =================================== -->
+    <!-- Header Bölümü -->
     <header>
         <div class="container">
-            <!-- Site Logosu -->
-            <a href="index.html" class="logo">GRCKobi</a>
-            
-            <!-- Ana Navigasyon Menüsü -->
-            <nav>
-                <ul>
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="index.html#grc">GRC Nedir?</a></li>
-                    <li><a href="index.html#kvkk">KVKK Rehberi</a></li>
-                    <li><a href="risk-testi.html">Risk Testi</a></li>
-                    <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
-                    <li><a href="iletisim.html">İletişim</a></li>
-                </ul>
-            </nav>
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">GRCKobi</a>
+                </div>
+                
+                <!-- Navigasyon Menüsü -->
+                <nav class="main-navigation">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="grc-nedir.html">GRC Nedir?</a></li>
+                        <li><a href="kvkk-rehberi.html">KVKK Rehberi</a></li>
+                        <li><a href="risk-testi.html">Risk Testi</a></li>
+                        <li><a href="hakkimizda.html" class="active">Hakkımızda</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Dark Mode Toggle Butonu -->
+                <button id="theme-toggle-button" class="dark-mode-toggle" aria-label="Tema değiştir" title="Tema değiştir">
+                    🌙
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- ===================================
-         MAIN - Ana İçerik Alanı
-         =================================== -->
-    <main class="container">
-        <!-- Sayfa Başlığı -->
-        <h1>Hakkımızda</h1>
-        
-        <!-- Giriş Paragrafı -->
-        <p>
-            GRCKobi, KOBİ'lerin dijital dayanıklılığını artırma misyonuyla yola çıkmış bir bilgi paylaşım platformudur.
-        </p>
+    <!-- Ana İçerik Alanı -->
+    <main>
+        <div class="container">
+            <!-- Ana İçerik Kutusu -->
+            <div class="content-box">
+                <!-- Sayfa Başlığı -->
+                <h1>GRCKobi: Vizyonumuz ve Misyonumuz</h1>
+                
+                <!-- Giriş Paragrafı -->
+                <p class="lead">GRCKobi olarak, KOBİ'lerin dijital dönüşüm yolculuğunda güvenilir rehberi olmayı hedefliyoruz. Karmaşık yasal düzenlemeleri basitleştirerek, işletmelerin sürdürülebilir büyümesine katkı sağlıyoruz.</p>
+                
+                <!-- Misyon Bölümü -->
+                <div class="about-section mt-4">
+                    <h2>🎯 Misyonumuz</h2>
+                    <p>KOBİ'lerin dijital dünyada karşılaştıkları GRC (Yönetişim, Risk, Uyum) ve KVKK zorluklarını, anlaşılır, uygulanabilir ve modern rehberlik ile çözüme kavuşturmak. Her büyüklükteki işletmenin, profesyonel danışmanlık hizmetlerine erişebilmesini sağlamak için ücretsiz ve kaliteli içerikler üretmek.</p>
+                    
+                    <div class="mission-values grid mt-3">
+                        <div class="value-item">
+                            <h4>✅ Erişilebilirlik</h4>
+                            <p>Herkes için anlaşılır içerik</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>🚀 Uygulanabilirlik</h4>
+                            <p>Teoriden pratiğe geçiş</p>
+                        </div>
+                        <div class="value-item">
+                            <h4>💡 İnovasyon</h4>
+                            <p>Modern teknoloji çözümleri</p>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- ===================================
-             HAKKIMIZDA KARTLARI
-             =================================== -->
-        
-        <!-- Kart 1: Proje Hakkında -->
-        <div class="card">
-            <h3>Proje Hakkında: GRCKobi Nedir?</h3>
-            <p>
-                GRCKobi, Türkiye'deki Küçük ve Orta Büyüklükteki İşletmelerin (KOBİ) dijital dünyada 
-                karşılaştıkları riskleri anlamalarına yardımcı olmak için doğmuş, kâr amacı gütmeyen 
-                bir bilgi paylaşım platformudur.
-            </p>
-            <p>
-                Amacımız, karmaşık Yönetişim, Risk ve Uyum (GRC) konularını herkesin anlayabileceği 
-                sade bir dille sunarak bilgi güvenliği farkındalığını artırmaktır.
-            </p>
-        </div>
+                <!-- Vizyon Bölümü -->
+                <div class="about-section mt-4">
+                    <h2>🔭 Vizyonumuz</h2>
+                    <p>Türkiye'deki her KOBİ'nin, karmaşık yasal düzenlemeleri bir yük olarak değil, sürdürülebilir bir başarı faktörü olarak görmesini sağlayan bir numaralı rehber olmak. 2030 yılına kadar, 100.000+ KOBİ'nin dijital güvenlik ve uyum konularında bilinçlenmesine katkıda bulunmak.</p>
+                    
+                    <blockquote class="vision-quote mt-3">
+                        <p>"Güvenlik ve uyum, büyük şirketlerin lüksü değil, her işletmenin hakkıdır."</p>
+                    </blockquote>
+                </div>
 
-        <!-- Kart 2: Kurucu Hakkında -->
-        <div class="card">
-            <h3>Kurucu Hakkında</h3>
-            <p>
-                Bu proje, GRC alanına tutku duyan ve bu alanda uzmanlaşmayı hedefleyen Eskişehir Teknik 
-                Üniversitesi Bilgi Güvenliği Teknolojisi öğrencisi <strong>Mustafa Eren Dinç</strong> 
-                tarafından yönetilmektedir.
-            </p>
-            <p>
-                Amacı, edindiği teknik bilgileri KOBİ'lerin siber dayanıklılığını artırmak için paylaşmaktır. 
-                Profesyonel profili için <a href="https://www.linkedin.com/in/musderi" target="_blank" rel="noopener noreferrer">LinkedIn</a> 
-                adresini ziyaret edebilirsiniz.
-            </p>
+                <!-- Yaklaşım Bölümü -->
+                <div class="about-section mt-4">
+                    <h2>💼 Yaklaşımımız</h2>
+                    <p>Sadece 'ne yapılması gerektiğini' değil, 'nasıl yapılacağını' da gösteren, pratik ve teknoloji odaklı çözümler sunuyoruz. KOBİ'lerin gerçek ihtiyaçlarını anlayarak, bütçe ve kaynak kısıtlarını göz önünde bulunduran realist öneriler geliştiriyoruz.</p>
+                    
+                    <div class="approach-features mt-3">
+                        <h4>Çalışma Prensiblerimiz:</h4>
+                        <ul>
+                            <li><strong>Basit ve Anlaşılır:</strong> Hukuki jargon yerine, herkesin anlayabileceği dil</li>
+                            <li><strong>Adım Adım Rehberlik:</strong> Büyük hedefleri küçük, yönetilebilir adımlara bölen yaklaşım</li>
+                            <li><strong>Maliyet Etkin:</strong> Minimum bütçe ile maksimum uyum sağlayan çözümler</li>
+                            <li><strong>Teknoloji Dostu:</strong> Dijital araçları ve otomasyonu kullanan modern yöntemler</li>
+                            <li><strong>Sürekli Güncel:</strong> Değişen mevzuat ve teknolojiye uyum sağlayan dinamik içerik</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Değerlerimiz Bölümü -->
+                <div class="about-section mt-4">
+                    <h2>🌟 Değerlerimiz</h2>
+                    <div class="values-grid grid mt-3">
+                        <div class="content-box value-card">
+                            <h3>Şeffaflık</h3>
+                            <p>Tüm süreçlerimizde açık ve dürüst iletişim</p>
+                        </div>
+                        <div class="content-box value-card">
+                            <h3>Güvenilirlik</h3>
+                            <p>Doğru, güncel ve test edilmiş bilgiler</p>
+                        </div>
+                        <div class="content-box value-card">
+                            <h3>Toplumsal Fayda</h3>
+                            <p>Türkiye ekonomisine katkı sağlayan KOBİ'leri destekleme</p>
+                        </div>
+                        <div class="content-box value-card">
+                            <h3>Sürekli Gelişim</h3>
+                            <p>Kendimizi ve içeriklerimizi sürekli iyileştirme</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neden GRCKobi? -->
+                <div class="about-section mt-4">
+                    <h2>🤔 Neden GRCKobi?</h2>
+                    <div class="why-us-content">
+                        <p>Piyasada birçok GRC ve KVKK danışmanlık hizmeti bulunurken, çoğu büyük şirketlere odaklanmıştır. Biz ise:</p>
+                        <ul class="mt-3">
+                            <li>✓ KOBİ'lere özel içerik üretiyoruz</li>
+                            <li>✓ Ücretsiz ve açık erişimli bilgi sağlıyoruz</li>
+                            <li>✓ Pratik araçlar ve şablonlar sunuyoruz</li>
+                            <li>✓ Topluluk desteği ile sorulara yanıt veriyoruz</li>
+                            <li>✓ Gerçek deneyimlerden yola çıkarak rehberlik ediyoruz</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CTA Bölümü -->
+                <div class="cta-section text-center mt-4">
+                    <h3>Birlikte Büyüyelim</h3>
+                    <p>GRC ve KVKK yolculuğunuzda yanınızdayız. Sorularınız mı var?</p>
+                    <a href="iletisim.html" class="button mt-3">İletişime Geçin</a>
+                </div>
+            </div>
         </div>
     </main>
 
-    <!-- ===================================
-         FOOTER - Alt Bilgi Alanı
-         =================================== -->
+    <!-- Footer Bölümü -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <p>© 2025 GRCKobi - Tüm Hakları Saklıdır.</p>
+            <div class="footer-content text-center">
+                <p>© 2025 GRCKobi. Tüm hakları saklıdır.</p>
+                <p class="mt-2">
+                    <a href="gizlilik.html">Gizlilik Politikası</a> | 
+                    <a href="kullanim-sartlari.html">Kullanım Şartları</a> | 
+                    <a href="iletisim.html">İletişim</a>
+                </p>
             </div>
         </div>
     </footer>
-</body>
-</html>
+
+    <!-- Hoş Geldiniz Baloncuğu -->
+    <div class="welcome-bubble" id="welcome-bubble">
+        <button class="close-btn" onclick="this.parentElement.style.display='none'" aria-label="Kapat">×</button>
+        <h3>Tanışalım!</h3>
+        <p>GRCKobi'nin hikayesini ve KOBİ'nize nasıl değer katabileceğimizi keşfedin.</p>
+    </div>
+
+    <style>
+        /* Say
