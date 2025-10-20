@@ -11,55 +11,83 @@
     <!-- Sayfa Başlığı -->
     <title>İletişim - GRCKobi</title>
     
-    <!-- Google Fonts - Open Sans -->
+    <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- CSS Dosyası -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Üst Başlık (Header) Bölümü -->
+    <!-- ===================================
+         HEADER - Yapışkan Transparan Menü
+         =================================== -->
+    <header>
+        <div class="container">
+            <!-- Site Logosu -->
+            <a href="index.html" class="logo">GRCKobi</a>
+            
+            <!-- Ana Navigasyon Menüsü -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="index.html#grc">GRC Nedir?</a></li>
+                    <li><a href="index.html#kvkk">KVKK Rehberi</a></li>
+                    <li><a href="risk-testi.html">Risk Testi</a></li>
+                    <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <header>
-    <div class="container">
-        <!-- Site Logosu/Başlığı -->
-        <a href="index.html" class="logo">GRCKobi</a>
-        
-        <!-- Ana Navigasyon Menüsü -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="grc-nedir.html">GRC Nedir?</a></li>
-                <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                <li><a href="risk-testi.html">Risk Testi</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-  
-    <!-- Ana İçerik (Main) Bölümü -->
+    <!-- ===================================
+         MAIN - Ana İçerik Alanı
+         =================================== -->
     <main class="container">
+        <!-- Sayfa Başlığı -->
         <h1>İletişim</h1>
-        <p>Soru, görüş veya önerileriniz için aşağıdaki kanallardan bana ulaşabilirsiniz.</p>
         
-        <h2>E-posta</h2>
-        <p>Teknik sorular ve iş birliği talepleri için:<br>
-        <a href="mailto:mustafaerendnc@gmail.com">mustafaerendnc@gmail.com</a></p>
+        <!-- Giriş Paragrafı -->
+        <p>
+            Soru, görüş, öneri veya iş birliği talepleriniz için aşağıdaki kanallardan ulaşabilirsiniz.
+        </p>
+
+        <!-- ===================================
+             İLETİŞİM KARTLARI
+             =================================== -->
         
-        <h2>Profesyonel Ağ</h2>
-        <p>Kariyerim ve GRC alanındaki paylaşımlarım için LinkedIn profilimi takip edebilirsiniz:<br>
-        <a href="https://www.linkedin.com/in/musderi" target="_blank" rel="noopener noreferrer">linkedin.com/in/musderi</a></p>
+        <!-- Kart 1: E-posta -->
+        <div class="card">
+            <h3>E-posta</h3>
+            <p>
+                Teknik sorular, içerik önerileri ve genel iletişim için:
+            </p>
+            <p>
+                <a href="mailto:mustafaerendnc@gmail.com">mustafaerendnc@gmail.com</a>
+            </p>
+        </div>
+
+        <!-- Kart 2: LinkedIn -->
+        <div class="card">
+            <h3>LinkedIn</h3>
+            <p>
+                GRC alanındaki paylaşımlarım ve profesyonel profilim için beni LinkedIn'den takip edebilirsiniz:
+            </p>
+            <p>
+                <a href="https://www.linkedin.com/in/musderi" target="_blank" rel="noopener noreferrer">linkedin.com/in/musderi</a>
+            </p>
+        </div>
     </main>
-    
-    <!-- Alt Bilgi (Footer) Bölümü -->
+
+    <!-- ===================================
+         FOOTER - Alt Bilgi Alanı
+         =================================== -->
     <footer>
         <div class="container">
-            <div class="footer-bottom">
-                <!-- Telif Hakkı Metni -->
-                © 2025 GRCKobi - Mustafa Eren Dinç tarafından yönetilmektedir.
+            <div class="footer-content">
+                <p>© 2025 GRCKobi - Tüm Hakları Saklıdır.</p>
             </div>
         </div>
     </footer>
