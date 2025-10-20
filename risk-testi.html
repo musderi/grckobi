@@ -16,4 +16,109 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- CSS
+    <!-- CSS Dosyası -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- JavaScript Dosyası -->
+    <script src="test.js" defer></script>
+</head>
+<body>
+    <!-- ===================================
+         HEADER - Yapışkan Transparan Menü
+         =================================== -->
+    <header>
+        <div class="container">
+            <!-- Site Logosu -->
+            <a href="index.html" class="logo">GRCKobi</a>
+            
+            <!-- Ana Navigasyon Menüsü -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="index.html#grc">GRC Nedir?</a></li>
+                    <li><a href="index.html#kvkk">KVKK Rehberi</a></li>
+                    <li><a href="risk-testi.html">Risk Testi</a></li>
+                    <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===================================
+         MAIN - Ana İçerik Alanı
+         =================================== -->
+    <main class="container">
+        <!-- Sayfa Başlığı -->
+        <h1>5 Dakikada Risk Testi</h1>
+        
+        <!-- Giriş Paragrafı -->
+        <p>
+            İşletmenizin temel siber güvenlik risklerini hızlıca değerlendirin. Lütfen aşağıdaki soruları dürüstçe yanıtlayın.
+        </p>
+
+        <!-- Risk Testi Formu -->
+        <form id="riskTestForm" class="card">
+            
+            <!-- Soru 1: Veri Yedekleme -->
+            <div class="form-question">
+                <h3>1. Veri Yedekleme</h3>
+                <p>Verilerinizi düzenli olarak (örn: haftalık) yedekliyor ve bu yedekleri test ediyor musunuz?</p>
+                <label><input type="radio" name="q1" value="yes" required> Evet</label>
+                <label><input type="radio" name="q1" value="no"> Hayır</label>
+            </div>
+
+            <!-- Soru 2: Erişim ve Parola Güvenliği -->
+            <div class="form-question">
+                <h3>2. Erişim ve Parola Güvenliği</h3>
+                <p>Tüm çalışanlar için güçlü parola politikaları ve mümkün olan yerlerde Çok Faktörlü Kimlik Doğrulama (MFA) kullanıyor musunuz?</p>
+                <label><input type="radio" name="q2" value="yes" required> Evet</label>
+                <label><input type="radio" name="q2" value="no"> Hayır</label>
+            </div>
+
+            <!-- Soru 3: Yasal Uyum (KVKK) -->
+            <div class="form-question">
+                <h3>3. Yasal Uyum (KVKK)</h3>
+                <p>Müşteri ve çalışan verilerini toplarken KVKK kapsamında gerekli aydınlatma ve onay metinlerini kullanıyor musunuz?</p>
+                <label><input type="radio" name="q3" value="yes" required> Evet</label>
+                <label><input type="radio" name="q3" value="no"> Hayır</label>
+            </div>
+
+            <!-- Soru 4: Çalışan Farkındalığı -->
+            <div class="form-question">
+                <h3>4. Çalışan Farkındalığı</h3>
+                <p>Çalışanlarınıza oltalama (phishing) e-postaları gibi siber güvenlik tehditleri hakkında düzenli eğitim veriyor musunuz?</p>
+                <label><input type="radio" name="q4" value="yes" required> Evet</label>
+                <label><input type="radio" name="q4" value="no"> Hayır</label>
+            </div>
+
+            <!-- Soru 5: Yazılım Güncellemeleri -->
+            <div class="form-question">
+                <h3>5. Yazılım Güncellemeleri</h3>
+                <p>Şirketinizdeki tüm bilgisayar ve sunucuların yazılımlarını (işletim sistemi, antivirüs) düzenli olarak güncelliyor musunuz?</p>
+                <label><input type="radio" name="q5" value="yes" required> Evet</label>
+                <label><input type="radio" name="q5" value="no"> Hayır</label>
+            </div>
+
+            <!-- Gönder Butonu -->
+            <button type="button" id="submitButton" class="button-primary">Testi Bitir ve Sonucu Gör</button>
+        </form>
+
+        <!-- Sonuç Alanı (Başlangıçta Gizli) -->
+        <div id="resultArea" class="card" style="display:none;">
+            <h2 id="resultText"></h2>
+        </div>
+    </main>
+
+    <!-- ===================================
+         FOOTER - Alt Bilgi Alanı
+         =================================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2025 GRCKobi - Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
