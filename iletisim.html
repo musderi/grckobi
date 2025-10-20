@@ -1,95 +1,216 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <!-- Meta Etiketler -->
+    <!-- Meta Etiketleri -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GRCKobi iletişim bilgileri. Soru ve önerileriniz için bizimle iletişime geçin.">
-    <meta name="keywords" content="GRCKobi, İletişim, Contact, Mustafa Eren Dinç">
-    <meta name="author" content="Mustafa Eren Dinç">
+    <meta name="description" content="GRCKobi ile iletişime geçin. GRC ve KVKK danışmanlığı için bizimle bağlantı kurun.">
+    <meta name="keywords" content="GRCKobi, iletişim, danışmanlık, GRC, KVKK, KOBİ, destek">
+    <meta name="author" content="GRCKobi">
     
     <!-- Sayfa Başlığı -->
     <title>İletişim - GRCKobi</title>
     
-    <!-- Google Fonts - Inter -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS Dosyası -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- JavaScript Dosyası -->
+    <script src="site-scripts.js" defer></script>
 </head>
+
 <body>
-    <!-- ===================================
-         HEADER - Yapışkan Transparan Menü
-         =================================== -->
+    <!-- Header Bölümü -->
     <header>
         <div class="container">
-            <!-- Site Logosu -->
-            <a href="index.html" class="logo">GRCKobi</a>
-            
-            <!-- Ana Navigasyon Menüsü -->
-            <nav>
-                <ul>
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="index.html#grc">GRC Nedir?</a></li>
-                    <li><a href="index.html#kvkk">KVKK Rehberi</a></li>
-                    <li><a href="risk-testi.html">Risk Testi</a></li>
-                    <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
-                    <li><a href="iletisim.html">İletişim</a></li>
-                </ul>
-            </nav>
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">GRCKobi</a>
+                </div>
+                
+                <!-- Navigasyon Menüsü -->
+                <nav class="main-navigation">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="grc-nedir.html">GRC Nedir?</a></li>
+                        <li><a href="kvkk-rehberi.html">KVKK Rehberi</a></li>
+                        <li><a href="risk-testi.html">Risk Testi</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="iletisim.html" class="active">İletişim</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Dark Mode Toggle Butonu -->
+                <button id="theme-toggle-button" class="dark-mode-toggle" aria-label="Tema değiştir" title="Tema değiştir">
+                    🌙
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- ===================================
-         MAIN - Ana İçerik Alanı
-         =================================== -->
-    <main class="container">
-        <!-- Sayfa Başlığı -->
-        <h1>İletişim</h1>
-        
-        <!-- Giriş Paragrafı -->
-        <p>
-            Soru, görüş, öneri veya iş birliği talepleriniz için aşağıdaki kanallardan ulaşabilirsiniz.
-        </p>
+    <!-- Ana İçerik Alanı -->
+    <main>
+        <div class="container">
+            <!-- Ana İçerik Kutusu -->
+            <div class="content-box">
+                <!-- Sayfa Başlığı -->
+                <h1>Bize Ulaşın</h1>
+                
+                <!-- Giriş Paragrafı -->
+                <p class="lead">GRC ve KVKK konularındaki sorularınız, danışmanlık talepleriniz veya iş birlikleri için aşağıdaki kanallardan benimle iletişime geçebilirsiniz.</p>
+                
+                <!-- İletişim Kanalları -->
+                <div class="contact-channels mt-4">
+                    <!-- E-posta -->
+                    <div class="contact-section">
+                        <h2>📧 E-posta</h2>
+                        <p>Detaylı sorularınız ve danışmanlık talepleri için:</p>
+                        <a href="mailto:mustafaerendnc@gmail.com" class="contact-link email-link">
+                            mustafaerendnc@gmail.com
+                        </a>
+                    </div>
 
-        <!-- ===================================
-             İLETİŞİM KARTLARI
-             =================================== -->
-        
-        <!-- Kart 1: E-posta -->
-        <div class="card">
-            <h3>E-posta</h3>
-            <p>
-                Teknik sorular, içerik önerileri ve genel iletişim için:
-            </p>
-            <p>
-                <a href="mailto:mustafaerendnc@gmail.com">mustafaerendnc@gmail.com</a>
-            </p>
-        </div>
+                    <!-- Profesyonel Ağ -->
+                    <div class="contact-section mt-4">
+                        <h2>💼 Profesyonel Ağ</h2>
+                        <p>İş ağım üzerinden bağlantı kurmak için:</p>
+                        <a href="https://www.linkedin.com/in/musderi" target="_blank" rel="noopener noreferrer" class="contact-link linkedin-link">
+                            Mustafa Eren Dinç (LinkedIn)
+                        </a>
+                    </div>
 
-        <!-- Kart 2: LinkedIn -->
-        <div class="card">
-            <h3>LinkedIn</h3>
-            <p>
-                GRC alanındaki paylaşımlarım ve profesyonel profilim için beni LinkedIn'den takip edebilirsiniz:
-            </p>
-            <p>
-                <a href="https://www.linkedin.com/in/musderi" target="_blank" rel="noopener noreferrer">linkedin.com/in/musderi</a>
-            </p>
+                    <!-- Yanıt Süresi Bilgisi -->
+                    <div class="response-info mt-4">
+                        <div class="info-box">
+                            <h3>⏱️ Yanıt Süresi</h3>
+                            <p>E-posta yoluyla gelen mesajlara genellikle 24-48 saat içerisinde dönüş yapmaya çalışıyorum. Acil durumlar için lütfen e-posta konusuna "ACİL" ibaresini ekleyin.</p>
+                        </div>
+                    </div>
+
+                    <!-- İletişim Konuları -->
+                    <div class="contact-topics mt-4">
+                        <h3>📋 Hangi Konularda İletişime Geçebilirsiniz?</h3>
+                        <ul class="topic-list">
+                            <li>✓ GRC (Yönetişim, Risk ve Uyum) danışmanlığı</li>
+                            <li>✓ KVKK uyum süreci ve VERBİS kaydı</li>
+                            <li>✓ Veri güvenliği ve siber güvenlik soruları</li>
+                            <li>✓ KOBİ'lere özel uyum çözümleri</li>
+                            <li>✓ Eğitim ve bilinçlendirme programları</li>
+                            <li>✓ İş birliği ve ortaklık önerileri</li>
+                        </ul>
+                    </div>
+
+                    <!-- İletişim Formu Alternatifi -->
+                    <div class="alternative-contact mt-4">
+                        <div class="cta-section text-center">
+                            <h3>🤝 Size Nasıl Yardımcı Olabilirim?</h3>
+                            <p>GRC ve KVKK yolculuğunuzda, KOBİ'nizin ihtiyaçlarına özel çözümler sunmak için buradayım. Sorularınızı detaylı bir şekilde paylaşın, size en kısa sürede dönüş yapayım.</p>
+                        </div>
+                    </div>
+
+                    <!-- Sosyal Sorumluluk Notu -->
+                    <div class="social-responsibility mt-4">
+                        <div class="note-box">
+                            <h4>💚 Sosyal Sorumluluk</h4>
+                            <p>GRCKobi, KOBİ'lerin dijital dünyada güvenle var olabilmesi için ücretsiz rehberlik sunma misyonuyla hareket eder. Temel bilgi ve yönlendirmeler için ücret talep edilmez.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
-    <!-- ===================================
-         FOOTER - Alt Bilgi Alanı
-         =================================== -->
+    <!-- Footer Bölümü -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <p>© 2025 GRCKobi - Tüm Hakları Saklıdır.</p>
+            <div class="footer-content text-center">
+                <p>© 2025 GRCKobi. Tüm hakları saklıdır.</p>
+                <p class="mt-2">
+                    <a href="gizlilik.html">Gizlilik Politikası</a> | 
+                    <a href="kullanim-sartlari.html">Kullanım Şartları</a> | 
+                    <a href="iletisim.html">İletişim</a>
+                </p>
             </div>
         </div>
     </footer>
+
+    <!-- Hoş Geldiniz Baloncuğu -->
+    <div class="welcome-bubble" id="welcome-bubble">
+        <button class="close-btn" onclick="this.parentElement.style.display='none'" aria-label="Kapat">×</button>
+        <h3>İletişime Geçin!</h3>
+        <p>GRC ve KVKK konularında sorularınız mı var? Size yardımcı olmaktan mutluluk duyarım.</p>
+    </div>
+
+    <style>
+        /* İletişim Sayfası Özel Stilleri */
+        .contact-link {
+            display: inline-block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            margin-top: 0.5rem;
+            border-radius: 8px;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .email-link {
+            background-color: var(--color-primary);
+            color: white;
+        }
+        
+        .email-link:hover {
+            background-color: var(--color-secondary);
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        .linkedin-link {
+            background-color: #0077B5;
+            color: white;
+        }
+        
+        .linkedin-link:hover {
+            background-color: #005885;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        .info-box, .note-box {
+            background-color: #F3F4F6;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-primary);
+        }
+        
+        body.dark-mode .info-box,
+        body.dark-mode .note-box {
+            background-color: #374151;
+        }
+        
+        .topic-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        
+        .topic-list li {
+            padding: 0.5rem 0;
+            font-size: 1.05rem;
+        }
+        
+        .contact-section {
+            margin-bottom: 2rem;
+        }
+        
+        .response-info,
+        .social-responsibility {
+            margin-top: 3rem;
+        }
+    </style>
 </body>
 </html>
