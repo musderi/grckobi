@@ -407,4 +407,21 @@ input[type="radio"]:first-of-type {
 }
 
 /* ===================================
-   RESPONSIVE TASARIM -
+   RESPONSIVE TASARIM - TABLET
+   =================================== */
+@media (max-width: 768px) {
+    /* Header responsive */
+    header .container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 20px;
+    }
+    
+    /* Navigasyon menüsü tablet */
+    nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav
