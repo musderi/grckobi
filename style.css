@@ -29,6 +29,10 @@ body.dark-mode {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
@@ -60,6 +64,122 @@ body::before {
 body.dark-mode::before {
   opacity: 0.15;
 }
+
+/* ===================================
+   HEADER STYLES - V3.0 (EKLENDİ)
+   =================================== */
+
+/* Ana Header Container */
+header {
+  background-color: var(--color-background-content);
+  box-shadow: 0 2px 10px var(--color-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all var(--transition-speed) ease;
+}
+
+/* Header İçerik Düzeni */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  min-height: 70px;
+}
+
+/* Logo Stili */
+.logo a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 1.75rem;
+  font-weight: 700;
+  font-family: 'Lexend', sans-serif;
+  transition: color var(--transition-speed) ease;
+}
+
+.logo a:hover {
+  color: var(--color-secondary);
+  text-decoration: none; /* Alt çizgiyi kaldır */
+}
+
+/* Ana Navigasyon Container */
+.main-navigation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 2rem;
+}
+
+/* Navigasyon Menü Listesi */
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Menü Liste Elemanları */
+.nav-menu li {
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.nav-menu li:first-child {
+  margin-left: 0;
+}
+
+/* Menü Linkleri */
+.nav-menu a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+}
+
+.nav-menu a:hover {
+  color: var(--color-primary);
+  background-color: rgba(0, 95, 115, 0.05);
+  text-decoration: none; /* Alt çizgiyi kaldır */
+}
+
+/* Aktif Sayfa Göstergesi */
+.nav-menu a.active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.nav-menu a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 1rem;
+  right: 1rem;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+/* Dark Mode Toggle Butonu (Header'da) */
+header .dark-mode-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: all var(--transition-speed) ease;
+}
+
+header .dark-mode-toggle:hover {
+    transform: rotate(180deg) scale(1.1);
+    color: var(--color-secondary);
+}
+
 
 /* Başlıklar */
 h1, h2, h3, h4, h5, h6 {
@@ -280,7 +400,7 @@ a:hover {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem; /* Yan boşluklar eklendi */
 }
 
 .grid {
@@ -338,7 +458,7 @@ input:focus, textarea:focus, select:focus {
   h3 { font-size: 1.5rem; }
   
   .container {
-    padding: 1rem;
+    padding: 0 1rem; /* Mobil için yan boşluklar */
   }
   
   .content-box, .card {
@@ -383,34 +503,6 @@ input:focus, textarea:focus, select:focus {
 .p-2 { padding: 1rem; }
 .p-3 { padding: 1.5rem; }
 .p-4 { padding: 2rem; }
-
-/* Dark Mode Toggle Butonu */
-.dark-mode-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: var(--color-primary);
-  color: #FFFFFF;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  box-shadow: 0 4px 12px var(--color-shadow);
-  transition: all var(--transition-speed) ease;
-  z-index: 999;
-}
-
-.dark-mode-toggle:hover {
-  transform: rotate(180deg);
-  background-color: var(--color-secondary);
-}
-
-/* Smooth Scroll */
-html {
-  scroll-behavior: smooth;
-}
 
 /* Selection Color */
 ::selection {
