@@ -11,13 +11,20 @@
    =================================== */
 :root {
     /* Ana Renk Paleti - Açık Mod */
-    --color-text-primary: #2D3748;        /* Füme - Ana metin */
-    --color-primary: #38A169;             /* Güçlü Yeşil - Başlıklar, linkler */
-    --color-secondary: #D69E2E;           /* Altın Sarısı - Butonlar, vurgular */
-    --color-bg-main: #FAFAFA;             /* Hafif Kırık Beyaz - İçerik arka planı */
+    --color-text-primary: #333333;        /* Koyu Gri - Ana metin (daha okunaklı) */
+    --color-primary: #005F73;             /* Koyu Teal/Lacivert - Başlıklar, linkler */
+    --color-secondary: #D4A017;           /* Altın/Hardal - Butonlar, vurgular */
+    --color-secondary-accent: #B5830D;    /* Koyu Altın - Hover efektleri */
+    --color-bg-main: #FFFFFF;             /* Saf Beyaz - İçerik kutuları arka planı */
     --color-bg-body: #E2E8F0;             /* Çok açık gri - Body arka planı */
     --color-white: #FFFFFF;
     --color-black: #1A202C;
+    
+    /* Tamamlayıcı Renkler */
+    --color-teal-light: #0A7790;          /* Açık Teal - Hover durumları */
+    --color-teal-dark: #003E4F;           /* Çok Koyu Teal - Aktif durumlar */
+    --color-gray-light: #F7FAFC;          /* Çok Açık Gri - Alternatif arka planlar */
+    --color-gray-medium: #718096;         /* Orta Gri - İkincil metinler */
     
     /* Gölgeler */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -31,8 +38,9 @@
 }
 
 /* ===================================
-   TEMEL RESET VE GENEL AYARLAR
+   KOYU MOD RENKLERİ - V3.0
    =================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -89,7 +97,13 @@ body::before {
 
 /* Dark mode için arka plan ayarlaması */
 body.dark-mode::before {
-    opacity: 0.15; /* Koyu modda daha transparan */
+   --color-text-primary: #E2E8F0;        /* Açık Gri - Ana metin */
+    --color-primary: #4DB8CC;             /* Açık Teal - Başlıklar, linkler */
+    --color-secondary: #F7C948;           /* Parlak Altın - Butonlar, vurgular */
+    --color-secondary-accent: #E5B935;    /* Altın - Hover efektleri */
+    --color-bg-main: #2D3748;             /* Koyu Füme - İçerik kutuları */
+    --color-bg-body: #1A202C;     
+   opacity: 0.15; /* Koyu modda daha transparan */
 }
 
 /* Başlıklar - Lexend Font */
@@ -336,6 +350,7 @@ nav a:hover {
     background-color: var(--color-secondary);
     color: var(--color-white);
 }
+
 
 
 
