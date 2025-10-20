@@ -75,7 +75,7 @@ body::before {
     z-index: -1; /* İçeriğin arkasında kalması için */
     
     /* Arka plan görseli ayarları */
-    background-image: url('../images/arka-plan-deseni.png');
+    background-image: url('images/arka-plan-deseni.jpg');
     background-repeat: repeat; /* Desen olarak tekrarla */
     background-size: auto; /* Orijinal boyutunu koru */
     background-position: top left; /* Başlangıç noktası */
@@ -336,3 +336,4 @@ nav a:hover {
     background-color: var(--color-secondary);
     color: var(--color-white);
 }
+
