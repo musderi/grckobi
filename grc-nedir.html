@@ -1,86 +1,40 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <!-- Meta Etiketler -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GRC nedir? Yönetişim, Risk ve Uyum kavramlarının detaylı açıklaması. KOBİ'ler için GRC rehberi.">
-    <meta name="keywords" content="GRC, Yönetişim, Risk, Uyum, Governance, Risk Management, Compliance">
-    <meta name="author" content="Mustafa Eren Dinç">
+Merhaba Claude. Şimdi 'grc-nedir.html' sayfamızı, 'Proje 2.0' vizyonumuza (yeni 'style.css', 'Koyu Mod' ve 'kart' tasarımı) uygun olarak sıfırdan oluşturacağız.
+
+Hedef: Sadece GRC'nin tanımını yapmak değil, bileşenlerini de detaylı ve profesyonel bir şekilde "kartlar" içinde sunmak.
+
+İşte Kurallar:
+
+1.  **`<head>` Bölümü:**
+    * Güncellenmiş 'style.css' dosyasını çağırmalı.
+    * 'Inter' Google Font'unu import etmeli.
+    * Sayfa başlığı (title) "GRC Nedir? (Yönetişim, Risk, Uyum) - GRCKobi" olmalı.
+
+2.  **`<header>` (İç Sayfa Menüsü):**
+    * 'kvkk-rehberi.html' sayfası için oluşturduğumuz AYNI 'iç sayfa' menü yapısını kullanmalı (Tüm linkler 'index.html#anchor' şeklinde ana sayfaya dönmeli).
+    * Bu, sitenin her yerinde tutarlı bir navigasyon sağlar.
+
+3.  **`<main class="container">` (Ana İçerik):**
+    * Sayfanın ana başlığı: `<h1>GRC: Yönetişim, Risk ve Uyum</h1>`
+    * Giriş paragrafı: `<p>GRC, bir kuruluşun hedeflerine güvenilir bir şekilde ulaşması, belirsizliği (riski) yönetmesi ve yasalara (uyumluluk) uygun hareket etmesi için kullanılan entegre bir yaklaşımdır. KOBİ'ler için bu, siber dayanıklılık ve sürdürülebilir büyüme anlamına gelir. GRC, bu üç temel direk üzerine kuruludur:</p>`
     
-    <!-- Sayfa Başlığı -->
-    <title>GRC Nedir? - GRCKobi</title>
-    
-    <!-- Google Fonts - Open Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- CSS Dosyası -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Üst Başlık (Header) Bölümü -->
-    <header>
-    <div class="container">
-        <!-- Site Logosu/Başlığı -->
-        <a href="index.html" class="logo">GRCKobi</a>
-        
-        <!-- Ana Navigasyon Menüsü -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="grc-nedir.html">GRC Nedir?</a></li>
-                <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                <li><a href="risk-testi.html">Risk Testi</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-    
-    <!-- Ana İçerik (Main) Bölümü -->
-    <main class="container">
-        <!-- Ana Başlık -->
-        <h1>GRC Nedir?</h1>
-        
-        <!-- GRC Tanımı -->
-        <p>
-            GRC; Yönetişim (Governance), Risk (Risk) ve Uyum (Compliance) kelimelerinin baş harflerinden oluşur. 
-            Bir kuruluşun hedeflerine ulaşmak için riskleri yönetmesini ve yasalara uyum sağlamasını sağlayan 
-            entegre bir yaklaşımdır.
-        </p>
-        
-        <!-- Yönetişim Bölümü -->
-        <h2>Yönetişim (Governance)</h2>
-        <p>
-            Kuruluşun hedeflerine ulaşması için nasıl yönetildiğidir. Strateji belirleme, karar alma 
-            mekanizmaları ve performans takibini kapsar.
-        </p>
-        
-        <!-- Risk Bölümü -->
-        <h2>Risk (Risk)</h2>
-        <p>
-            Hedeflere ulaşmayı engelleyebilecek her türlü belirsizliktir. Risk yönetimi, bu tehditlerin 
-            belirlenmesi, analiz edilmesi ve yönetilmesini içerir.
-        </p>
-        
-        <!-- Uyum Bölümü -->
-        <h2>Uyum (Compliance)</h2>
-        <p>
-            Kuruluşun faaliyet gösterdiği yasalara, düzenlemelere (KVKK, GDPR gibi) ve standartlara 
-            uyması zorunluluğudur.
-        </p>
-    </main>
-    
-    <!-- Alt Bilgi (Footer) Bölümü -->
-    <footer>
-        <div class="container">
-            <div class="footer-bottom">
-                <!-- Telif Hakkı Metni -->
-                © 2025 GRCKobi - Mustafa Eren Dinç tarafından yönetilmektedir.
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+    * **İçerik (Kartlar içinde):** Aşağıdaki 3 bölümün her birini, başlığı `.card`'ın içinde `<h3>` olacak şekilde ayrı `.card`'lar olarak oluştur:
+
+        * **Kart 1 (Yönetişim):**
+            * `<h3>G - Yönetişim (Governance)</h3>`
+            * `<p><strong>Tanım:</strong> Kuruluşun hedeflerine ulaşması için nasıl yönetildiğidir. Strateji belirleme, karar alma mekanizmaları ve performans takibini kapsar.</p>`
+            * `<p><strong>KOBİ'ler için Anlamı:</strong> Şirketinizde siber güvenlik politikaları var mı? Bilgi varlıklarınızın (veritabanları, sunucular) sahibi kim? Kritik kararlar nasıl alınıyor? Yönetişim, bu kuralları belirlemektir.</p>`
+
+        * **Kart 2 (Risk):**
+            * `<h3>R - Risk (Risk)</h3>`
+            * `<p><strong>Tanım:</strong> Hedeflere ulaşmayı engelleyebilecek her türlü belirsizliktir. Risk yönetimi, bu tehditlerin (siber saldırılar, veri sızıntıları, yasal cezalar) belirlenmesi, analiz edilmesi ve yönetilmesini içerir.</p>`
+            * `<p><strong>KOBİ'ler için Anlamı:</strong> En kritik veriniz nedir? Bir oltalama (phishing) saldırısına uğrarsanız ne kaybedersiniz? Verilerinizi yedekliyor musunuz? Risk yönetimi, 'kötü bir şey olursa' ne yapacağınızı planlamaktır.</p>`
+
+        * **Kart 3 (Uyum):**
+            * `<h3>C - Uyum (Compliance)</h3>`
+            * `<p><strong>Tanım:</strong> Kuruluşun faaliyet gösterdiği yasalara, düzenlemelere (KVKK, GDPR gibi) ve endüstri standartlarına (ISO 27001 vb.) uyması zorunluluğudur.</p>`
+            * `<p><strong>KOBİ'ler için Anlamı:</strong> Müşteri verilerini KVKK'ya uygun topluyor musunuz? E-ticaret yapıyorsanız ödeme sistemleri standartlarına (PCI-DSS) uyuyor musunuz? Uyum, sizi yasal cezalardan ve itibar kaybından korur.</p>`
+
+4.  **`<footer>` Bölümü:**
+    * Diğer sayfalarla aynı temiz ve sade footer'ı kullanmalı.
+
+Lütfen bu yapıya tam olarak uyan bir 'grc-nedir.html' kodu oluştur.
