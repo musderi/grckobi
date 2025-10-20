@@ -172,3 +172,15 @@ window.setTheme = function(theme) {
     
     console.log(`Tema manuel olarak değiştirildi: ${theme}`);
 };
+
+// ===================================
+// Header Scroll Efekti (Opsiyonel) - EKLENDİ
+// ===================================
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
