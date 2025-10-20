@@ -1,64 +1,80 @@
 /* ===================================
-   GRC KOBİ - Ana Stil Dosyası (style.css)
-   Tüm sayfalarda kullanılan ortak stiller
+   GRC KOBİ 2.0 - Modern Stil Dosyası
+   Teknolojik, Profesyonel ve Güven Veren Tasarım
    =================================== */
 
-/* Google Fonts - Open Sans import */
-@import url('https://fonts.googleapis.com/css2?family:Open+Sans:wght@300;400;500;600;700&display=swap');
+/* Google Fonts - Inter import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ===================================
+   CSS DEĞİŞKENLERİ (Custom Properties)
+   Tutarlı renk ve değer yönetimi için
+   =================================== */
+:root {
+    /* Ana Renk Paleti */
+    --color-white: #FFFFFF;
+    --color-light-gray: #F7FAFC;
+    --color-dark-gray: #2D3748;
+    --color-primary-blue: #3182CE;
+    --color-secondary-blue: #63B3ED;
+    
+    /* Gölge Değerleri */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    
+    /* Geçiş Animasyonu */
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 /* ===================================
    TEMEL RESET VE GENEL AYARLAR
    =================================== */
-
-/* Tüm elementler için temel reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* HTML ve Body temel ayarları */
+/* Smooth scroll davranışı */
 html {
-    font-size: 16px; /* Temel font boyutu - rem hesaplamaları için */
-    scroll-behavior: smooth; /* Sayfa içi yumuşak geçiş */
+    scroll-behavior: smooth;
+    font-size: 16px;
 }
 
+/* Body temel stilleri */
 body {
-    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 400;
     line-height: 1.6;
-    color: #282C34; /* Ana metin rengi - Koyu lacivert */
-    background-color: #F5F5DC; /* Krem arka plan */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    color: var(--color-dark-gray);
+    background-color: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* ===================================
-   CONTAINER - İÇERİK ORTALAMA
+   CONTAINER - İÇERİK SARMALAYICI
    =================================== */
-
-/* Ana içerik container'ı */
 .container {
     width: 100%;
-    max-width: 1200px; /* Maksimum genişlik */
-    margin: 0 auto; /* Yatay ortalama */
-    padding: 0 30px; /* Sağ-sol boşluklar */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* ===================================
-   HEADER STİLLERİ
+   HEADER - TRANSPARAN MENÜ
    =================================== */
-
-/* Header ana stili */
 header {
-    background-color: #3A506B; /* Mat lacivert arka plan */
-    color: #FFFFFF; /* Beyaz yazı rengi */
-    padding: 20px 0;
-    position: sticky; /* Sayfada sabit kalması için */
+    position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.85); /* Yarı transparan beyaz */
+    backdrop-filter: blur(10px); /* Buzlu cam efekti */
+    -webkit-backdrop-filter: blur(10px); /* Safari uyumluluğu */
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition-base);
 }
 
 /* Header içeriği düzeni */
@@ -66,393 +82,344 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    padding: 1.25rem 20px;
 }
 
-/* Logo/Site başlığı */
+/* Logo stili */
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--color-primary-blue);
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: -0.5px;
 }
 
 /* Navigasyon menüsü */
 nav ul {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 2rem;
     align-items: center;
 }
 
 /* Navigasyon linkleri */
 nav a {
-    color: #FFFFFF;
+    color: var(--color-dark-gray);
     text-decoration: none;
     font-weight: 500;
-    font-size: 1rem;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
     position: relative;
+    transition: var(--transition-base);
 }
 
 /* Navigasyon link hover efekti */
 nav a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
+    color: var(--color-primary-blue);
 }
 
-/* Navigasyon aktif link alt çizgisi */
+/* Navigasyon aktif link altı çizgi animasyonu */
 nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%;
+    left: 0;
     width: 0;
     height: 2px;
-    background-color: #FFFFFF;
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
+    background-color: var(--color-primary-blue);
+    transition: width 0.3s ease;
 }
 
 nav a:hover::after {
-    width: 80%;
-}
-
-/* ===================================
-   ANA İÇERİK ALANI
-   =================================== */
-
-/* Main content alanı */
-main {
-    flex: 1; /* Footer'ı aşağıda tutmak için */
-    padding: 50px 0;
+    width: 100%;
 }
 
 /* ===================================
    BAŞLIK STİLLERİ
    =================================== */
-
-/* Tüm başlıklar için genel stil */
 h1, h2, h3, h4, h5, h6 {
-    color: #8B4513; /* Mat kahverengi */
+    color: var(--color-primary-blue);
     font-weight: 600;
     line-height: 1.3;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
 }
 
-/* H1 - Ana başlık */
 h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 30px;
+    font-size: 3rem;
+    font-weight: 800;
 }
 
-/* H2 - Alt başlık */
 h2 {
-    font-size: 2rem;
-    margin-top: 40px;
-    margin-bottom: 25px;
+    font-size: 2.25rem;
+    font-weight: 700;
 }
 
-/* H3 - Bölüm başlığı */
 h3 {
     font-size: 1.5rem;
-    margin-top: 30px;
 }
 
-/* H4, H5, H6 */
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.1rem; }
-h6 { font-size: 1rem; }
+h4 {
+    font-size: 1.25rem;
+}
 
 /* ===================================
-   PARAGRAF VE METİN STİLLERİ
+   METİN VE PARAGRAF STİLLERİ
    =================================== */
-
-/* Paragraf stili */
 p {
-    color: #282C34; /* Koyu lacivert metin */
-    font-size: 1rem;
+    margin-bottom: 1rem;
     line-height: 1.8;
-    margin-bottom: 20px;
-    text-align: justify;
+    color: var(--color-dark-gray);
 }
 
-/* Link stili (genel) */
+/* Link stilleri */
 a {
-    color: #8B4513;
+    color: var(--color-secondary-blue);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: var(--transition-base);
 }
 
 a:hover {
-    color: #6B3410;
     text-decoration: underline;
+}
+
+/* ===================================
+   HERO BÖLÜMÜ (GİRİŞ ALANI)
+   =================================== */
+.hero {
+    padding: 100px 20px 80px;
+    text-align: center;
+    background-color: var(--color-white);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+/* Hero başlıktaki vurgulu kelimeler */
+.hero h1 .highlight {
+    color: var(--color-primary-blue);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--color-dark-gray);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+/* ===================================
+   BÖLÜM (SECTION) STİLLERİ
+   =================================== */
+section {
+    padding: 60px 20px;
+}
+
+/* Çift sayılı bölümler için arka plan */
+section:nth-of-type(even) {
+    background-color: var(--color-light-gray);
+}
+
+/* Bölüm başlıkları */
+section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* ===================================
+   CARD (KART) TASARIMI
+   =================================== */
+.card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-base);
+    height: 100%;
+}
+
+/* Card hover efekti */
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Card başlıkları */
+.card h3 {
+    color: var(--color-primary-blue);
+    margin-bottom: 1rem;
+}
+
+/* Card içerik */
+.card p {
+    margin-bottom: 0.75rem;
+}
+
+/* Kart grid düzeni */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* ===================================
+   BUTON STİLLERİ
+   =================================== */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.btn:hover {
+    background-color: #2c5aa0; /* Daha koyu mavi */
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+}
+
+/* İkincil buton */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary-blue);
+    border: 2px solid var(--color-primary-blue);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
 }
 
 /* ===================================
    FOOTER STİLLERİ
    =================================== */
-
-/* Footer ana stili */
 footer {
-    background-color: #3A506B; /* Mat lacivert arka plan */
-    color: #FFFFFF; /* Beyaz yazı */
-    padding: 40px 0 20px 0;
-    margin-top: auto;
+    background-color: var(--color-white);
+    border-top: 1px solid #E2E8F0;
+    padding: 3rem 0;
+    margin-top: 4rem;
 }
 
-/* Footer içeriği grid düzeni */
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 30px;
-}
-
-/* Footer bölüm başlıkları */
-.footer-section h4 {
-    color: #FFFFFF;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-/* Footer linkleri */
-.footer-section a {
-    color: #FFFFFF;
-    text-decoration: none;
-    display: block;
-    padding: 5px 0;
-    transition: opacity 0.3s ease;
-}
-
-.footer-section a:hover {
-    opacity: 0.8;
-    text-decoration: underline;
-}
-
-/* Footer alt kısım */
-.footer-bottom {
     text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    font-size: 0.9rem;
-    opacity: 0.9;
+}
+
+.footer-content p {
+    color: var(--color-dark-gray);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* ===================================
+   LİSTE STİLLERİ
+   =================================== */
+ul, ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    color: var(--color-dark-gray);
+}
+
+/* ===================================
+   FORM STİLLERİ (Risk Testi için)
+   =================================== */
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-group p {
+    margin-bottom: 1rem;
+}
+
+/* Radio button stilleri */
+input[type="radio"] {
+    margin-right: 0.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+input[type="radio"]:first-of-type {
+    margin-left: 0;
+}
+
+/* Form buton */
+#submitButton {
+    margin-top: 2rem;
+}
+
+/* Sonuç alanı */
+#resultText {
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    display: none;
+}
+
+/* Risk seviyelerine göre renkler */
+.low-risk {
+    background-color: #D1FAE5;
+    color: #064E3B;
+}
+
+.medium-risk {
+    background-color: #FEF3C7;
+    color: #78350F;
+}
+
+.high-risk {
+    background-color: #FEE2E2;
+    color: #7F1D1D;
 }
 
 /* ===================================
    YARDIMCI SINIFLAR
    =================================== */
+.text-center {
+    text-align: center;
+}
 
-/* Metin hizalama */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
+.mb-0 {
+    margin-bottom: 0;
+}
 
-/* Margin yardımcıları */
-.mt-1 { margin-top: 10px; }
-.mt-2 { margin-top: 20px; }
-.mt-3 { margin-top: 30px; }
-.mb-1 { margin-bottom: 10px; }
-.mb-2 { margin-bottom: 20px; }
-.mb-3 { margin-bottom: 30px; }
+.mt-2 {
+    margin-top: 2rem;
+}
 
 /* ===================================
    RESPONSIVE TASARIM - TABLET
    =================================== */
-
-@media screen and (max-width: 768px) {
-    /* Container ayarları */
-    .container {
-        padding: 0 20px;
-    }
-    
-    /* Header düzeni */
+@media (max-width: 768px) {
+    /* Header responsive */
     header .container {
         flex-direction: column;
-        gap: 20px;
+        gap: 1rem;
+        padding: 1rem 20px;
     }
     
-    /* Navigasyon tablet düzeni */
+    /* Navigasyon menüsü tablet */
     nav ul {
-        gap: 20px;
+        gap: 1rem;
         flex-wrap: wrap;
         justify-content: center;
-    }
     
-    /* Başlık boyutları */
-    h1 {
-        font-size: 2rem;
-    }
-    
-    h2 {
-        font-size: 1.5rem;
-    }
-    
-    h3 {
-        font-size: 1.25rem;
-    }
-    
-    /* Ana içerik padding */
-    main {
-        padding: 30px 0;
-    }
-    
-    /* Footer grid düzeni */
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-}
-
-/* ===================================
-   RESPONSIVE TASARIM - MOBİL
-   =================================== */
-
-@media screen and (max-width: 480px) {
-    /* HTML temel font boyutu */
-    html {
-        font-size: 14px;
-    }
-    
-    /* Container ayarları */
-    .container {
-        padding: 0 15px;
-    }
-    
-    /* Logo boyutu */
-    .logo {
-        font-size: 1.5rem;
-    }
-    
-    /* Navigasyon mobil düzeni */
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
-    }
-    
-    nav a {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 10px;
-    }
-    
-    /* Başlık boyutları mobil */
-    h1 {
-        font-size: 1.75rem;
-        margin-bottom: 20px;
-    }
-    
-    h2 {
-        font-size: 1.35rem;
-        margin-top: 30px;
-    }
-    
-    h3 {
-        font-size: 1.15rem;
-    }
-    
-    /* Paragraf mobil ayarları */
-    p {
-        font-size: 0.95rem;
-        text-align: left; /* Mobilde justify kaldırılıyor */
-    }
-    
-    /* Ana içerik padding */
-    main {
-        padding: 20px 0;
-    }
-    
-    /* Footer mobil düzeni */
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    
-    .footer-section {
-        text-align: center;
-    }
-    
-    .footer-bottom {
-        font-size: 0.85rem;
-        padding: 15px 10px 10px;
-    }
-}
-
-/* ===================================
-   KÜÇÜK MOBİL CİHAZLAR (360px ve altı)
-   =================================== */
-
-@media screen and (max-width: 360px) {
-    html {
-        font-size: 13px;
-    }
-    
-    .logo {
-        font-size: 1.3rem;
-    }
-    
-    h1 {
-        font-size: 1.5rem;
-    }
-}
-
-/* ===================================
-   BASKI STİLLERİ
-   =================================== */
-
-@media print {
-    /* Header ve Footer gizleme */
-    header, footer {
-        display: none;
-    }
-    
-    /* Arka plan renkleri kaldırma */
-    body {
-        background-color: white;
-        color: black;
-    }
-    
-    /* Container genişletme */
-    .container {
-        max-width: 100%;
-        padding: 0;
-    }
-    
-    /* Link renklerini koyu yapma */
-    a {
-        color: black;
-        text-decoration: underline;
-    }
-}
-
-/* ===================================
-   ERİŞİLEBİLİRLİK
-   =================================== */
-
-/* Klavye odağı için görsel gösterge */
-:focus {
-    outline: 2px solid #8B4513;
-    outline-offset: 2px;
-}
-
-/* Görme engelliler için gizli metin */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-/* Skip link - Klavye navigasyonu
