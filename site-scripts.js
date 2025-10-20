@@ -1,153 +1,174 @@
-/* ===================================
-   GRC KOBİ V3.0 - Site Scripts
-   Dark Mode Toggle & Theme Management
-   =================================== */
+// ===================================
+// GRCKOBI V3.0 - Site Scripts
+// Dark Mode (Koyu Mod) Yönetimi
+// ===================================
 
-// DOM tamamen yüklendikten sonra scripti çalıştır
+// AŞAMA 1: Sayfa Yüklenirken Tema Kontrolü (Flaş Önleme)
+// Bu kod bloğu, DOM tamamen yüklenmeden önce çalışır
+(function() {
+    // localStorage'dan kayıtlı tema tercihini al
+    const savedTheme = localStorage.getItem('theme');
+    
+    // Eğer daha önce 'dark' seçilmişse, hemen uygula
+    if (savedTheme === 'dark') {
+        // Body elementine dark-mode sınıfını ekle
+        // Bu sayede sayfa yüklenirken beyaz flaş görünmez
+        document.documentElement.classList.add('dark-mode-loading');
+        
+        // Body elementi hazır olur olmaz dark-mode sınıfını ekle
+        if (document.body) {
+            document.body.classList.add('dark-mode');
+        } else {
+            // Body henüz yüklenmediyse, yüklendiğinde ekle
+            document.addEventListener('DOMContentLoaded', function() {
+                document.body.classList.add('dark-mode');
+            });
+        }
+    }
+})();
+
+// AŞAMA 2: Sayfa Tamamen Yüklendiğinde Çalışacak Ana Kod
 document.addEventListener('DOMContentLoaded', function() {
     
-    /* ===================================
-       TEMA YÖNETİMİ DEĞİŞKENLERİ
-       =================================== */
-    
-    // Tema butonunu ve ikonları tanımla
-    let themeToggleButton;
-    const sunIcon = '☀️';
-    const moonIcon = '🌙';
-    
-    /* ===================================
-       TEMA BUTONU OLUŞTURMA
-       =================================== */
-    
-    // Yeni buton elementi oluştur
-    themeToggleButton = document.createElement('button');
-    
-    // Butona CSS sınıfı ekle
-    themeToggleButton.className = 'theme-toggle-button';
-    
-    // Buton içine ikon için span elementi oluştur
-    const iconSpan = document.createElement('span');
-    iconSpan.className = 'theme-icon';
-    
-    // Span'i butona ekle
-    themeToggleButton.appendChild(iconSpan);
-    
-    // Header içindeki nav elementini bul
-    const navElement = document.querySelector('header nav ul');
-    
-    // Eğer nav elementi varsa, butonu ekle
-    if (navElement) {
-        // Butonu bir li elementi içine sarmalayalım (menü uyumluluğu için)
-        const buttonWrapper = document.createElement('li');
-        buttonWrapper.appendChild(themeToggleButton);
+    // Dark Mode Toggle Fonksiyonu
+    function toggleDarkMode() {
+        // Body elementini al
+        const body = document.body;
         
-        // Nav menüsünün sonuna ekle
-        navElement.appendChild(buttonWrapper);
+        // Dark mode sınıfını değiştir (toggle)
+        body.classList.toggle('dark-mode');
+        
+        // Mevcut durumu kontrol et
+        const isDarkMode = body.classList.contains('dark-mode');
+        
+        // Yeni tema durumunu belirle
+        const newTheme = isDarkMode ? 'dark' : 'light';
+        
+        // localStorage'a kaydet
+        localStorage.setItem('theme', newTheme);
+        
+        // Konsola bilgi yaz (debug için)
+        console.log(`Tema değiştirildi: ${newTheme}`);
+        
+        // Tema değişimi olayını tetikle (diğer scriptler dinleyebilir)
+        window.dispatchEvent(new CustomEvent('themeChanged', { 
+            detail: { theme: newTheme } 
+        }));
+    }
+    
+    // Theme Toggle Butonunu Bul ve Dinle
+    const themeToggleButton = document.getElementById('theme-toggle-button');
+    
+    if (themeToggleButton) {
+        // Butona tıklama olayını dinle
+        themeToggleButton.addEventListener('click', toggleDarkMode);
+        
+        // Buton içeriğini güncelle (opsiyonel)
+        updateButtonContent(themeToggleButton);
+        
+        // Tema değiştiğinde buton içeriğini güncelle
+        window.addEventListener('themeChanged', function() {
+            updateButtonContent(themeToggleButton);
+        });
     } else {
-        // Eğer nav bulunamazsa, direkt header'a ekle
-        const headerElement = document.querySelector('header');
-        if (headerElement) {
-            headerElement.appendChild(themeToggleButton);
-        }
+        // Eğer buton bulunamazsa konsola uyarı yaz
+        console.warn('Theme toggle button (#theme-toggle-button) bulunamadı!');
     }
     
-    /* ===================================
-       HAFIZA (localStorage) KONTROLÜ
-       =================================== */
-    
-    // Kullanıcının daha önce seçtiği temayı kontrol et
-    const savedTheme = localStorage.getItem('theme');
-    const iconElement = themeToggleButton.querySelector('.theme-icon');
-    
-    // Kaydedilmiş tema varsa uygula
-    if (savedTheme === 'dark') {
-        // Koyu mod aktif
-        document.body.classList.add('dark-mode');
-        iconElement.textContent = moonIcon;
-    } else {
-        // Açık mod aktif (varsayılan)
-        document.body.classList.remove('dark-mode');
-        iconElement.textContent = sunIcon;
+    // Yardımcı Fonksiyon: Buton İçeriğini Güncelle
+    function updateButtonContent(button) {
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        
+        // Buton içeriğini tema durumuna göre değiştir
+        // Emoji veya ikon kullanabilirsiniz
+        button.innerHTML = isDarkMode ? '☀️' : '🌙';
+        button.setAttribute('aria-label', isDarkMode ? 'Açık temaya geç' : 'Koyu temaya geç');
+        button.setAttribute('title', isDarkMode ? 'Açık temaya geç' : 'Koyu temaya geç');
     }
     
-    /* ===================================
-       TEMA DEĞİŞTİRME FONKSİYONU
-       =================================== */
-    
-    function toggleTheme() {
-        // Body'ye dark-mode sınıfını ekle/kaldır
-        const isDarkMode = document.body.classList.toggle('dark-mode');
-        
-        // İkonu güncelle
-        iconElement.textContent = isDarkMode ? moonIcon : sunIcon;
-        
-        // Tema tercihini localStorage'a kaydet
-        if (isDarkMode) {
-            localStorage.setItem('theme', 'dark');
-        } else {
-            localStorage.setItem('theme', 'light');
-        }
-        
-        // Konsola log at (debug için)
-        console.log('Tema değiştirildi:', isDarkMode ? 'Koyu Mod' : 'Açık Mod');
+    // İlk Yükleme Kontrolü (Güvenlik için)
+    // localStorage'da tema yoksa varsayılan olarak 'light' kaydet
+    if (!localStorage.getItem('theme')) {
+        const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+        localStorage.setItem('theme', currentTheme);
     }
     
-    /* ===================================
-       BUTONA TIKLANMA OLAYI
-       =================================== */
+    // Temizlik: Geçici sınıfı kaldır
+    document.documentElement.classList.remove('dark-mode-loading');
     
-    // Tema butonuna click event listener ekle
-    themeToggleButton.addEventListener('click', toggleTheme);
-    
-    /* ===================================
-       KLAVYE ERİŞİLEBİLİRLİĞİ
-       =================================== */
-    
-    // Enter veya Space tuşlarıyla da tema değiştirilebilsin
-    themeToggleButton.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            toggleTheme();
-        }
-    });
-    
-    // Butona erişilebilirlik özellikleri ekle
-    themeToggleButton.setAttribute('aria-label', 'Tema değiştir');
-    themeToggleButton.setAttribute('title', 'Koyu/Açık mod değiştir');
-    
-    /* ===================================
-       BONUS: GEÇİŞ ANİMASYONU
-       =================================== */
-    
-    // Tema değişimlerinde yumuşak geçiş için
-    const style = document.createElement('style');
-    style.textContent = `
-        body {
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        * {
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-        }
-    `;
-    document.head.appendChild(style);
-    
-    /* ===================================
-       İLK YÜKLEME MESAJI
-       =================================== */
-    
-    // Konsola başarılı yükleme mesajı
-    console.log('GRCKobi V3.0 Site Scripts başarıyla yüklendi!');
-    console.log('Mevcut tema:', savedTheme || 'light');
 });
 
-/* ===================================
-   YARDIMCI FONKSİYONLAR
-   =================================== */
+// BONUS: Klavye Kısayolu (Ctrl/Cmd + Shift + D)
+document.addEventListener('keydown', function(event) {
+    // Ctrl/Cmd + Shift + D kombinasyonunu kontrol et
+    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'D') {
+        event.preventDefault();
+        
+        // Toggle butonunu bul ve tıklama olayını tetikle
+        const button = document.getElementById('theme-toggle-button');
+        if (button) {
+            button.click();
+        }
+    }
+});
 
-// Tema durumunu kontrol eden yardımcı fonksiyon
-function isDarkModeActive() {
-    return document.body.classList.contains('dark-mode');
+// BONUS: Sistem Tema Tercihini Dinle (Opsiyonel)
+// Kullanıcının işletim sistemi tema tercihini algıla
+if (window.matchMedia) {
+    // Sistem koyu mod tercihini kontrol et
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // İlk yüklemede, eğer localStorage'da tema yoksa sistem tercihini kullan
+    if (!localStorage.getItem('theme') && systemPrefersDark.matches) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+    }
+    
+    // Sistem tercihi değiştiğinde dinle (opsiyonel)
+    systemPrefersDark.addEventListener('change', function(e) {
+        // Sadece kullanıcı manuel olarak tema seçmemişse uygula
+        if (!localStorage.getItem('userSetTheme')) {
+            if (e.matches) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+            
+            // Buton içeriğini güncelle
+            const button = document.getElementById('theme-toggle-button');
+            if (button && window.updateButtonContent) {
+                updateButtonContent(button);
+            }
+        }
+    });
 }
 
-// Tema durumunu dışarıdan sorgulayabilmek için global scope'a ekle
-window.isDarkModeActive = isDarkModeActive;
+// Debug Fonksiyonu: Mevcut Tema Durumunu Konsola Yaz
+window.getCurrentTheme = function() {
+    const theme = localStorage.getItem('theme') || 'light';
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    console.log(`LocalStorage tema: ${theme}`);
+    console.log(`Body dark-mode sınıfı: ${isDarkMode ? 'var' : 'yok'}`);
+    return theme;
+};
+
+// Tema Değişimini Manuel Olarak Tetikleme Fonksiyonu
+window.setTheme = function(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+    } else if (theme === 'light') {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+    }
+    
+    // Buton içeriğini güncelle
+    const button = document.getElementById('theme-toggle-button');
+    if (button && window.updateButtonContent) {
+        updateButtonContent(button);
+    }
+    
+    console.log(`Tema manuel olarak değiştirildi: ${theme}`);
+};
