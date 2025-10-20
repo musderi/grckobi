@@ -1,205 +1,141 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <!-- Meta Etiketler -->
+    <!-- Meta Etiketleri -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="KOBİ'ler için modern GRC ve KVKK rehberi. İşletmenizi dijital tehditlere karşı koruyun.">
-    <meta name="keywords" content="GRC, KVKK, KOBİ, Yönetişim, Risk, Uyum, Siber Güvenlik, Veri Koruma">
-    <meta name="author" content="Mustafa Eren Dinç">
+    <meta name="description" content="GRCKobi - KOBİ'ler için GRC (Yönetişim, Risk, Uyum) ve KVKK danışmanlık rehberi. İşletmenizi dijital dünyada koruyun.">
+    <meta name="keywords" content="GRC, KVKK, KOBİ, yönetişim, risk, uyum, veri koruma">
+    <meta name="author" content="GRCKobi">
     
     <!-- Sayfa Başlığı -->
-    <title>GRCKobi - KOBİ'ler için Modern GRC & KVKK Rehberi</title>
+    <title>GRCKobi - GRC ve KVKK Danışmanlık Rehberi</title>
     
-    <!-- Google Fonts - Inter -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS Dosyası -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- JavaScript Dosyası -->
+    <script src="site-scripts.js" defer></script>
 </head>
+
 <body>
-    <!-- ===================================
-         HEADER - Yapışkan Transparan Menü
-         =================================== -->
+    <!-- Header Bölümü -->
     <header>
         <div class="container">
-            <!-- Site Logosu -->
-            <a href="index.html" class="logo">GRCKobi</a>
-            
-            <!-- Ana Navigasyon Menüsü -->
-            <nav>
-                <ul>
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="#grc">GRC Nedir?</a></li>
-                    <li><a href="#kvkk">KVKK Rehberi</a></li>
-                    <li><a href="risk-testi.html">Risk Testi</a></li>
-                    <li><a href="#hakkimizda">Hakkımızda</a></li>
-                    <li><a href="iletisim.html">İletişim</a></li>
-                </ul>
-            </nav>
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">GRCKobi</a>
+                </div>
+                
+                <!-- Navigasyon Menüsü -->
+                <nav class="main-navigation">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                        <li><a href="grc-nedir.html">GRC Nedir?</a></li>
+                        <li><a href="kvkk-rehberi.html">KVKK Rehberi</a></li>
+                        <li><a href="risk-testi.html">Risk Testi</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Dark Mode Toggle Butonu -->
+                <button id="theme-toggle-button" class="dark-mode-toggle" aria-label="Tema değiştir" title="Tema değiştir">
+                    🌙
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- ===================================
-         MAIN - Ana İçerik Alanı
-         =================================== -->
+    <!-- Ana İçerik Alanı -->
     <main>
-        <!-- HERO SECTION - Giriş Bölümü -->
+        <!-- Hero (Karşılama) Bölümü -->
         <section class="hero">
             <div class="container">
-                <h1>
-                    Dijital Dünyada İşletmenizi Koruyun: 
-                    <span class="highlight">GRC</span> ve 
-                    <span class="highlight">KVKK</span>
-                </h1>
-                <h2>KOBİ'ler için Anlaşılır, Uygulanabilir ve Modern Güvenlik Rehberi</h2>
-            </div>
-        </section>
-
-        <!-- ===================================
-             GRC BÖLÜMÜ
-             =================================== -->
-        <section id="grc">
-            <div class="container">
-                <!-- Bölüm Başlığı -->
-                <h2>GRC (Yönetişim, Risk, Uyum) Nedir?</h2>
-                
-                <!-- GRC Bileşenleri - Kartlar -->
-                <div class="cards-grid">
-                    <!-- Yönetişim Kartı -->
-                    <div class="card">
-                        <h3>Yönetişim (Governance)</h3>
-                        <p>
-                            İşletmenizin hedeflerine ulaşması için doğru kararlar almanızı sağlayan 
-                            sistem ve süreçlerdir. Strateji belirleme, performans takibi ve şeffaf 
-                            yönetim anlayışını kapsar.
-                        </p>
-                    </div>
-                    
-                    <!-- Risk Kartı -->
-                    <div class="card">
-                        <h3>Risk (Risk Management)</h3>
-                        <p>
-                            İşletmenizi tehdit eden belirsizlikleri önceden tespit etme ve yönetme 
-                            sanatıdır. Siber saldırılar, veri kayıpları ve finansal riskler gibi 
-                            tehditlere karşı proaktif önlemler alınmasını sağlar.
-                        </p>
-                    </div>
-                    
-                    <!-- Uyum Kartı -->
-                    <div class="card">
-                        <h3>Uyum (Compliance)</h3>
-                        <p>
-                            KVKK, GDPR gibi yasal düzenlemeler ve ISO 27001 gibi standartlara 
-                            uygun hareket etmektir. Cezalardan korunmanın yanı sıra müşteri 
-                            güvenini de artırır.
-                        </p>
+                <div class="hero-content text-center">
+                    <h1>Dijital Dünyada İşletmenizi Koruyun: GRC ve KVKK</h1>
+                    <p class="lead">KOBİ'ler için özel olarak hazırlanmış, anlaşılır ve uygulanabilir yönetişim, risk ve uyum rehberi</p>
+                    <div class="hero-buttons mt-4">
+                        <a href="grc-nedir.html" class="button">GRC'yi Keşfet</a>
+                        <a href="kvkk-rehberi.html" class="button button-secondary">KVKK Rehberi</a>
                     </div>
                 </div>
-                
-                <!-- Detaylı Bilgi Linki -->
-                <p class="text-center mt-2">
-                    <a href="grc-nedir.html">GRC hakkında daha fazlasını öğrenin...</a>
-                </p>
             </div>
         </section>
 
-        <!-- ===================================
-             KVKK REHBERİ BÖLÜMÜ
-             =================================== -->
-        <section id="kvkk">
+        <!-- İçerik Kutuları Bölümü -->
+        <section class="content-section">
             <div class="container">
-                <!-- Bölüm Başlığı -->
-                <h2>KOBİ'ler için Pratik KVKK Rehberi</h2>
-                
-                <!-- KVKK SSS Kartları -->
-                <div class="cards-grid">
-                    <!-- KVKK Nedir Kartı -->
-                    <div class="card">
-                        <h3>KVKK Nedir?</h3>
-                        <p>
-                            Kişisel Verilerin Korunması Kanunu, vatandaşların kişisel bilgilerinin 
-                            nasıl toplanacağı, saklanacağı ve kullanılacağını düzenleyen yasal 
-                            çerçevedir. Tüm işletmeler için uyum zorunludur.
-                        </p>
+                <div class="grid">
+                    <!-- İçerik Kutusu 1: GRC Nedir -->
+                    <div class="content-box">
+                        <h2>GRC (Yönetişim, Risk, Uyum) Nedir?</h2>
+                        <p>İşletmenizin güvenli ve sürdürülebilir büyümesi için kritik olan GRC kavramını basit bir dille öğrenin. Yönetişim ilkeleri, risk yönetimi ve uyum süreçleri hakkında temel bilgiler edinin.</p>
+                        <a href="grc-nedir.html" class="button mt-3">Detaylı Bilgi →</a>
                     </div>
-                    
-                    <!-- Veri Sorumlusu Kartı -->
-                    <div class="card">
-                        <h3>Veri Sorumlusu Kimdir?</h3>
-                        <p>
-                            Müşteri, çalışan veya tedarikçi verilerini toplayan her işletme 
-                            "veri sorumlusu"dur. Bu, sizi KVKK kapsamındaki yükümlülüklere 
-                            tabi kılar.
-                        </p>
+
+                    <!-- İçerik Kutusu 2: KVKK Rehberi -->
+                    <div class="content-box">
+                        <h2>KOBİ'ler için Pratik KVKK Rehberi</h2>
+                        <p>Kişisel Verilerin Korunması Kanunu'na uyum sürecinde KOBİ'lerin ihtiyaç duyduğu tüm pratik bilgiler. Adım adım uyum rehberi, kontrol listeleri ve şablonlarla KVKK'ya hazır olun.</p>
+                        <a href="kvkk-rehberi.html" class="button mt-3">Rehberi İncele →</a>
                     </div>
-                    
-                    <!-- Açık Rıza Kartı -->
-                    <div class="card">
-                        <h3>Açık Rıza Şart mı?</h3>
-                        <p>
-                            Her veri işleme için açık rıza gerekmez. Sözleşmenin ifası, kanuni 
-                            yükümlülük gibi meşru sebepler de veri işlemeye dayanak olabilir. 
-                            Ancak pazarlama faaliyetleri için açık rıza şarttır.
-                        </p>
+
+                    <!-- İçerik Kutusu 3: Yeni V3.0 Bölümü -->
+                    <div class="content-box">
+                        <h2>Neden GRC ve KVKK Birlikte Çalışmalı?</h2>
+                        <p>GRC ve KVKK, modern işletmeler için ayrılmaz bir bütündür. Veri güvenliğinden kurumsal yönetişime, risk yönetiminden yasal uyuma kadar birbirleriyle nasıl entegre çalıştıklarını keşfedin.</p>
+                        <div class="integration-highlights mt-3">
+                            <ul>
+                                <li>✓ Bütünleşik risk yönetimi</li>
+                                <li>✓ Veri odaklı uyum stratejisi</li>
+                                <li>✓ Maliyet optimizasyonu</li>
+                                <li>✓ Proaktif güvenlik yaklaşımı</li>
+                            </ul>
+                        </div>
+                        <a href="grc-nedir.html#entegrasyon" class="button mt-3">Sinerjiyi Keşfet →</a>
                     </div>
                 </div>
-                
-                <!-- Detaylı Bilgi Linki -->
-                <p class="text-center mt-2">
-                    <a href="kvkk-rehberi.html">Tüm KVKK SSS ve rehberi için tıklayın...</a>
-                </p>
             </div>
         </section>
 
-        <!-- ===================================
-             HAKKIMIZDA BÖLÜMÜ
-             =================================== -->
-        <section id="hakkimizda">
+        <!-- Hızlı Başlangıç Bölümü -->
+        <section class="quick-start-section mt-4">
             <div class="container">
-                <!-- Bölüm Başlığı -->
-                <h2>Proje Hakkında</h2>
-                
-                <!-- Hakkımızda Kartı -->
-                <div class="card" style="max-width: 800px; margin: 0 auto;">
-                    <h3>GRCKobi Nedir?</h3>
-                    <p>
-                        GRCKobi, Türkiye'deki Küçük ve Orta Büyüklükteki İşletmelerin (KOBİ) 
-                        dijital dünyada karşılaştıkları riskleri anlamalarına yardımcı olmak 
-                        için doğmuş, kâr amacı gütmeyen bir bilgi paylaşım platformudur. 
-                        Amacımız, karmaşık Yönetişim, Risk ve Uyum (GRC) konularını herkesin 
-                        anlayabileceği sade bir dille sunarak bilgi güvenliği farkındalığını 
-                        artırmaktır.
-                    </p>
-                    
-                    <h3>Kurucu Hakkında</h3>
-                    <p>
-                        Bu proje, GRC alanına tutku duyan ve bu alanda uzmanlaşmayı hedefleyen 
-                        Eskişehir Teknik Üniversitesi Bilgi Güvenliği Teknolojisi öğrencisi 
-                        <strong>Mustafa Eren Dinç</strong> tarafından yönetilmektedir. 
-                        Amacı, edindiği teknik bilgileri KOBİ'lerin siber dayanıklılığını 
-                        artırmak için paylaşmaktır.
-                    </p>
-                    
-                    <p class="text-center mb-0">
-                        <a href="hakkimizda.html">Daha fazla bilgi için tıklayın...</a>
-                    </p>
+                <div class="content-box text-center">
+                    <h2>Hızlı Başlangıç</h2>
+                    <p>İşletmenizin mevcut durumunu değerlendirin ve iyileştirme alanlarını keşfedin</p>
+                    <a href="risk-testi.html" class="button mt-3">Risk Testini Başlat</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- ===================================
-         FOOTER - Alt Bilgi Alanı
-         =================================== -->
+    <!-- Footer Bölümü -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <p>© 2025 GRCKobi - Tüm Hakları Saklıdır.</p>
+            <div class="footer-content text-center">
+                <p>© 2025 GRCKobi. Tüm hakları saklıdır.</p>
+                <p class="mt-2">
+                    <a href="gizlilik.html">Gizlilik Politikası</a> | 
+                    <a href="kullanim-sartlari.html">Kullanım Şartları</a> | 
+                    <a href="iletisim.html">İletişim</a>
+                </p>
             </div>
         </div>
     </footer>
+
+    <!-- Hoş Geldiniz Baloncuğu -->
+    <div class="welcome-bubble" id="welcome-bubble">
+        <button class="close-btn" onclick="this.parentElement.style.display='none'" aria-label="Kapat">×</button>
+        <h3>GRCKobi'ye Hoş Geldiniz!</h3>
+        <p>KOBİ'niz için GRC ve KVKK çözümleri burada. Sorularınız mı var? Size yardımcı olabiliriz!</p>
+    </div>
 </body>
 </html>
