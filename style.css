@@ -1,30 +1,33 @@
 /* ===================================
-   GRC KOBİ 2.0 - Modern Stil Dosyası
-   Teknolojik, Profesyonel ve Güven Veren Tasarım
+   GRC KOBİ V3.0 - Ultra Modern Stil Dosyası
+   Yeşil & Altın Tema, Flip Cards, Dark Mode
    =================================== */
 
-/* Google Fonts - Inter import */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Google Fonts - Lexend & Inter import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700;800&display=swap');
 
 /* ===================================
-   CSS DEĞİŞKENLERİ (Custom Properties)
-   Tutarlı renk ve değer yönetimi için
+   CSS DEĞİŞKENLERİ - V3.0
    =================================== */
 :root {
-    /* Ana Renk Paleti */
+    /* Ana Renk Paleti - Açık Mod */
+    --color-text-primary: #2D3748;        /* Füme - Ana metin */
+    --color-primary: #38A169;             /* Güçlü Yeşil - Başlıklar, linkler */
+    --color-secondary: #D69E2E;           /* Altın Sarısı - Butonlar, vurgular */
+    --color-bg-main: #FAFAFA;             /* Hafif Kırık Beyaz - İçerik arka planı */
+    --color-bg-body: #E2E8F0;             /* Çok açık gri - Body arka planı */
     --color-white: #FFFFFF;
-    --color-light-gray: #F7FAFC;
-    --color-dark-gray: #2D3748;
-    --color-primary-blue: #3182CE;
-    --color-secondary-blue: #63B3ED;
+    --color-black: #1A202C;
     
-    /* Gölge Değerleri */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
-    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    /* Gölgeler */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
     
-    /* Geçiş Animasyonu */
-    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Geçişler */
+    --transition-fast: all 0.2s ease;
+    --transition-base: all 0.3s ease;
+    --transition-slow: all 0.6s ease;
 }
 
 /* ===================================
@@ -36,65 +39,94 @@
     box-sizing: border-box;
 }
 
-/* Smooth scroll davranışı */
 html {
-    scroll-behavior: smooth;
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 
-/* Body temel stilleri - GÜNCELLEME: Yumuşak arka plan */
+/* Body - Desenli Arka Plan */
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
     line-height: 1.6;
-    color: var(--color-dark-gray);
-    background-color: #FAFAFA; /* İnci beyazı - göz yormayan yumuşak ton */
+    color: var(--color-text-primary);
+    background-color: #E2E8F0;
+    /* SVG Nokta Deseni */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239CA3AF' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===================================
-   CONTAINER - İÇERİK SARMALAYICI
-   =================================== */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Başlıklar - Lexend Font */
+h1, h2, h3, h4, h5, h6, .logo {
+    font-family: 'Lexend', sans-serif;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-primary);
+    letter-spacing: -0.02em;
 }
 
 /* ===================================
-   HEADER - TRANSPARAN MENÜ
+   V3.0 BOXED CONTAINER
+   =================================== */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--color-bg-main);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Main özel ayarları */
+main.container {
+    margin-top: 100px; /* Header'dan uzaklaştır */
+    margin-bottom: 3rem;
+    min-height: 600px;
+}
+
+/* ===================================
+   HEADER - STICKY & TRANSPARAN
    =================================== */
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.85); /* Yarı transparan beyaz */
-    backdrop-filter: blur(10px); /* Buzlu cam efekti */
-    -webkit-backdrop-filter: blur(10px); /* Safari uyumluluğu */
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    background-color: rgba(250, 250, 250, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
     transition: var(--transition-base);
 }
 
-/* Header içeriği düzeni */
-header .container {
+/* Header içeriği */
+header .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.25rem 20px;
 }
 
-/* Logo stili */
+/* Logo Stili - İki Renkli */
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 700;
-    color: var(--color-primary-blue);
     text-decoration: none;
-    letter-spacing: -0.5px;
+    display: inline-block;
 }
 
-/* Navigasyon menüsü */
+.logo-grc {
+    color: var(--color-primary); /* Yeşil */
+}
+
+.logo-kobi {
+    color: var(--color-text-primary); /* Füme */
+}
+
+/* Navigasyon */
 nav ul {
     display: flex;
     list-style: none;
@@ -102,167 +134,152 @@ nav ul {
     align-items: center;
 }
 
-/* Navigasyon linkleri */
 nav a {
-    color: var(--color-dark-gray);
+    color: var(--color-text-primary);
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
-    padding: 0.5rem 0;
-    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
     transition: var(--transition-base);
 }
 
-/* Navigasyon link hover efekti */
 nav a:hover {
-    color: var(--color-primary-blue);
+    background-color: var(--color-primary);
+    color: var(--color-white);
 }
 
-/* Navigasyon aktif link altı çizgi animasyonu */
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-primary-blue);
-    transition: width 0.3s ease;
+/* Tema Değiştirme Butonu */
+.theme-toggle-button {
+    background: none;
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-nav a:hover::after {
+.theme-toggle-button:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+/* ===================================
+   V3.0 FLIP CARDS - 3D DÖNEN KARTLAR
+   =================================== */
+
+/* Flip Card Container */
+.flip-card {
+    background-color: transparent;
     width: 100%;
+    height: 300px;
+    perspective: 1000px; /* 3D derinlik */
+    margin-bottom: 2rem;
 }
 
-/* ===================================
-   BAŞLIK STİLLERİ
-   =================================== */
-h1, h2, h3, h4, h5, h6 {
-    color: var(--color-primary-blue);
-    font-weight: 600;
-    line-height: 1.3;
-    margin-bottom: 1rem;
-    letter-spacing: -0.02em;
-}
-
-h1 {
-    font-size: 3rem;
-    font-weight: 800;
-}
-
-h2 {
-    font-size: 2.25rem;
-    font-weight: 700;
-}
-
-h3 {
-    font-size: 1.5rem;
-}
-
-h4 {
-    font-size: 1.25rem;
-}
-
-/* ===================================
-   METİN VE PARAGRAF STİLLERİ
-   =================================== */
-p {
-    margin-bottom: 1rem;
-    line-height: 1.8;
-    color: var(--color-dark-gray);
-}
-
-/* Link stilleri */
-a {
-    color: var(--color-secondary-blue);
-    text-decoration: none;
-    transition: var(--transition-base);
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* ===================================
-   HERO BÖLÜMÜ (GİRİŞ ALANI)
-   =================================== */
-.hero {
-    padding: 100px 20px 80px;
-    text-align: center;
-    background-color: transparent; /* Yumuşak arka plan görünsün */
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
-}
-
-/* Hero başlıktaki vurgulu kelimeler */
-.hero h1 .highlight {
-    color: var(--color-primary-blue);
-}
-
-.hero p {
-    font-size: 1.25rem;
-    color: var(--color-dark-gray);
-    max-width: 700px;
-    margin: 0 auto 2rem;
-}
-
-/* ===================================
-   BÖLÜM (SECTION) STİLLERİ
-   =================================== */
-section {
-    padding: 60px 20px;
-}
-
-/* Çift sayılı bölümler için arka plan */
-section:nth-of-type(even) {
-    background-color: var(--color-light-gray);
-}
-
-/* Bölüm başlıkları */
-section h2 {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-/* ===================================
-   CARD (KART) TASARIMI
-   =================================== */
-.card {
-    background-color: var(--color-white); /* Kartlar beyaz kalıyor - kontrast için */
-    border-radius: 8px;
-    padding: 24px;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition-base);
+/* İç kart - Dönme animasyonu burada */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
     height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
 }
 
-/* Card hover efekti */
-.card:hover {
-    transform: translateY(-2px);
+/* Hover'da kartı döndür */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Ön ve arka yüz ortak stiller */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ön yüz - Yeşil arka plan */
+.flip-card-front {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.flip-card-front h3 {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+}
+
+/* Arka yüz - Kırık beyaz arka plan */
+.flip-card-back {
+    background-color: var(--color-bg-main);
+    color: var(--color-text-primary);
+    transform: rotateY(180deg);
+    border: 2px solid var(--color-primary);
+}
+
+.flip-card-back p {
+    line-height: 1.8;
+}
+
+/* Flip Card Grid Düzeni */
+.flip-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* ===================================
+   V3.0 WELCOME BUBBLE - SABİT BALON
+   =================================== */
+.welcome-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    box-shadow: var(--shadow-lg);
+    font-weight: 600;
+    z-index: 999;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.welcome-bubble:hover {
+    transform: scale(1.05);
     box-shadow: var(--shadow-lg);
 }
 
-/* Card başlıkları */
-.card h3 {
-    color: var(--color-primary-blue);
-    margin-bottom: 1rem;
-}
-
-/* Card içerik */
-.card p {
-    margin-bottom: 0.75rem;
-}
-
-/* Kart grid düzeni */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+/* Zıplama animasyonu */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
 }
 
 /* ===================================
@@ -271,157 +288,17 @@ section h2 {
 .btn {
     display: inline-block;
     padding: 0.75rem 2rem;
-    background-color: var(--color-primary-blue);
-    color: var(--color-white);
-    border: none;
-    border-radius: 6px;
-    font-weight: 500;
-    font-size: 1rem;
+    font-weight: 600;
     text-decoration: none;
-    cursor: pointer;
-    transition: var(--transition-base);
-}
-
-.btn:hover {
-    background-color: #2c5aa0; /* Daha koyu mavi */
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
-    text-decoration: none;
-}
-
-/* İkincil buton */
-.btn-secondary {
-    background-color: transparent;
-    color: var(--color-primary-blue);
-    border: 2px solid var(--color-primary-blue);
-}
-
-.btn-secondary:hover {
-    background-color: var(--color-primary-blue);
-    color: var(--color-white);
-}
-
-/* ===================================
-   FOOTER STİLLERİ
-   =================================== */
-footer {
-    background-color: transparent; /* Yumuşak arka plan görünsün */
-    border-top: 1px solid #E2E8F0;
-    padding: 3rem 0;
-    margin-top: 4rem;
-}
-
-.footer-content {
-    text-align: center;
-}
-
-.footer-content p {
-    color: var(--color-dark-gray);
-    font-size: 0.95rem;
-    margin-bottom: 0;
-}
-
-/* ===================================
-   LİSTE STİLLERİ
-   =================================== */
-ul, ol {
-    margin-left: 2rem;
-    margin-bottom: 1rem;
-}
-
-li {
-    margin-bottom: 0.5rem;
-    color: var(--color-dark-gray);
-}
-
-/* ===================================
-   FORM STİLLERİ (Risk Testi için)
-   =================================== */
-.form-group {
-    margin-bottom: 2rem;
-}
-
-.form-group h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-
-.form-group p {
-    margin-bottom: 1rem;
-}
-
-/* Radio button stilleri */
-input[type="radio"] {
-    margin-right: 0.5rem;
-    margin-left: 1rem;
-    cursor: pointer;
-}
-
-input[type="radio"]:first-of-type {
-    margin-left: 0;
-}
-
-/* Form buton */
-#submitButton {
-    margin-top: 2rem;
-}
-
-/* Sonuç alanı */
-#resultText {
-    margin-top: 2rem;
-    padding: 2rem;
     border-radius: 8px;
-    font-weight: 500;
-    display: none;
+    transition: var(--transition-base);
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
 }
 
-/* Risk seviyelerine göre renkler */
-.low-risk {
-    background-color: #D1FAE5;
-    color: #064E3B;
+/* Birincil buton - Altın sarısı */
+.btn-primary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
 }
-
-.medium-risk {
-    background-color: #FEF3C7;
-    color: #78350F;
-}
-
-.high-risk {
-    background-color: #FEE2E2;
-    color: #7F1D1D;
-}
-
-/* ===================================
-   YARDIMCI SINIFLAR
-   =================================== */
-.text-center {
-    text-align: center;
-}
-
-.mb-0 {
-    margin-bottom: 0;
-}
-
-.mt-2 {
-    margin-top: 2rem;
-}
-
-/* ===================================
-   RESPONSIVE TASARIM - TABLET
-   =================================== */
-@media (max-width: 768px) {
-    /* Header responsive */
-    header .container {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem 20px;
-    }
-    
-    /* Navigasyon menüsü tablet */
-    nav ul {
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    nav
