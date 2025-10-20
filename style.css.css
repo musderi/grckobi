@@ -1,0 +1,458 @@
+/* ===================================
+   GRC KOBİ - Ana Stil Dosyası (style.css)
+   Tüm sayfalarda kullanılan ortak stiller
+   =================================== */
+
+/* Google Fonts - Open Sans import */
+@import url('https://fonts.googleapis.com/css2?family:Open+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ===================================
+   TEMEL RESET VE GENEL AYARLAR
+   =================================== */
+
+/* Tüm elementler için temel reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HTML ve Body temel ayarları */
+html {
+    font-size: 16px; /* Temel font boyutu - rem hesaplamaları için */
+    scroll-behavior: smooth; /* Sayfa içi yumuşak geçiş */
+}
+
+body {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #282C34; /* Ana metin rengi - Koyu lacivert */
+    background-color: #F5F5DC; /* Krem arka plan */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===================================
+   CONTAINER - İÇERİK ORTALAMA
+   =================================== */
+
+/* Ana içerik container'ı */
+.container {
+    width: 100%;
+    max-width: 1200px; /* Maksimum genişlik */
+    margin: 0 auto; /* Yatay ortalama */
+    padding: 0 30px; /* Sağ-sol boşluklar */
+}
+
+/* ===================================
+   HEADER STİLLERİ
+   =================================== */
+
+/* Header ana stili */
+header {
+    background-color: #3A506B; /* Mat lacivert arka plan */
+    color: #FFFFFF; /* Beyaz yazı rengi */
+    padding: 20px 0;
+    position: sticky; /* Sayfada sabit kalması için */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header içeriği düzeni */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Logo/Site başlığı */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+/* Navigasyon menüsü */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Navigasyon linkleri */
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Navigasyon link hover efekti */
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Navigasyon aktif link alt çizgisi */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+/* ===================================
+   ANA İÇERİK ALANI
+   =================================== */
+
+/* Main content alanı */
+main {
+    flex: 1; /* Footer'ı aşağıda tutmak için */
+    padding: 50px 0;
+}
+
+/* ===================================
+   BAŞLIK STİLLERİ
+   =================================== */
+
+/* Tüm başlıklar için genel stil */
+h1, h2, h3, h4, h5, h6 {
+    color: #8B4513; /* Mat kahverengi */
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+/* H1 - Ana başlık */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* H2 - Alt başlık */
+h2 {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+/* H3 - Bölüm başlığı */
+h3 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+
+/* H4, H5, H6 */
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
+
+/* ===================================
+   PARAGRAF VE METİN STİLLERİ
+   =================================== */
+
+/* Paragraf stili */
+p {
+    color: #282C34; /* Koyu lacivert metin */
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Link stili (genel) */
+a {
+    color: #8B4513;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #6B3410;
+    text-decoration: underline;
+}
+
+/* ===================================
+   FOOTER STİLLERİ
+   =================================== */
+
+/* Footer ana stili */
+footer {
+    background-color: #3A506B; /* Mat lacivert arka plan */
+    color: #FFFFFF; /* Beyaz yazı */
+    padding: 40px 0 20px 0;
+    margin-top: auto;
+}
+
+/* Footer içeriği grid düzeni */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+/* Footer bölüm başlıkları */
+.footer-section h4 {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Footer linkleri */
+.footer-section a {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    transition: opacity 0.3s ease;
+}
+
+.footer-section a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Footer alt kısım */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* ===================================
+   YARDIMCI SINIFLAR
+   =================================== */
+
+/* Metin hizalama */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Margin yardımcıları */
+.mt-1 { margin-top: 10px; }
+.mt-2 { margin-top: 20px; }
+.mt-3 { margin-top: 30px; }
+.mb-1 { margin-bottom: 10px; }
+.mb-2 { margin-bottom: 20px; }
+.mb-3 { margin-bottom: 30px; }
+
+/* ===================================
+   RESPONSIVE TASARIM - TABLET
+   =================================== */
+
+@media screen and (max-width: 768px) {
+    /* Container ayarları */
+    .container {
+        padding: 0 20px;
+    }
+    
+    /* Header düzeni */
+    header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    /* Navigasyon tablet düzeni */
+    nav ul {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    /* Başlık boyutları */
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    /* Ana içerik padding */
+    main {
+        padding: 30px 0;
+    }
+    
+    /* Footer grid düzeni */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+/* ===================================
+   RESPONSIVE TASARIM - MOBİL
+   =================================== */
+
+@media screen and (max-width: 480px) {
+    /* HTML temel font boyutu */
+    html {
+        font-size: 14px;
+    }
+    
+    /* Container ayarları */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Logo boyutu */
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    /* Navigasyon mobil düzeni */
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    /* Başlık boyutları mobil */
+    h1 {
+        font-size: 1.75rem;
+        margin-bottom: 20px;
+    }
+    
+    h2 {
+        font-size: 1.35rem;
+        margin-top: 30px;
+    }
+    
+    h3 {
+        font-size: 1.15rem;
+    }
+    
+    /* Paragraf mobil ayarları */
+    p {
+        font-size: 0.95rem;
+        text-align: left; /* Mobilde justify kaldırılıyor */
+    }
+    
+    /* Ana içerik padding */
+    main {
+        padding: 20px 0;
+    }
+    
+    /* Footer mobil düzeni */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        font-size: 0.85rem;
+        padding: 15px 10px 10px;
+    }
+}
+
+/* ===================================
+   KÜÇÜK MOBİL CİHAZLAR (360px ve altı)
+   =================================== */
+
+@media screen and (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ===================================
+   BASKI STİLLERİ
+   =================================== */
+
+@media print {
+    /* Header ve Footer gizleme */
+    header, footer {
+        display: none;
+    }
+    
+    /* Arka plan renkleri kaldırma */
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    /* Container genişletme */
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    /* Link renklerini koyu yapma */
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+}
+
+/* ===================================
+   ERİŞİLEBİLİRLİK
+   =================================== */
+
+/* Klavye odağı için görsel gösterge */
+:focus {
+    outline: 2px solid #8B4513;
+    outline-offset: 2px;
+}
+
+/* Görme engelliler için gizli metin */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Skip link - Klavye navigasyonu
