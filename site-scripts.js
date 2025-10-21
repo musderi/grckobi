@@ -308,3 +308,105 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ===== V3.5 BRAIN UPDATE TAMAMLANDI =====
+// ===== İNTERAKTİF RİSK TESTİ - V3.5 =====
+document.addEventListener('DOMContentLoaded', function() {
+    const riskTestForm = document.getElementById('riskTestForm');
+    const testResults = document.getElementById('test-results');
+
+    if (riskTestForm) {
+        riskTestForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Tüm soruların cevaplanıp cevaplanmadığını kontrol et
+            let totalQuestions = 15;
+            let answeredQuestions = 0;
+            let totalScore = 0;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const question = document.querySelector(`input[name="q${i}"]:checked`);
+                if (question) {
+                    answeredQuestions++;
+                    totalScore += parseInt(question.value);
+                }
+            }
+
+            // Eksik cevap kontrolü
+            if (answeredQuestions < totalQuestions) {
+                alert(`Lütfen tüm soruları cevaplayınız. ${totalQuestions - answeredQuestions} soru cevaplanmamış.`);
+                return;
+            }
+
+            // Yüzdelik skor hesapla (maksimum puan 30)
+            const maxScore = 30;
+            const percentageScore = Math.round((totalScore / maxScore) * 100);
+
+            // Risk seviyesi belirleme
+            let riskLevel, riskClass, riskTitle, riskDescription, riskRecommendation;
+
+            if (percentageScore >= 75) {
+                // Düşük Risk
+                riskLevel = "Düşük Risk";
+                riskClass = "low-risk";
+                riskTitle = "🎉 Harika! Güçlü Bir Temel";
+                riskDescription = "Tebrikler! GRC ve KVKK konularında sağlam bir temeliniz var. İşletmeniz bu alanlarda oldukça iyi durumda ve temel uyumluluk gereksinimlerinin çoğunu karşılıyor.";
+                riskRecommendation = "💡 <strong>Önerimiz:</strong> Mevcut sistemlerinizi düzenli olarak gözden geçirmeye ve güncel tutmaya devam edin. Çalışan eğitimlerini periyodik olarak tekrarlayın.";
+            } else if (percentageScore >= 40) {
+                // Orta Risk
+                riskLevel = "Orta Risk";
+                riskClass = "medium-risk";
+                riskTitle = "⚠️ İyi Bir Başlangıç, Ama...";
+                riskDescription = "İyi bir başlangıç yapmışsınız ancak iyileştirilmesi gereken önemli alanlar bulunuyor. Bazı temel GRC ve KVKK gereksinimlerini karşılıyorsunuz, ancak daha kapsamlı bir yaklaşım gerekli.";
+                riskRecommendation = "💡 <strong>Önerimiz:</strong> 'Kısmen' veya 'Bilmiyorum' cevabı verdiğiniz alanlara odaklanın. Bu konularda uzman desteği almanızı öneririz.";
+            } else {
+                // Yüksek Risk
+                riskLevel = "Yüksek Risk";
+                riskClass = "high-risk";
+                riskTitle = "🚨 Dikkat! Acil Eylem Gerekli";
+                riskDescription = "Dikkat! İşletmeniz GRC ve KVKK açısından önemli riskler altında olabilir. 'Hayır' cevabı verdiğiniz konulara acilen odaklanmalısınız. Mevcut durumunuz yasal yükümlülükleri ve güvenlik gereksinimlerini karşılamamakta.";
+                riskRecommendation = "💡 <strong>Önerimiz:</strong> Derhal uzman destek alın ve öncelikli eylem planı oluşturun. KVKK uyumluluğu ve temel güvenlik önlemleri için hızlıca hareket edin.";
+            }
+
+            // Sonuçları HTML'e yaz
+            testResults.innerHTML = `
+                <div class="result-score">${percentageScore}%</div>
+                <div class="result-title">${riskTitle}</div>
+                <div class="result-level"><strong>Risk Seviyeniz:</strong> ${riskLevel}</div>
+                <div class="result-description">${riskDescription}</div>
+                <div class="result-recommendation">${riskRecommendation}</div>
+                <div class="result-next-steps" style="margin-top: 20px;">
+                    <p><strong>Bir sonraki adımınız:</strong></p>
+                    <a href="iletisim.html" class="button">Uzman Desteği Al</a>
+                    <a href="hizmetler.html" class="button" style="margin-left: 10px;">Hizmetlerimizi İncele</a>
+                </div>
+            `;
+
+            // Risk seviyesine göre CSS sınıfı ekle
+            testResults.className = riskClass;
+
+            // Sonuç bölümünü göster ve yumuşak kaydırma
+            testResults.style.display = 'block';
+            testResults.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Analytics için (gelecekte kullanılabilir)
+            console.log(`Risk Testi Tamamlandı - Skor: ${percentageScore}%, Risk: ${riskLevel}`);
+        });
+    }
+});
+
+// Test sonuçlarını paylaşma özelliği (gelecekteki güncellemeler için hazır)
+function shareTestResult(score, riskLevel) {
+    const shareText = `GRCKobi Risk Testini tamamladım! Skorum: ${score}%, Risk Seviyem: ${riskLevel}. Sen de testini yap: ${window.location.href}`;
+    
+    if (navigator.share) {
+        navigator.share({
+            title: 'GRCKobi Risk Testi Sonucum',
+            text: shareText,
+            url: window.location.href
+        });
+    } else {
+        // Fallback: Panoya kopyala
+        navigator.clipboard.writeText(shareText).then(() => {
+            alert('Sonuç panoya kopyalandı!');
+        });
+    }
+}
