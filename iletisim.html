@@ -139,78 +139,12 @@
         </div>
     </footer>
 
-    <!-- Hoş Geldiniz Baloncuğu -->
-    <div class="welcome-bubble" id="welcome-bubble">
-        <button class="close-btn" onclick="this.parentElement.style.display='none'" aria-label="Kapat">×</button>
-        <h3>İletişime Geçin!</h3>
-        <p>GRC ve KVKK konularında sorularınız mı var? Size yardımcı olmaktan mutluluk duyarım.</p>
+    <!-- Hoş Geldiniz Baloncuğu (YENİ HALİ) -->
+    <div class="welcome-bubble">
+        <button class="close-btn" aria-label="Kapat" title="Kapat">&times;</button>
+        <h3>Merhaba!</h3>
+        <p>GRCKobi'ye hoş geldiniz!</p>
     </div>
 
-    <style>
-        /* İletişim Sayfası Özel Stilleri */
-        .contact-link {
-            display: inline-block;
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            margin-top: 0.5rem;
-            border-radius: 8px;
-            transition: all var(--transition-speed) ease;
-        }
-        
-        .email-link {
-            background-color: var(--color-primary);
-            color: white;
-        }
-        
-        .email-link:hover {
-            background-color: var(--color-secondary);
-            text-decoration: none;
-            transform: translateY(-2px);
-        }
-        
-        .linkedin-link {
-            background-color: #0077B5;
-            color: white;
-        }
-        
-        .linkedin-link:hover {
-            background-color: #005885;
-            text-decoration: none;
-            transform: translateY(-2px);
-        }
-        
-        .info-box, .note-box {
-            background-color: #F3F4F6;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--color-primary);
-        }
-        
-        body.dark-mode .info-box,
-        body.dark-mode .note-box {
-            background-color: #374151;
-        }
-        
-        .topic-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 1rem;
-        }
-        
-        .topic-list li {
-            padding: 0.5rem 0;
-            font-size: 1.05rem;
-        }
-        
-        .contact-section {
-            margin-bottom: 2rem;
-        }
-        
-        .response-info,
-        .social-responsibility {
-            margin-top: 3rem;
-        }
-    </style>
 </body>
 </html>
