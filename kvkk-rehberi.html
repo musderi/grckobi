@@ -1,180 +1,160 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <!-- Meta Etiketleri -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="KOBİ'ler için pratik KVKK rehberi. KVKK uyumu için adım adım kılavuz ve sıkça sorulan sorular.">
-    <meta name="keywords" content="KVKK, kişisel veri, KOBİ, GDPR, VERBİS, veri koruma">
-    <meta name="author" content="GRCKobi">
-    
-    <!-- Sayfa Başlığı -->
-    <title>KVKK Rehberi - GRCKobi</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- CSS Dosyası -->
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- JavaScript Dosyası -->
-    <script src="site-scripts.js" defer></script>
+    <title>KVKK Rehberi - KOBİ'ler için Rehber | GRCKobi</title>
+    <meta name="description" content="KOBİ'ler için hazırlanmış kapsamlı KVKK rehberi. Kişisel Verilerin Korunması Kanunu hakkında bilmeniz gereken her şey.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-
 <body>
-    <!-- Header Bölümü -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="index.html">GRCKobi</a>
-                </div>
-                
-                <!-- Navigasyon Menüsü -->
-                <nav class="main-navigation">
-                    <ul class="nav-menu">
-                        <li><a href="index.html">Ana Sayfa</a></li>
-                        <li><a href="grc-nedir.html">GRC Nedir?</a></li>
-                        <li><a href="kvkk-rehberi.html" class="active">KVKK Rehberi</a></li>
-                        <li><a href="risk-testi.html">Risk Testi</a></li>
-                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                        <li><a href="iletisim.html">İletişim</a></li>
-                    </ul>
-                </nav>
-                
-                <!-- Dark Mode Toggle Butonu -->
-                <button id="theme-toggle-button" class="dark-mode-toggle" aria-label="Tema değiştir" title="Tema değiştir">
-                    🌙
-                </button>
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">GRCKobi</a>
             </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html">Ana Sayfa</a>
+                <a href="grc-nedir.html">GRC Nedir?</a>
+                <a href="hizmetler.html">Hizmetler</a>
+                <a href="blog.html">Blog</a>
+                <a href="hakkimizda.html">Hakkımızda</a>
+                <a href="iletisim.html">İletişim</a>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Tema değiştir">🌙</button>
         </div>
     </header>
 
-    <!-- Ana İçerik Alanı -->
     <main>
         <div class="container">
-            <!-- Ana İçerik Kutusu -->
-            <div class="content-box">
-                <!-- Sayfa Başlığı -->
-                <h1>KOBİ'ler için Pratik KVKK Rehberi</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Ana Sayfa</a> &gt; 
+                <a href="blog.html">Blog</a> &gt; 
+                <span>KVKK Rehberi</span>
+            </div>
+
+            <article class="content-box">
+                <h1>KOBİ'ler için KVKK Rehberi</h1>
+                <p class="article-meta">Son güncelleme: 15 Aralık 2024</p>
                 
-                <!-- Giriş Paragrafı -->
-                <p class="lead">6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK), müşterilerinizin, çalışanlarınızın ve iş ortaklarınızın kişisel verilerini işleyen tüm işletmeleri kapsar. KOBİ'ler için KVKK uyumu, yalnızca yasal bir zorunluluk değil, aynı zamanda müşteri güvenini artıran ve rekabet avantajı sağlayan bir fırsattır.</p>
-                
-                <!-- KVKK'nın Önemi -->
-                <div class="importance-section mt-4">
-                    <h2>KVKK Neden Önemli?</h2>
-                    <div class="grid mt-3">
-                        <div class="info-card">
-                            <h4>💰 Yüksek Cezalar</h4>
-                            <p>KVKK ihlalleri 25.000 TL'den 2.000.000 TL'ye kadar idari para cezası getirebilir.</p>
-                        </div>
-                        <div class="info-card">
-                            <h4>🤝 Müşteri Güveni</h4>
-                            <p>Veri güvenliği, müşterilerin işletmenize olan güvenini artırır.</p>
-                        </div>
-                        <div class="info-card">
-                            <h4>🏆 Rekabet Avantajı</h4>
-                            <p>KVKK uyumlu çalışmak, rakiplerinizden sizi ayıran bir değer olur.</p>
-                        </div>
-                    </div>
+                <p>Kişisel Verilerin Korunması Kanunu (KVKK), Türkiye'deki tüm işletmeleri etkileyen önemli bir düzenlemedir. Bu rehber, Küçük ve Orta Boy İşletmeler (KOBİ) için KVKK uyumluluğunun temellerini açıklamaktadır.</p>
+
+                <h2>KVKK Nedir?</h2>
+                <p>6698 sayılı Kişisel Verilerin Korunması Kanunu, kişisel verilerin işlenmesi, saklanması ve korunması konularında temel kuralları belirler. KOBİ'ler dahil, kişisel veri işleyen tüm kuruluşlar bu kanuna uymakla yükümlüdür.</p>
+
+                <h2>KOBİ'ler İçin Temel Yükümlülükler</h2>
+                <ul>
+                    <li><strong>Aydınlatma Yükümlülüğü:</strong> Kişisel veri toplama öncesi kişileri bilgilendirme</li>
+                    <li><strong>Rıza Alma:</strong> Gerekli durumlarda açık rıza toplama</li>
+                    <li><strong>Veri Güvenliği:</strong> Teknik ve idari güvenlik önlemleri alma</li>
+                    <li><strong>Kayıt Tutma:</strong> Veri işleme faaliyetlerini kayıt altına alma</li>
+                    <li><strong>Veri Sahibi Hakları:</strong> Kişilerin haklarına saygı gösterme</li>
+                </ul>
+
+                <h2>Hangi Belgeler Hazırlanmalı?</h2>
+                <div class="content-box mt-3">
+                    <ul>
+                        <li>Kişisel Veri ve Gizlilik Politikası</li>
+                        <li>Çerez Politikası (web siteniz varsa)</li>
+                        <li>Veri İşleme Envanteri</li>
+                        <li>Veri Sahibi Başvuru Formu</li>
+                        <li>Veri İhlali Müdahale Planı</li>
+                    </ul>
                 </div>
 
-                <!-- Genişletilmiş SSS Bölümü -->
-                <div class="faq-section mt-4">
-                    <h2>Sıkça Sorulan Sorular (SSS)</h2>
-                    <p class="mb-4">KOBİ'ler için KVKK ile ilgili en çok merak edilen konular ve detaylı açıklamalar:</p>
+                <h2>Sık Sorulan Sorular</h2>
+                
+                <details class="faq-item">
+                    <summary>KOBİ'ler KVKK'dan muaf mıdır?</summary>
+                    <p>Hayır, KOBİ'ler de KVKK'ya uymakla yükümlüdür. Ancak bazı raporlama yükümlülükleri için istisna durumları bulunmaktadır.</p>
+                </details>
 
-                    <!-- Soru 1: VERBİS -->
-                    <details class="faq-item">
-                        <summary>
-                            <span class="faq-question">VERBİS nedir ve kayıt zorunlu mudur?</span>
-                            <span class="faq-toggle">+</span>
-                        </summary>
-                        <div class="faq-answer">
-                            <p><strong>VERBİS (Veri Sorumluları Sicil Bilgi Sistemi)</strong>, Kişisel Verileri Koruma Kurumu tarafından oluşturulan, veri sorumlularının kayıt olması gereken resmi sistemdir.</p>
-                            
-                            <h5>Kimler VERBİS'e kayıt olmalı?</h5>
-                            <ul>
-                                <li>Yıllık çalışan sayısı 50'den çok olan gerçek ve tüzel kişiler</li>
-                                <li>Yıllık mali bilançosu 25 milyon TL'den çok olan gerçek ve tüzel kişiler</li>
-                                <li>Ana faaliyet konusu özel nitelikli kişisel veri işleme olan veri sorumluları</li>
-                                <li>Yurtdışında yerleşik gerçek ve tüzel kişiler</li>
-                            </ul>
-                            
-                            <p class="mt-3"><strong>Not:</strong> Bu kriterleri sağlamayan KOBİ'ler VERBİS'e kayıt olmak zorunda değildir, ancak KVKK'ya uyum yükümlülükleri devam eder.</p>
-                        </div>
-                    </details>
+                <details class="faq-item">
+                    <summary>KVKK Temsilcisi atamak zorunda mıyım?</summary>
+                    <p>50'den az çalışanı olan işletmeler, KVKK Temsilcisi atamaktan muaf tutulmuştur. Ancak kişisel veri güvenliği sorumluluğu devam eder.</p>
+                </details>
 
-                    <!-- Soru 2: Veri Sorumlusu -->
-                    <details class="faq-item">
-                        <summary>
-                            <span class="faq-question">Veri Sorumlusu kimdir ve sorumlulukları nelerdir?</span>
-                            <span class="faq-toggle">+</span>
-                        </summary>
-                        <div class="faq-answer">
-                            <p><strong>Veri Sorumlusu</strong>, kişisel verilerin işleme amaçlarını ve vasıtalarını belirleyen, veri kayıt sisteminin kurulmasından ve yönetilmesinden sorumlu olan gerçek veya tüzel kişidir.</p>
-                            
-                            <h5>Veri Sorumlusunun Temel Sorumlulukları:</h5>
-                            <ul>
-                                <li><strong>Aydınlatma Yükümlülüğü:</strong> Veri sahiplerini bilgilendirmek</li>
-                                <li><strong>Veri Güvenliği:</strong> Teknik ve idari tedbirleri almak</li>
-                                <li><strong>Başvuru Yönetimi:</strong> Veri sahiplerinin taleplerini 30 gün içinde yanıtlamak</li>
-                                <li><strong>Veri İşleme Envanteri:</strong> Hangi verileri, neden topladığınızı kayıt altına almak</li>
-                                <li><strong>Veri İhlal Bildirimi:</strong> İhlal durumunda 72 saat içinde Kurul'a bildirim</li>
-                            </ul>
-                            
-                            <p class="mt-3"><strong>Örnek:</strong> Bir e-ticaret sitesi işletiyorsanız, müşterilerinizin verilerinin sorumlusu sizsiniz.</p>
-                        </div>
-                    </details>
+                <details class="faq-item">
+                    <summary>Veri İşleme Envanteri nedir?</summary>
+                    <p>İşletmenizde hangi kişisel verilerin, hangi amaçlarla, nasıl işlendiğini gösteren detaylı bir kayıttır. Bu envanter, KVKK uyumluluğunun temel taşıdır.</p>
+                </details>
 
-                    <!-- Soru 3: Aydınlatma Yükümlülüğü -->
-                    <details class="faq-item">
-                        <summary>
-                            <span class="faq-question">Aydınlatma Yükümlülüğü nedir ve nasıl yerine getirilir?</span>
-                            <span class="faq-toggle">+</span>
-                        </summary>
-                        <div class="faq-answer">
-                             <p><strong>Aydınlatma Yükümlülüğü</strong>, veri sorumlusunun, kişisel verilerini işlediği kişilere; verilerin hangi amaçla işlendiği, kimlere aktarıldığı, toplanma yöntemi ve hukuki sebebi ile veri sahibinin hakları konusunda bilgi verme zorunluluğudur.</p>
-                            <h5>Nasıl yerine getirilir?</h5>
-                            <ul>
-                                <li>Web sitenizde bir "Aydınlatma Metni" veya "Gizlilik Politikası" yayınlayarak.</li>
-                                <li>Fiziksel formlarda, sözleşmelerde bilgilendirme notları ekleyerek.</li>
-                                <li>Çalışanlar için iş sözleşmelerinde veya ek protokollerde.</li>
-                            </ul>
-                        </div>
-                    </details>
+                <details class="faq-item">
+                    <summary>Müşteri bilgilerini ne kadar süre saklayabilirim?</summary>
+                    <p>Kişisel veriler, işlenme amacının gerektirdiği süre kadar saklanmalıdır. Bu süre, mevzuatta belirtilen süreler veya işletmenizin meşru menfaatleri doğrultusunda belirlenmelidir.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Çerez (Cookie) politikaları KVKK kapsamında mıdır?</summary>
+                    <p>Evet. Çerezler, kullanıcıları tanımlayabilen veriler topluyorsa kişisel veri sayılır. Web sitenizde çerez kullanıyorsanız, kullanıcıları bu konuda bilgilendiren bir çerez politikası yayınlamalı ve gerekli durumlarda açık rızalarını almalısınız.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>Veri ihlali durumunda ne yapmalıyım?</summary>
+                    <p>Bir veri ihlali tespit ettiğinizde, durumu en geç 72 saat içinde Kişisel Verileri Koruma Kurumu'na bildirmekle yükümlüsünüz. Ayrıca, ihlalden etkilenen kişileri de uygun bir yöntemle bilgilendirmeniz gerekir. Bunun için önceden hazırlanmış bir "Veri İhlali Müdahale Planı"nızın olması kritiktir.</p>
+                </details>
+
+                <div class="content-box mt-4">
+                    <h3>💡 Uzman Tavsiyesi</h3>
+                    <p>KVKK uyumluluğu, sadece yasal bir zorunluluk değil, aynı zamanda müşteri güveninizi artıran önemli bir rekabet avantajıdır. Doğru yaklaşımla, KVKK uyumluluğunu işletmenizin güçlü yanlarından biri haline getirebilirsiniz.</p>
                 </div>
+            </article>
+
+            <!-- Resmi Kaynak Bölümü -->
+            <div class="content-box resource-box mt-4">
+                <h3>Resmi Kaynak: 6698 Sayılı Kanun</h3>
+                <p>Kişisel Verilerin Korunması Kanunu'nun en güncel ve tam metnine doğrudan T.C. Cumhurbaşkanlığı Mevzuat Bilgi Sistemi üzerinden ulaşabilirsiniz.</p>
+                <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5" class="button mt-2" target="_blank" rel="noopener noreferrer">
+                    Kanun Metnini Görüntüle
+                </a>
             </div>
         </div>
     </main>
 
-    <!-- Footer Bölümü -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content text-center">
-                <p>© 2025 GRCKobi. Tüm hakları saklıdır.</p>
-                <p class="mt-2">
-                    <a href="gizlilik.html">Gizlilik Politikası</a> | 
-                    <a href="kullanim-sartlari.html">Kullanım Şartları</a> | 
-                    <a href="iletisim.html">İletişim</a>
-                </p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GRCKobi</h3>
+                    <p>KOBİ'ler için GRC çözümleri</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="grc-nedir.html">GRC Nedir?</a></li>
+                        <li><a href="hizmetler.html">Hizmetler</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim</h4>
+                    <p>Email: info@grckobi.com</p>
+                    <p>Telefon: +90 212 XXX XX XX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GRCKobi. Tüm hakları saklıdır.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Hoş Geldiniz Baloncuğu (YENİ HALİ) -->
+    <!-- Hoş Geldiniz Baloncuğu -->
     <div class="welcome-bubble">
         <button class="close-btn" aria-label="Kapat" title="Kapat">&times;</button>
         <h3>Merhaba!</h3>
         <p>GRCKobi'ye hoş geldiniz!</p>
     </div>
+
     <!-- Yukarı Çık Butonu -->
     <button id="scrollTopBtn" title="Yukarı Çık" aria-label="Sayfanın başına dön">&uarr;</button>
 
-</body>
+    <script src="site-scripts.js"></script>
 </body>
 </html>
