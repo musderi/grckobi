@@ -225,3 +225,86 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+// ===== GRCKOBI V3.5 - JAVASCRIPT BRAIN UPDATE =====
+
+// 1. Hoş Geldiniz Baloncuğu Mantığı
+document.addEventListener('DOMContentLoaded', function() {
+    const welcomeBubble = document.querySelector('.welcome-bubble');
+    
+    if (welcomeBubble) {
+        // LocalStorage'dan kullanıcının daha önce baloncuğu kapatıp kapatmadığını kontrol et
+        const isBubbleClosed = localStorage.getItem('welcomeBubbleClosed') === 'true';
+        
+        // Mevcut sayfanın ana sayfa olup olmadığını kontrol et
+        const currentPath = window.location.pathname;
+        const isHomePage = currentPath === '/' || 
+                          currentPath === '/index.html' || 
+                          currentPath.endsWith('/index.html') ||
+                          currentPath === '' ||
+                          (currentPath.split('/').pop() === '' || currentPath.split('/').pop() === 'index.html');
+        
+        // Baloncuk gösterme mantığı
+        if (!isBubbleClosed && isHomePage) {
+            welcomeBubble.style.display = 'block';
+        } else {
+            welcomeBubble.style.display = 'none';
+        }
+        
+        // Kapatma butonu olayını ekle
+        const closeBtn = welcomeBubble.querySelector('.close-btn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                welcomeBubble.style.display = 'none';
+                localStorage.setItem('welcomeBubbleClosed', 'true');
+                console.log('Welcome bubble kapatıldı ve tercih kaydedildi.');
+            });
+        }
+    }
+});
+
+// 2. Açık Tema Varsayılanı
+document.addEventListener('DOMContentLoaded', function() {
+    // Sayfa yüklenirken tema kontrolü
+    const savedTheme = localStorage.getItem('theme');
+    const body = document.body;
+    
+    // Eğer kaydedilmiş tema 'dark' değilse, dark-mode sınıfını kaldır (varsayılan açık tema)
+    if (savedTheme !== 'dark') {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light'); // Açık temayı kaydet
+    } else {
+        // Eğer dark tema kaydedilmişse, dark-mode sınıfını ekle
+        body.classList.add('dark-mode');
+    }
+});
+
+// 3. "Yukarı Çık" (Scroll to Top) Butonu Mantığı
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    
+    if (scrollTopBtn) {
+        // Başlangıçta butonu gizle
+        scrollTopBtn.style.display = 'none';
+        
+        // Scroll olayını dinle
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                // 20px'ten fazla kaydırıldığında butonu göster
+                scrollTopBtn.style.display = 'block';
+            } else {
+                // En üstte veya 20px'ten az kaydırıldığında butonu gizle
+                scrollTopBtn.style.display = 'none';
+            }
+        };
+        
+        // Butona tıklandığında yumuşak kaydırma ile en üste çık
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+});
+
+// ===== V3.5 BRAIN UPDATE TAMAMLANDI =====
