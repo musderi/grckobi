@@ -553,3 +553,38 @@ input:focus, textarea:focus, select:focus {
         font-size: 18px;
     }
 }
+/* Mevcut CSS kodlarınız burada... */
+
+/* ===== Son satırlarınız buraya kadar ===== */
+
+/* ===== RESMİ KAYNAK KUTUSU - V3.5 ===== */
+.resource-box {
+    background-color: #f0f9ff;
+    border-left: 5px solid var(--color-primary);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.resource-box h3 {
+    color: var(--color-primary);
+    margin-bottom: 12px;
+    font-size: 1.2em;
+}
+
+.resource-box p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Dark Mode Desteği */
+body.dark-mode .resource-box {
+    background-color: #1e293b;
+    border-left: 5px solid var(--color-secondary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .resource-box h3 {
+    color: var(--color-secondary);
+}
