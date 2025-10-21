@@ -1,248 +1,123 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <!-- Meta Etiketleri -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRCKobi - KOBİ'ler için GRC ve KVKK Çözümleri</title>
-    <meta name="description" content="KOBİ'ler için GRC (Yönetişim, Risk, Uyum) ve KVKK danışmanlığı. Risk testinizi yapın, uyumluluk seviyenizi öğrenin.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="GRCKobi - KOBİ'ler için GRC (Yönetişim, Risk, Uyum) ve KVKK danışmanlık rehberi. İşletmenizi dijital dünyada koruyun.">
+    <meta name="keywords" content="GRC, KVKK, KOBİ, yönetişim, risk, uyum, veri koruma">
+    <meta name="author" content="GRCKobi">
+    
+    <!-- Sayfa Başlığı -->
+    <title>GRCKobi - GRC ve KVKK Danışmanlık Rehberi</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Dosyası -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- JavaScript Dosyası -->
+    <script src="site-scripts.js" defer></script>
 </head>
+
 <body>
-    <header class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <a href="#">GRCKobi</a>
+    <!-- Header Bölümü -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">GRCKobi</a>
+                </div>
+                <nav class="main-navigation">
+                    <ul class="nav-menu">
+                        <li><a href="#" class="active">Ana Sayfa</a></li>
+                        <li><a href="#grc-nedir">GRC Nedir?</a></li>
+                        <li><a href="#kvkk-rehberi">KVKK Rehberi</a></li>
+                        <li><a href="#risk-testi">Risk Testi</a></li>
+                        <li><a href="#hakkimizda">Hakkımızda</a></li>
+                        <li><a href="#iletisim">İletişim</a></li>
+                    </ul>
+                </nav>
+                <button id="theme-toggle-button" class="dark-mode-toggle" aria-label="Tema değiştir" title="Tema değiştir">🌙</button>
             </div>
-            <nav class="nav-menu" id="navMenu">
-                <a href="#" class="active">Ana Sayfa</a>
-                <a href="#grc-nedir">GRC Nedir?</a>
-                <a href="#kvkk-rehberi">KVKK Rehberi</a>
-                <a href="#risk-testi">Risk Testi</a>
-                <a href="#hakkimizda">Hakkımızda</a>
-                <a href="#iletisim">İletişim</a>
-            </nav>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <button class="theme-toggle" id="themeToggle" aria-label="Tema değiştir">🌙</button>
         </div>
     </header>
 
+    <!-- Akıllı Geri Dön Butonu -->
+    <button id="smartBackButton" title="Geri Dön" style="display: none;">←</button>
+
+    <!-- Ana İçerik Alanı -->
     <main>
-        <!-- Hero Section -->
+        <!-- Hero (Karşılama) Bölümü -->
         <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>KOBİ'ler için GRC ve KVKK Çözümleri</h1>
-                    <p>İşletmenizi daha güvenli, daha uyumlu ve daha sürdürülebilir hale getirin. Uzman danışmanlık ve pratik çözümlerle yanınızdayız.</p>
-                    <div class="hero-buttons">
-                        <a href="#risk-testi" class="button">Risk Testini Başlat</a>
-                        <a href="#grc-nedir" class="button button-outline">GRC Nedir?</a>
-                    </div>
+            <div class="container text-center">
+                <h1>Dijital Dünyada İşletmenizi Koruyun: GRC ve KVKK</h1>
+                <p class="lead">KOBİ'ler için özel olarak hazırlanmış, anlaşılır ve uygulanabilir yönetişim, risk ve uyum rehberi</p>
+                <div class="hero-buttons mt-4">
+                    <a href="#risk-testi" class="button">Risk Testini Başlat</a>
+                    <a href="#grc-nedir" class="button button-secondary">Daha Fazlasını Öğren</a>
                 </div>
             </div>
         </section>
 
-        <!-- GRC Nedir Section -->
-        <section id="grc-nedir" class="content-section">
-            <div class="container">
-                <div class="section-content">
-                    <div class="section-header">
-                        <h2>GRC (Yönetişim, Risk, Uyum) Nedir?</h2>
-                        <div class="section-icon">⚖️</div>
-                    </div>
-                    <p>GRC, Governance (Yönetişim), Risk Management (Risk Yönetimi) ve Compliance (Uyumluluk) kelimelerinin kısaltmasıdır. Modern işletmecilikte sürdürülebilir başarı için vazgeçilmez olan bu üç bileşen, işletmenizi hem yasal risklerden korur hem de operasyonel verimliliğinizi artırır.</p>
-                    <div class="section-highlights">
-                        <div class="highlight-item">
-                            <h4>🏛️ Yönetişim</h4>
-                            <p>Şeffaf ve hesap verebilir yönetim süreçleri</p>
-                        </div>
-                        <div class="highlight-item">
-                            <h4>⚠️ Risk Yönetimi</h4>
-                            <p>Potansiyel tehditleri önceden belirleme ve önleme</p>
-                        </div>
-                        <div class="highlight-item">
-                            <h4>✅ Uyumluluk</h4>
-                            <p>Yasal düzenlemeler ve standartlara tam uyum</p>
-                        </div>
-                    </div>
-                    <div class="section-cta">
-                        <a href="grc-nedir.html" class="button">Daha Fazlasını Keşfet →</a>
-                    </div>
-                </div>
+        <!-- GRC Nedir? Bölümü -->
+        <section id="grc-nedir" class="container">
+            <div class="content-box text-center">
+                <h2>GRC (Yönetişim, Risk, Uyum) Nedir?</h2>
+                <p>GRC, işletmenizin hedeflerine ulaşırken bütünlüğünü korumasına, riskleri yönetmesine ve yasal gerekliliklere uymasına yardımcı olan stratejik bir yaklaşımdır.</p>
+                <a href="grc-nedir.html" class="button mt-2">Daha Fazlasını Keşfet →</a>
             </div>
         </section>
 
-        <!-- KVKK Rehberi Section -->
-        <section id="kvkk-rehberi" class="content-section bg-light">
-            <div class="container">
-                <div class="section-content">
-                    <div class="section-header">
-                        <h2>KOBİ'ler için Pratik KVKK Rehberi</h2>
-                        <div class="section-icon">🔒</div>
-                    </div>
-                    <p>Kişisel Verilerin Korunması Kanunu (KVKK), KOBİ'ler dahil tüm işletmeleri etkileyen kritik bir düzenlemedir. Müşteri verilerinizi korumak, yasal yükümlülükleri yerine getirmek ve güven inşa etmek için KVKK uyumluluğu artık zorunlu hale gelmiştir.</p>
-                    <div class="section-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">6698</div>
-                            <div class="stat-label">Sayılı Kanun</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">2018</div>
-                            <div class="stat-label">Yürürlük Yılı</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">KOBİ Kapsamı</div>
-                        </div>
-                    </div>
-                    <div class="section-cta">
-                        <a href="kvkk-rehberi.html" class="button">Rehberi İncele →</a>
-                    </div>
-                </div>
+        <!-- KVKK Rehberi Bölümü -->
+        <section id="kvkk-rehberi" class="container">
+            <div class="content-box text-center">
+                <h2>KOBİ'ler için Pratik KVKK Rehberi</h2>
+                <p>Kişisel Verilerin Korunması Kanunu'na uyum sağlamak, KOBİ'ler için hem yasal bir zorunluluk hem de müşteri güveni için bir fırsattır.</p>
+                <a href="kvkk-rehberi.html" class="button mt-2">Rehberi İncele →</a>
             </div>
         </section>
 
-        <!-- Risk Testi Section -->
-        <section id="risk-testi" class="content-section">
-            <div class="container">
-                <div class="section-content">
-                    <div class="section-header">
-                        <h2>Risk Seviyenizi Ölçün</h2>
-                        <div class="section-icon">📊</div>
-                    </div>
-                    <p>İşletmenizin mevcut GRC ve KVKK uyumluluk seviyesini sadece 5-7 dakikada ölçebilirsiniz. 15 soruluk interaktif testimiz, hangi alanlarda iyileştirme yapmanız gerektiğini gösterir ve size özel önerilerde bulunur.</p>
-                    <div class="test-features">
-                        <div class="feature-grid">
-                            <div class="feature-item">
-                                <div class="feature-icon">⏱️</div>
-                                <h4>Hızlı Test</h4>
-                                <p>5-7 dakikada tamamlayın</p>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon">📈</div>
-                                <h4>Anında Sonuç</h4>
-                                <p>Hemen skorunuzu görün</p>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon">💡</div>
-                                <h4>Özel Öneriler</h4>
-                                <p>Size özel tavsiyelere ulaşın</p>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon">🎯</div>
-                                <h4>Eylem Planı</h4>
-                                <p>Nelere odaklanacağınızı öğrenin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section-cta">
-                        <a href="risk-testi.html" class="button button-primary-large">Risk Testini Başlat</a>
-                    </div>
-                </div>
+        <!-- Risk Testi Bölümü -->
+        <section id="risk-testi" class="container">
+            <div class="content-box text-center">
+                <h2>Risk Seviyenizi Ölçün</h2>
+                <p>İnteraktif testimizle işletmenizin mevcut GRC ve KVKK risk seviyesini öğrenin ve iyileştirme alanlarınızı keşfedin.</p>
+                <a href="risk-testi.html" class="button button-secondary mt-2">Risk Testini Başlat</a>
             </div>
         </section>
 
-        <!-- Hakkımızda Section -->
-        <section id="hakkimizda" class="content-section bg-light">
-            <div class="container">
-                <div class="section-content">
-                    <div class="section-header">
-                        <h2>Biz Kimiz?</h2>
-                        <div class="section-icon">👥</div>
-                    </div>
-                    <p>GRCKobi olarak, KOBİ'lerin karmaşık GRC ve KVKK gereksinimlerini basit, anlaşılır ve uygulanabilir çözümlere dönüştürüyoruz. Amacımız, her büyüklükteki işletmenin güvenli, uyumlu ve sürdürülebilir bir şekilde büyümesine katkıda bulunmaktır.</p>
-                    <div class="mission-values">
-                        <div class="value-item">
-                            <h4>🎯 Misyonumuz</h4>
-                            <p>KOBİ'lerin GRC yolculuğunda güvenilir rehberi olmak</p>
-                        </div>
-                        <div class="value-item">
-                            <h4>👁️ Vizyonumuz</h4>
-                            <p>Her KOBİ'nin uyumlu ve güvenli olduğu bir ekosistem yaratmak</p>
-                        </div>
-                        <div class="value-item">
-                            <h4>💎 Değerlerimiz</h4>
-                            <p>Sadelik, güvenilirlik ve sürekli öğrenme</p>
-                        </div>
-                    </div>
-                    <div class="section-cta">
-                        <a href="hakkimizda.html" class="button">Hikayemizi Okuyun →</a>
-                    </div>
-                </div>
+        <!-- Hakkımızda Bölümü -->
+        <section id="hakkimizda" class="container">
+            <div class="content-box text-center">
+                <h2>Biz Kimiz?</h2>
+                <p>GRCKobi olarak misyonumuz, KOBİ'lerin dijital dünyadaki karmaşık GRC ve KVKK zorluklarını anlaşılır ve uygulanabilir rehberlikle çözüme kavuşturmaktır.</p>
+                <a href="hakkimizda.html" class="button mt-2">Hikayemizi Okuyun →</a>
             </div>
         </section>
 
-        <!-- İletişim Section -->
-        <section id="iletisim" class="content-section">
-            <div class="container">
-                <div class="section-content">
-                    <div class="section-header">
-                        <h2>Bize Ulaşın</h2>
-                        <div class="section-icon">📞</div>
-                    </div>
-                    <p>GRC ve KVKK konularında uzman desteğe mi ihtiyacınız var? İşletmeniz için özel çözümler geliştirmek, sorularınızı yanıtlamak ve GRC yolculuğunuzda size rehberlik etmek için buradayız. Hemen iletişime geçin!</p>
-                    <div class="contact-options">
-                        <div class="contact-item">
-                            <div class="contact-icon">📧</div>
-                            <h4>E-posta</h4>
-                            <p>info@grckobi.com</p>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">📱</div>
-                            <h4>Telefon</h4>
-                            <p>+90 212 XXX XX XX</p>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">⏰</div>
-                            <h4>Çalışma Saatleri</h4>
-                            <p>Paz-Cum: 09:00-18:00</p>
-                        </div>
-                    </div>
-                    <div class="section-cta">
-                        <a href="iletisim.html" class="button">İletişime Geçin</a>
-                        <a href="hizmetler.html" class="button button-outline" style="margin-left: 15px;">Hizmetlerimizi İnceleyin</a>
-                    </div>
-                </div>
+        <!-- İletişim Bölümü -->
+        <section id="iletisim" class="container">
+            <div class="content-box text-center">
+                <h2>Bize Ulaşın</h2>
+                <p>Sorularınız, danışmanlık talepleriniz veya iş birlikleri için bizimle iletişime geçmekten çekinmeyin.</p>
+                <a href="iletisim.html" class="button mt-2">İletişime Geçin</a>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>GRCKobi</h3>
-                    <p>KOBİ'ler için GRC çözümleri</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Hızlı Linkler</h4>
-                    <ul>
-                        <li><a href="grc-nedir.html">GRC Nedir?</a></li>
-                        <li><a href="hizmetler.html">Hizmetler</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="iletisim.html">İletişim</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Yasal</h4>
-                    <ul>
-                        <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
-                        <li><a href="kullanim-sartlari.html">Kullanım Şartları</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>İletişim</h4>
-                    <p>Email: info@grckobi.com</p>
-                    <p>Telefon: +90 212 XXX XX XX</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 GRCKobi. Tüm hakları saklıdır.</p>
-            </div>
+    <!-- Footer Bölümü -->
+    <footer>
+        <div class="container text-center">
+            <p>© 2025 GRCKobi. Tüm hakları saklıdır.</p>
+            <p class="mt-2">
+                <a href="gizlilik-politikasi.html">Gizlilik Politikası</a> | 
+                <a href="kullanim-sartlari.html">Kullanım Şartları</a> | 
+                <a href="iletisim.html">İletişim</a>
+            </p>
         </div>
     </footer>
 
@@ -254,8 +129,8 @@
     </div>
 
     <!-- Yukarı Çık Butonu -->
-    <button id="scrollTopBtn" title="Yukarı Çık" aria-label="Sayfanın başına dön">&uarr;</button>
+    <button id="scrollTopBtn" title="Yukarı Çık">&uarr;</button>
 
-    <script src="site-scripts.js"></script>
 </body>
 </html>
+
