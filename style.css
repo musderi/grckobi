@@ -588,3 +588,197 @@ body.dark-mode .resource-box {
 body.dark-mode .resource-box h3 {
     color: var(--color-secondary);
 }
+
+/* ===== İNTERAKTİF RİSK TESTİ - V3.5 ===== */
+
+/* Risk Test Form Stilleri */
+.risk-test-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.question-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+.question-item:hover {
+    background: #f1f3f5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question-item h4 {
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.95em;
+}
+
+.radio-group label:hover {
+    border-color: var(--color-primary);
+    background: #f8f9ff;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 10px;
+    accent-color: var(--color-primary);
+    transform: scale(1.2);
+}
+
+.radio-group label:has(input:checked) {
+    border-color: var(--color-primary);
+    background: #f0f9ff;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+/* Test Sonuçları */
+#test-results {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    animation: slideIn 0.5s ease-out;
+    border: 3px solid;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-score {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.result-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.result-description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.result-recommendation {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+/* Risk Seviyeleri */
+.low-risk {
+    background-color: #d4f6d4;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.low-risk .result-score {
+    color: #28a745;
+}
+
+.medium-risk {
+    background-color: #fff3cd;
+    border-color: #ffc107;
+    color: #856404;
+}
+
+.medium-risk .result-score {
+    color: #ffc107;
+}
+
+.high-risk {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+.high-risk .result-score {
+    color: #dc3545;
+}
+
+/* Dark Mode Desteği */
+body.dark-mode .question-item {
+    background: #2d3748;
+    border-left-color: var(--color-secondary);
+}
+
+body.dark-mode .question-item:hover {
+    background: #4a5568;
+}
+
+body.dark-mode .question-item h4 {
+    color: var(--color-secondary);
+}
+
+body.dark-mode .radio-group label {
+    background: #1a202c;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+body.dark-mode .radio-group label:hover {
+    border-color: var(--color-secondary);
+    background: #2d3748;
+}
+
+body.dark-mode .radio-group label:has(input:checked) {
+    border-color: var(--color-secondary);
+    background: #2d3748;
+    color: var(--color-secondary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .question-item {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .question-item h4 {
+        font-size: 1em;
+    }
+    
+    .radio-group label {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+    
+    .result-score {
+        font-size: 2.5em;
+    }
+}
