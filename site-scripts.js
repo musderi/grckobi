@@ -184,3 +184,44 @@ window.addEventListener('scroll', function() {
         header.classList.remove('scrolled');
     }
 });
+// V3.5 - Welcome Bubble Akıllı Mantık
+document.addEventListener('DOMContentLoaded', function() {
+    // Welcome bubble elementini seç
+    const welcomeBubble = document.querySelector('.welcome-bubble');
+    
+    if (!welcomeBubble) return; // Eğer element yoksa çık
+    
+    // LocalStorage'dan kullanıcının daha önce baloncuğu kapatıp kapatmadığını kontrol et
+    const isBubbleClosed = localStorage.getItem('welcomeBubbleClosed') === 'true';
+    
+    // Mevcut sayfanın ana sayfa olup olmadığını kontrol et
+    const currentPath = window.location.pathname;
+    const isHomePage = currentPath === '/' || 
+                      currentPath === '/index.html' || 
+                      currentPath.endsWith('/index.html') ||
+                      currentPath === '' ||
+                      (currentPath.split('/').pop() === '' || currentPath.split('/').pop() === 'index.html');
+    
+    // Baloncuk gösterme mantığı
+    if (!isBubbleClosed && isHomePage) {
+        // Ana sayfada ve daha önce kapatılmamışsa göster
+        welcomeBubble.style.display = 'block';
+    } else {
+        // Diğer tüm durumlarda gizle
+        welcomeBubble.style.display = 'none';
+    }
+    
+    // Kapatma butonu olayını ekle
+    const closeBtn = welcomeBubble.querySelector('.close-btn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            // Baloncuğu gizle
+            welcomeBubble.style.display = 'none';
+            
+            // Kullanıcının tercihini localStorage'a kaydet
+            localStorage.setItem('welcomeBubbleClosed', 'true');
+            
+            console.log('Welcome bubble kapatıldı ve tercih kaydedildi.');
+        });
+    }
+});
