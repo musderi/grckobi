@@ -410,3 +410,102 @@ function shareTestResult(score, riskLevel) {
         });
     }
 }
+// ===== SMOOTH SCROLLING FOR ONE-PAGE LAYOUT - V3.5 FINAL =====
+document.addEventListener('DOMContentLoaded', function() {
+    // Sadece index.html sayfasındayken çalışsın
+    if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html') || window.location.pathname === '') {
+        
+        // Tüm # ile başlayan linkleri seç (header navigasyon ve diğer internal linkler)
+        const scrollLinks = document.querySelectorAll('a[href^="#"]');
+        
+        scrollLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Sadece # veya boş değilse işlem yap
+                if (href && href !== '#') {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1); // # işaretini kaldır
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        // Yumuşak kaydırma
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Navigasyon menüsünü mobilde kapat (varsa)
+                        const navMenu = document.getElementById('navMenu');
+                        const navToggle = document.getElementById('navToggle');
+                        if (navMenu && navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            if (navToggle) {
+                                navToggle.classList.remove('active');
+                            }
+                        }
+                        
+                        // URL'yi güncelle (opsiyonel)
+                        history.pushState(null, null, href);
+                    }
+                } else if (href === '#') {
+                    // Ana sayfa linki için en üste git
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    history.pushState(null, null, '/');
+                }
+            });
+        });
+        
+        // Sayfa yüklendiğinde URL'de hash varsa o bölüme git
+        if (window.location.hash) {
+            setTimeout(() => {
+                const targetElement = document.querySelector(window.location.hash);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 100);
+        }
+        
+        // Scroll spy - hangi bölümde olduğumuzu takip et ve navigation'ı güncelle
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+        
+        function updateActiveNav() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                } else if (current === '' && link.getAttribute('href') === '#') {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Scroll olayını dinle
+        window.addEventListener('scroll', updateActiveNav);
+        
+        // Sayfa yüklendiğinde de çalıştır
+        updateActiveNav();
+        
+        console.log('One-page smooth scrolling initialized for index.html');
+    }
+});
+
+// ===== V3.5 FINAL - ONE-PAGE LAYOUT COMPLETED =====
