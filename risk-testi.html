@@ -1,258 +1,249 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <!-- Meta Etiketleri -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="KOBİ'niz için GRC ve KVKK risk değerlendirme testi. Mevcut durumunuzu hızlıca analiz edin.">
-    <meta name="keywords" content="GRC, KVKK, risk değerlendirme, risk testi, KOBİ, kontrol listesi">
-    <meta name="author" content="GRCKobi">
-    
-    <!-- Sayfa Başlığı -->
-    <title>Risk Testi - GRCKobi</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- CSS Dosyası -->
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- JavaScript Dosyası -->
-    <script src="site-scripts.js" defer></script>
+    <title>İnteraktif GRC & KVKK Risk Testi - GRCKobi</title>
+    <meta name="description" content="İşletmenizin GRC ve KVKK uyumluluk seviyesini ölçen interaktif risk testi. Ücretsiz analiz ve önerilere hemen ulaşın.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-
 <body>
-    <!-- Header Bölümü -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="index.html">GRCKobi</a>
-                </div>
-                
-                <!-- Navigasyon Menüsü -->
-                <nav class="main-navigation">
-                    <ul class="nav-menu">
-                        <li><a href="index.html">Ana Sayfa</a></li>
-                        <li><a href="grc-nedir.html">GRC Nedir?</a></li>
-                        <li><a href="kvkk-rehberi.html">KVKK Rehberi</a></li>
-                        <li><a href="risk-testi.html" class="active">Risk Testi</a></li>
-                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                        <li><a href="iletisim.html">İletişim</a></li>
-                    </ul>
-                </nav>
-                
-                <!-- Dark Mode Toggle Butonu -->
-                <button id="theme-toggle-button" class="dark-mode-toggle" aria-label="Tema değiştir" title="Tema değiştir">
-                    🌙
-                </button>
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">GRCKobi</a>
             </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html">Ana Sayfa</a>
+                <a href="grc-nedir.html">GRC Nedir?</a>
+                <a href="hizmetler.html">Hizmetler</a>
+                <a href="blog.html">Blog</a>
+                <a href="hakkimizda.html">Hakkımızda</a>
+                <a href="iletisim.html">İletişim</a>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Tema değiştir">🌙</button>
         </div>
     </header>
 
-    <!-- Ana İçerik Alanı -->
     <main>
         <div class="container">
-            <!-- Ana İçerik Kutusu -->
-            <div class="content-box">
-                <!-- Sayfa Başlığı -->
-                <h1>KOBİ GRC & KVKK Risk Değerlendirmesi</h1>
-                
-                <!-- Açıklama Paragrafı -->
-                <p class="lead">Aşağıdaki soruları 'Evet' veya 'Hayır' olarak yanıtlayarak işletmenizin mevcut risk durumunu hızlıca değerlendirin. Bu kontrol listesi, GRC ve KVKK uyum sürecinizde öncelik vermeniz gereken alanları belirlemenize yardımcı olacaktır.</p>
-                
-                <!-- Risk Değerlendirme Uyarısı -->
-                <div class="alert-box mt-4 mb-4">
-                    <p><strong>📋 Değerlendirme Yöntemi:</strong> Her "Hayır" cevabı potansiyel bir risk alanını gösterir. Test sonunda, "Hayır" dediğiniz alanları önceliklendirerek iyileştirme planınızı oluşturabilirsiniz.</p>
-                </div>
-
-                <!-- Kontrol Listesi -->
-                <div class="checklist-section">
-                    <h2>Risk Değerlendirme Kontrol Listesi</h2>
-                    
-                    <!-- 1. Veri Sınıflandırması -->
-                    <div class="checklist-item">
-                        <h3>1. Veri Sınıflandırması</h3>
-                        <p>İşletmenizde işlenen kişisel verileri (hassas, gizli, genel) sınıflandırdınız mı?</p>
-                        <div class="check-options">
-                            <label class="checkbox-container">
-                                <input type="checkbox" class="risk-checkbox">
-                                <span class="checkmark"></span>
-                                <span class="option-text">Evet</span>
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" class="risk-checkbox">
-                                <span class="checkmark"></span>
-                                <span class="option-text">Hayır</span>
-                            </label>
-                        </div>
-                        <div class="risk-note">
-                            <small><strong>Neden Önemli:</strong> Veri sınıflandırması, hangi verilerin daha güçlü koruma gerektirdiğini belirlemenizi sağlar.</small>
-                        </div>
-                    </div>
-
-                    <!-- 2. Erişim Kontrolü -->
-                    <div class="checklist-item">
-                        <h3>2. Erişim Kontrolü</h3>
-                        <p>Çalışanların verilere erişim yetkileri 'bilmesi gereken' prensibine göre kısıtlandı mı?</p>
-                        <div class="check-options">
-                            <label class="checkbox-container">
-                                <input type="checkbox" class="risk-checkbox">
-                                <span class="checkmark"></span>
-                                <span class="option-text">Evet</span>
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" class="risk-checkbox">
-                                <span class="checkmark"></span>
-                                <span class="option-text">Hayır</span>
-                            </label>
-                        </div>
-                        <div class="risk-note">
-                            <small><strong>Neden Önemli:</strong> Gereksiz erişim yetkileri, veri ihlali riskini artırır ve KVKK'ya aykırıdır.</small>
-                        </div>
-                    </div>
-
-                    <!-- 3. Yedekleme ve Kurtarma -->
-                    <div class="checklist-item">
-                        <h3>3. Yedekleme ve Kurtarma</h3>
-                        <p>Kritik verilerin düzenli yedekleme ve kurtarma prosedürleri var mı?</p>
-                        <div class="check-options">
-                            <label class="checkbox-container">
-                                <input type="checkbox" class="risk-checkbox">
-                                <span class="checkmark"></span>
-                                <span class="option-text">Evet</span>
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" class="risk-checkbox">
-                                <span class="checkmark"></span>
-                                <span class="option-text">Hayır</span>
-                            </label>
-                        </div>
-                        <div class="risk-note">
-                            <small><strong>Neden Önemli:</strong> Veri kaybı durumunda iş sürekliliğinizi ve KVKK yükümlülüklerinizi yerine getirme kabiliyetinizi korur.</small>
-                        </div>
-                    </div>
-
-                    <!-- 4. KVKK Aydınlatma Metni -->
-                    <div class="checklist-item">
-                        <h3>4. KVKK Aydınlatma Metni</h3>
-                        <p>Web sitenizde ve veri toplama noktalarında güncel KVKK aydınlatma metni bulunuyor mu?</p>
-                        <div class="check-options">
-                            <label class="checkbox-container">
-                                <input type="checkbox" class="risk-checkbox">
-                                <span class="checkmark"></span>
-                                <span class="option-text">Evet</span>
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" class="risk-checkbox">
-                                <span class="checkmark"></span>
-                                <span class="option-text">Hayır</span>
-                            </label>
-                        </div>
-                        <div class="risk-note">
-                            <small><strong>Neden Önemli:</strong> KVKK'nın 10. maddesi gereği aydınlatma yükümlülüğü yasal bir zorunluluktur.</small>
-                        </div>
-                    </div>
-
-                    <!-- 5. Siber Güvenlik Politikası -->
-                    <div class="checklist-item">
-                        <h3>5. Siber Güvenlik Politikası</h3>
-                        <p>Yazılı bir siber güvenlik politikanız ve çalışan eğitim programınız var mı?</p>
-                        <div class="check-options">
-                            <label class="checkbox-container">
-                                <input type="checkbox" class="risk-checkbox">
-                                <span class="checkmark"></span>
-                                <span class="option-text">Evet</span>
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" class="risk-checkbox">
-                                <span class="checkmark"></span>
-                                <span class="option-text">Hayır</span>
-                            </label>
-                        </div>
-                        <div class="risk-note">
-                            <small><strong>Neden Önemli:</strong> İnsan faktörü, siber güvenlik ihlallerinin %90'ından fazlasının nedenidir.</small>
-                        </div>
-                    </div>
-
-                    <!-- 6. Veri İhlal Prosedürü -->
-                    <div class="checklist-item">
-                        <h3>6. Veri İhlal Prosedürü</h3>
-                        <p>Olası bir veri ihlali durumunda izlenecek yazılı prosedürünüz var mı?</p>
-                        <div class="check-options">
-                            <label class="checkbox-container">
-                                <input type="checkbox" class="risk-checkbox">
-                                <span class="checkmark"></span>
-                                <span class="option-text">Evet</span>
-                            </label>
-                            <label class="checkbox-container">
-                                <input type="checkbox" class="risk-checkbox">
-                                <span class="checkmark"></span>
-                                <span class="option-text">Hayır</span>
-                            </label>
-                        </div>
-                        <div class="risk-note">
-                            <small><strong>Neden Önemli:</strong> KVKK gereği veri ihlalleri 72 saat içinde Kurul'a bildirilmelidir.</small>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sonuç ve Öneriler -->
-                <div class="result-section mt-4">
-                    <h2>Sonraki Adımlar</h2>
-                    <div class="result-box">
-                        <h4>🟢 "Evet" Cevapları</h4>
-                        <p>Bu alanlarda temel koruma önlemlerine sahipsiniz. Mevcut uygulamalarınızı düzenli olarak gözden geçirin ve güncelleyin.</p>
-                    </div>
-                    <div class="result-box mt-3">
-                        <h4>🔴 "Hayır" Cevapları</h4>
-                        <p>Bu alanlar öncelikli iyileştirme gerektiriyor. Her bir alan için:</p>
-                        <ul>
-                            <li>Mevcut durumu detaylı analiz edin</li>
-                            <li>Gerekli politika ve prosedürleri oluşturun</li>
-                            <li>Uygulama planı hazırlayın</li>
-                            <li>Çalışanları eğitin ve bilinçlendirin</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- CTA Bölümü -->
-                <div class="cta-section text-center mt-4">
-                    <h3>Detaylı Destek İçin</h3>
-                    <p>Risk değerlendirme sonuçlarınızı daha detaylı analiz etmek ve özelleştirilmiş çözüm önerileri almak için bizimle iletişime geçin.</p>
-                    <a href="iletisim.html" class="button mt-3">İletişime Geçin</a>
-                </div>
+            <div class="breadcrumb">
+                <a href="index.html">Ana Sayfa</a> &gt; 
+                <span>Risk Testi</span>
             </div>
+
+            <article class="content-box">
+                <h1>İnteraktif GRC & KVKK Risk Testi</h1>
+                <p>İşletmenizin mevcut GRC ve KVKK uyumluluk seviyesini ölçmek için tasarlanmış bu hızlı testle, risk profilinizi belirleyin ve hangi alanlarda iyileştirme yapmanız gerektiğini öğrenin.</p>
+                
+                <div class="content-box mt-3">
+                    <h3>📋 Test Hakkında</h3>
+                    <ul>
+                        <li><strong>Süre:</strong> Yaklaşık 5-7 dakika</li>
+                        <li><strong>Soru Sayısı:</strong> 15 soru</li>
+                        <li><strong>Puanlama:</strong> 0-100 arasında yüzdelik skor</li>
+                        <li><strong>Sonuç:</strong> Anında kişiselleştirilmiş değerlendirme</li>
+                    </ul>
+                </div>
+
+                <form id="riskTestForm" class="risk-test-form">
+                    
+                    <div class="question-item">
+                        <h4>1. İşletmenizde yazılı bir Kişisel Veri Koruma ve Gizlilik Politikası var mı?</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q1" value="2"> Evet, güncel ve kapsamlı</label>
+                            <label><input type="radio" name="q1" value="1"> Var ama güncellenme ihtiyacı olabilir</label>
+                            <label><input type="radio" name="q1" value="0"> Hayır, böyle bir politikamız yok</label>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h4>2. Çalışanlarınız KVKK ve veri güvenliği konularında eğitim aldı mı?</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q2" value="2"> Evet, düzenli eğitimler alıyorlar</label>
+                            <label><input type="radio" name="q2" value="1"> Temel seviyede eğitim aldılar</label>
+                            <label><input type="radio" name="q2" value="0"> Hayır, özel bir eğitim almadılar</label>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h4>3. Web sitenizde çerez (cookie) politikası ve kullanıcı onayı sistemi var mı?</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q3" value="2"> Evet, tam uyumlu sistem mevcut</label>
+                            <label><input type="radio" name="q3" value="1"> Kısmen var ama eksiklikler olabilir</label>
+                            <label><input type="radio" name="q3" value="0"> Hayır, böyle bir sistemimiz yok</label>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h4>4. Müşteri verilerinizi hangi sıklıkla yedekliyorsunuz?</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q4" value="2"> Günlük otomatik yedekleme</label>
+                            <label><input type="radio" name="q4" value="1"> Haftalık veya düzensiz yedekleme</label>
+                            <label><input type="radio" name="q4" value="0"> Düzenli yedekleme yapmıyoruz</label>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h4>5. İşletmenizde siber güvenlik (antivirus, firewall vb.) önlemleri mevcut mu?</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q5" value="2"> Evet, kapsamlı güvenlik sistemlerimiz var</label>
+                            <label><input type="radio" name="q5" value="1"> Temel seviyede güvenlik önlemleri var</label>
+                            <label><input type="radio" name="q5" value="0"> Hayır, özel güvenlik önlemlerimiz yok</label>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h4>6. Çalışanlarınızın şifrelerinin güvenliği konusunda bir politikanız var mı?</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q6" value="2"> Evet, güçlü şifre politikamız var</label>
+                            <label><input type="radio" name="q6" value="1"> Kısmen var ama zorunlu değil</label>
+                            <label><input type="radio" name="q6" value="0"> Hayır, özel bir politikamız yok</label>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h4>7. Veri ihlali (güvenlik açığı) durumunda izlenecek bir eylem planınız var mı?</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q7" value="2"> Evet, detaylı eylem planımız hazır</label>
+                            <label><input type="radio" name="q7" value="1"> Genel bir fikrimiz var ama yazılı değil</label>
+                            <label><input type="radio" name="q7" value="0"> Hayır, böyle bir planımız yok</label>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h4>8. Müşteri verilerini kim ve ne amaçlarla işlediğinizi kayıt altında tutuyor musunuz?</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q8" value="2"> Evet, detaylı kayıtlar tutuyoruz</label>
+                            <label><input type="radio" name="q8" value="1"> Kısmen kayıt tutuyoruz</label>
+                            <label><input type="radio" name="q8" value="0"> Hayır, özel kayıt tutmuyoruz</label>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h4>9. Kişisel verileri ne kadar süre saklayacağınızı belirlemiş misiniz?</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q9" value="2"> Evet, her veri türü için süre belirledik</label>
+                            <label><input type="radio" name="q9" value="1"> Genel bir süre belirlemiş</label>
+                            <label><input type="radio" name="q9" value="0"> Hayır, süre belirlememiş</label>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h4>10. Çalışanlar işten ayrıldığında sistem erişimleri hemen iptal ediliyor mu?</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q10" value="2"> Evet, anında iptal ediliyor</label>
+                            <label><input type="radio" name="q10" value="1"> Genellikle iptal ediliyor ama bazen gecikebiliyor</label>
+                            <label><input type="radio" name="q10" value="0"> Hayır, sistemli bir süreç yok</label>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h4>11. Fiziksel güvenlik (ofis, sunucu odası vb.) önlemleriniz yeterli mi?</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q11" value="2"> Evet, kapsamlı fiziksel güvenlik var</label>
+                            <label><input type="radio" name="q11" value="1"> Temel seviyede güvenlik önlemleri var</label>
+                            <label><input type="radio" name="q11" value="0"> Hayır, özel fiziksel güvenlik önlemi yok</label>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h4>12. Tedarikçi ve iş ortaklarınızla veri paylaşımı konusunda sözleşmeleriniz var mı?</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q12" value="2"> Evet, detaylı veri işleme sözleşmeleri var</label>
+                            <label><input type="radio" name="q12" value="1"> Genel sözleşmelerde bu konular kısmen var</label>
+                            <label><input type="radio" name="q12" value="0"> Hayır, özel sözleşmelerimiz yok</label>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h4>13. Müşterileriniz kişisel verilerinin silinmesini talep ettiklerinde ne yaparsınız?</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q13" value="2"> Hemen siliyoruz ve bunu belgeltiyoruz</label>
+                            <label><input type="radio" name="q13" value="1"> Genellikle siliyoruz ama sistemli değil</label>
+                            <label><input type="radio" name="q13" value="0"> Bu konuda net bir sürecimiz yok</label>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h4>14. GRC süreçlerinizi ne sıklıkla gözden geçirip güncelliyorsunuz?</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q14" value="2"> Düzenli olarak (3-6 ayda bir)</label>
+                            <label><input type="radio" name="q14" value="1"> Yılda bir veya ihtiyaç halinde</label>
+                            <label><input type="radio" name="q14" value="0"> Düzenli güncelleme yapmıyoruz</label>
+                        </div>
+                    </div>
+
+                    <div class="question-item">
+                        <h4>15. İşletmenizde GRC konularından sorumlu belirli kişi veya departman var mı?</h4>
+                        <div class="radio-group">
+                            <label><input type="radio" name="q15" value="2"> Evet, özel sorumlu kişi/departman var</label>
+                            <label><input type="radio" name="q15" value="1"> Kısmen var, ama diğer işlerle beraber bakıyorlar</label>
+                            <label><input type="radio" name="q15" value="0"> Hayır, özel bir sorumlu yok</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="button">Sonucu Hesapla</button>
+                </form>
+
+                <div id="test-results" style="display: none;">
+                    <!-- Sonuçlar buraya JavaScript ile eklenecek -->
+                </div>
+            </article>
         </div>
     </main>
 
-    <!-- Footer Bölümü -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content text-center">
-                <p>© 2025 GRCKobi. Tüm hakları saklıdır.</p>
-                <p class="mt-2">
-                    <a href="gizlilik.html">Gizlilik Politikası</a> | 
-                    <a href="kullanim-sartlari.html">Kullanım Şartları</a> | 
-                    <a href="iletisim.html">İletişim</a>
-                </p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GRCKobi</h3>
+                    <p>KOBİ'ler için GRC çözümleri</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="grc-nedir.html">GRC Nedir?</a></li>
+                        <li><a href="hizmetler.html">Hizmetler</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Yasal</h4>
+                    <ul>
+                        <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
+                        <li><a href="kullanim-sartlari.html">Kullanım Şartları</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim</h4>
+                    <p>Email: info@grckobi.com</p>
+                    <p>Telefon: +90 212 XXX XX XX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GRCKobi. Tüm hakları saklıdır.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Hoş Geldiniz Baloncuğu (YENİ HALİ) -->
+    <!-- Hoş Geldiniz Baloncuğu -->
     <div class="welcome-bubble">
         <button class="close-btn" aria-label="Kapat" title="Kapat">&times;</button>
         <h3>Merhaba!</h3>
         <p>GRCKobi'ye hoş geldiniz!</p>
     </div>
+
     <!-- Yukarı Çık Butonu -->
     <button id="scrollTopBtn" title="Yukarı Çık" aria-label="Sayfanın başına dön">&uarr;</button>
 
-</body>
+    <script src="site-scripts.js"></script>
 </body>
 </html>
-
