@@ -327,3 +327,36 @@ if (navToggle && mainNavMenu) {
 } else {
     console.warn('Hamburger menü elementleri (#navToggle veya #mainNavMenu) bulunamadı!');
 }
+// ===================================
+// V3.5 CİLASI: Mobil Flip Card Dokunma Desteği
+// ===================================
+document.addEventListener('DOMContentLoaded', function() {
+    // Tüm flip card elemanlarını seç
+    const flipCards = document.querySelectorAll('.flip-card');
+
+    flipCards.forEach(card => {
+        // Hem tıklama hem de dokunma olayını dinle
+        card.addEventListener('click', function() {
+            // Cihazın dokunmatik olup olmadığını kontrol et (basit bir yöntem)
+            const isTouchDevice = ('ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0);
+
+            // Sadece dokunmatik cihazlarda çalıştır veya hover olmayan durumlarda
+            if (isTouchDevice || window.matchMedia("(hover: none)").matches) {
+                 // İçindeki .flip-card-inner elementine 'is-flipped' sınıfını ekle/kaldır
+                 const innerCard = card.querySelector('.flip-card-inner');
+                 if (innerCard) {
+                     innerCard.classList.toggle('is-flipped');
+                 }
+            }
+        });
+
+        // Alternatif olarak touchstart da kullanılabilir ama click daha genel
+        // card.addEventListener('touchstart', function(e) {
+        //     // Sayfanın kaymasını engellememek için dikkatli kullanılmalı
+        //     const innerCard = card.querySelector('.flip-card-inner');
+        //      if (innerCard) {
+        //          innerCard.classList.toggle('is-flipped');
+        //      }
+        // }, {passive: true}); // Kaydırmayı engellememek için passive: true
+    });
+});
