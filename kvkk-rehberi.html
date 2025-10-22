@@ -18,7 +18,9 @@
                 <div class="logo">
     <a href="index.html">GRC<span class="logo-kobi">Kobi</span></a>
 </div>
-                <nav class="main-navigation">
+                <nav class="main-navigation" id="mainNavMenu"> 
+    <!-- İçindeki <ul> listesi aynı kalacak -->
+</nav>
                     <ul class="nav-menu">
                         <li><a href="index.html">Ana Sayfa</a></li>
                         <li><a href="grc-nedir.html">GRC Nedir?</a></li>
@@ -28,6 +30,12 @@
                         <li><a href="iletisim.html">İletişim</a></li>
                     </ul>
                 </nav>
+                <!-- Hamburger Menü Butonu (Sadece Mobilde Görünecek) -->
+<button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</button>
                 <button id="theme-toggle-button" class="dark-mode-toggle" aria-label="Tema değiştir" title="Tema değiştir">🌙</button>
             </div>
         </div>
