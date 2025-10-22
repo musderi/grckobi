@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hakkımızda - GRCKobi</title>
+    <meta name="description" content="GRCKobi hakkında - KOBİ'ler için GRC ve KVKK danışmanlık rehberi. Vizyonumuz, misyonumuz, değerlerimiz ve yaklaşımımız.">
+    <meta name="keywords" content="GRCKobi, hakkımızda, vizyon, misyon, değerler, GRC, KVKK, KOBİ">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23005F73'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial, sans-serif' fill='white' text-anchor='middle' font-weight='bold'%3EGK%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,11 +18,9 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-    <a href="index.html">GRC<span class="logo-kobi">Kobi</span></a>
-</div>
-                <nav class="main-navigation" id="mainNavMenu"> 
-    <!-- İçindeki <ul> listesi aynı kalacak -->
-
+                    <a href="index.html">GRC<span class="logo-kobi">Kobi</span></a>
+                </div>
+                <nav class="main-navigation" id="mainNavMenu">
                     <ul class="nav-menu">
                         <li><a href="index.html">Ana Sayfa</a></li>
                         <li><a href="grc-nedir.html">GRC Nedir?</a></li>
@@ -30,12 +30,12 @@
                         <li><a href="iletisim.html">İletişim</a></li>
                     </ul>
                 </nav>
-                <!-- Hamburger Menü Butonu (Sadece Mobilde Görünecek) -->
-<button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-</button>
+                <!-- Hamburger Menü Butonu -->
+                <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
                 <button id="theme-toggle-button" class="dark-mode-toggle" aria-label="Tema değiştir" title="Tema değiştir">🌙</button>
             </div>
         </div>
@@ -45,17 +45,74 @@
 
     <main class="container">
         <div class="content-box">
-            <h1 class="text-center">GRCKobi: Vizyonumuz ve Misyonumuz</h1>
-            <div class="text-center">
-                <h2 class="mt-4">🎯 Misyonumuz</h2>
-                <p>KOBİ'lerin dijital dünyada karşılaştıkları GRC (Yönetişim, Risk, Uyum) ve KVKK zorluklarını, anlaşılır, uygulanabilir ve modern rehberlik ile çözüme kavuşturmak.</p>
+            <h1 class="text-center mb-4">GRCKobi: Vizyonumuz ve Misyonumuz</h1>
+            <p class="lead text-center mb-4">GRCKobi olarak, KOBİ'lerin dijital dönüşüm yolculuğunda güvenilir rehberi olmayı hedefliyoruz. Karmaşık yasal düzenlemeleri basitleştirerek, işletmelerin sürdürülebilir büyümesine katkı sağlıyoruz.</p>
 
-                <h2 class="mt-4">🔭 Vizyonumuz</h2>
-                <p>Türkiye'deki her KOBİ'nin, karmaşık yasal düzenlemeleri bir yük olarak değil, sürdürülebilir bir başarı faktörü olarak görmesini sağlayan bir numaralı rehber olmak.</p>
-                
-                <h2 class="mt-4">💼 Yaklaşımımız</h2>
-                <p>Sadece 'ne yapılması gerektiğini' değil, 'nasıl yapılacağını' da gösteren, pratik ve teknoloji odaklı çözümler sunuyoruz.</p>
+            <div class="about-section">
+                <h2 class="mt-4 text-center">🎯 Misyonumuz</h2>
+                <p class="text-center">KOBİ'lerin dijital dünyada karşılaştıkları GRC (Yönetişim, Risk, Uyum) ve KVKK zorluklarını, anlaşılır, uygulanabilir ve modern rehberlik ile çözüme kavuşturmak. Her büyüklükteki işletmenin, profesyonel danışmanlık hizmetlerine erişebilmesini sağlamak için ücretsiz ve kaliteli içerikler üretmek.</p>
             </div>
+
+            <div class="about-section mt-4">
+                <h2 class="text-center">🔭 Vizyonumuz</h2>
+                <p class="text-center">Türkiye'deki her KOBİ'nin, karmaşık yasal düzenlemeleri bir yük olarak değil, sürdürülebilir bir başarı faktörü olarak görmesini sağlayan bir numaralı rehber olmak. KOBİ'lerin dijital güvenlik ve uyum konularında bilinçlenmesine katkıda bulunmak.</p>
+            </div>
+
+            <div class="about-section mt-4">
+                <h2 class="text-center">💼 Yaklaşımımız</h2>
+                <p class="text-center">Sadece 'ne yapılması gerektiğini' değil, 'nasıl yapılacağını' da gösteren, pratik ve teknoloji odaklı çözümler sunuyoruz. KOBİ'lerin gerçek ihtiyaçlarını anlayarak, bütçe ve kaynak kısıtlarını göz önünde bulunduran realist öneriler geliştiriyoruz.</p>
+                 <ul class="mt-3" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+                     <li><strong>Basit ve Anlaşılır:</strong> Hukuki jargon yerine, herkesin anlayabileceği dil.</li>
+                     <li><strong>Adım Adım Rehberlik:</strong> Büyük hedefleri küçük, yönetilebilir adımlara bölme.</li>
+                     <li><strong>Maliyet Etkin:</strong> Minimum bütçe ile maksimum uyum sağlayan çözümler.</li>
+                     <li><strong>Sürekli Güncel:</strong> Değişen mevzuat ve teknolojiye uyum sağlayan dinamik içerik.</li>
+                 </ul>
+            </div>
+
+            <!-- YENİ BÖLÜM: Değerlerimiz -->
+            <div class="about-section mt-4">
+                 <h2 class="text-center">🌟 Değerlerimiz</h2>
+                 <div class="grid mt-3" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                     <div class="value-card text-center" style="padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                         <h4>Güvenilirlik</h4>
+                         <p style="font-size: 0.9em; margin-bottom: 0;">Doğru, güncel ve test edilmiş bilgiler sunmak.</p>
+                     </div>
+                     <div class="value-card text-center" style="padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                         <h4>Erişilebilirlik</h4>
+                         <p style="font-size: 0.9em; margin-bottom: 0;">Her KOBİ'nin anlayabileceği ve faydalanabileceği içerikler üretmek.</p>
+                     </div>
+                     <div class="value-card text-center" style="padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                         <h4>Pratiklik</h4>
+                         <p style="font-size: 0.9em; margin-bottom: 0;">Teoriden çok, uygulanabilir adımlar ve çözümler sunmak.</p>
+                     </div>
+                     <div class="value-card text-center" style="padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                         <h4>Toplumsal Fayda</h4>
+                         <p style="font-size: 0.9em; margin-bottom: 0;">KOBİ'leri güçlendirerek ülke ekonomisine katkıda bulunmak.</p>
+                     </div>
+                 </div>
+            </div>
+
+            <!-- YENİ BÖLÜM: Neden GRCKobi? -->
+            <div class="about-section mt-4">
+                 <h2 class="text-center">🤔 Neden GRCKobi?</h2>
+                 <p class="text-center">Piyasada birçok GRC ve KVKK kaynağı bulunurken, GRCKobi özellikle KOBİ'lerin ihtiyaçlarına odaklanır:</p>
+                 <ul class="mt-3" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+                     <li>✓ **KOBİ Odaklı:** İçeriklerimiz ve araçlarımız KOBİ'lerin kaynak ve bütçe kısıtları düşünülerek hazırlanmıştır.</li>
+                     <li>✓ **Ücretsiz Erişim:** Temel bilgi ve rehberlere ücretsiz olarak ulaşabilirsiniz.</li>
+                     <li>✓ **Anlaşılır Dil:** Karmaşık konuları herkesin anlayabileceği basit bir dille açıklıyoruz.</li>
+                     <li>✓ **Pratik Çözümler:** Sadece ne yapmanız gerektiğini değil, nasıl yapacağınızı da gösteriyoruz.</li>
+                     <li>✓ **Güncel Bilgi:** Mevzuatı ve teknolojiyi takip ederek içeriklerimizi güncel tutuyoruz.</li>
+                 </ul>
+                 <p class="text-center mt-3">Amacımız, GRC ve KVKK uyumunu KOBİ'ler için korkutucu bir engel olmaktan çıkarıp, yönetilebilir bir sürece dönüştürmektir.</p>
+            </div>
+
+            <!-- CTA Bölümü -->
+             <div class="cta-section text-center mt-4">
+                 <h3>Birlikte Güvenle Büyüyelim</h3>
+                 <p>GRC ve KVKK yolculuğunuzda size rehberlik etmek için buradayız. Sorularınız mı var?</p>
+                 <a href="iletisim.html" class="button mt-3">İletişime Geçin</a>
+             </div>
+
         </div>
     </main>
 
@@ -63,8 +120,8 @@
         <div class="container text-center">
             <p>© 2025 GRCKobi. Tüm hakları saklıdır.</p>
             <p class="mt-2">
-                <a href="gizlilik-politikasi.html">Gizlilik Politikası</a> | 
-                <a href="kullanim-sartlari.html">Kullanım Şartları</a> | 
+                <a href="gizlilik-politikasi.html">Gizlilik Politikası</a> |
+                <a href="kullanim-sartlari.html">Kullanım Şartları</a> |
                 <a href="iletisim.html">İletişim</a>
             </p>
         </div>
@@ -78,8 +135,4 @@
     <button id="scrollTopBtn" title="Yukarı Çık">&uarr;</button>
 </body>
 </html>
-
-
-
-
 
