@@ -358,3 +358,14 @@ footer {
 .mt-2 { margin-top: 1rem; }
 .mt-4 { margin-top: 2rem; }
 
+
+/* ===================================
+   V3.5 CİLASI: Logo Stili
+   =================================== */
+
+.logo .logo-kobi {
+    font-style: italic; /* "Kobi" kısmını italik yapar */
+    font-weight: 500;  /* Belki biraz daha normal kalınlıkta? (Opsiyonel) */
+    /* Eğer farklı bir font istersen buraya ekleyebilirsin, örn: */
+    /* font-family: 'Georgia', serif; */
+}
