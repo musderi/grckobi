@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Risk Testi - GRCKobi</title>
+    <meta name="description" content="KOBİ'niz için GRC ve KVKK risk değerlendirme testi. Mevcut durumunuzu hızlıca analiz edin ve size özel öneriler alın.">
+    <meta name="keywords" content="GRC, KVKK, risk değerlendirme, risk testi, KOBİ, kontrol listesi, interaktif test">
+    <meta name="author" content="GRCKobi">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23005F73'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial, sans-serif' fill='white' text-anchor='middle' font-weight='bold'%3EGK%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,26 +18,26 @@
     <header>
         <div class="container">
             <div class="header-content">
-             <div class="logo">
-    <a href="index.html">GRC<span class="logo-kobi">Kobi</span></a>
-</div>
-                <nav class="main-navigation">
-<nav class="main-navigation" id="mainNavMenu"> 
-    <!-- İçindeki <ul> listesi aynı kalacak -->
-                       <li><a href="index.html">Ana Sayfa</a></li>
+               <div class="logo">
+                   <a href="index.html">GRC<span class="logo-kobi">Kobi</span></a>
+               </div>
+                <nav class="main-navigation" id="mainNavMenu"> <!-- ID BURADA -->
+                    <!-- FAZLADAN NAV SİLİNDİ -->
+                    <ul class="nav-menu"> <!-- UL HEMEN NAV İÇİNDE BAŞLIYOR -->
+                        <li><a href="index.html">Ana Sayfa</a></li>
                         <li><a href="grc-nedir.html">GRC Nedir?</a></li>
                         <li><a href="kvkk-rehberi.html">KVKK Rehberi</a></li>
                         <li><a href="risk-testi.html" class="active">Risk Testi</a></li>
                         <li><a href="hakkimizda.html">Hakkımızda</a></li>
                         <li><a href="iletisim.html">İletişim</a></li>
                     </ul>
-                </nav>
-                <!-- Hamburger Menü Butonu (Sadece Mobilde Görünecek) -->
-<button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-</button>
+                </nav> <!-- DOĞRU NAV BURADA BİTİYOR -->
+                <!-- Hamburger Menü Butonu -->
+                <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
                 <button id="theme-toggle-button" class="dark-mode-toggle" aria-label="Tema değiştir" title="Tema değiştir">🌙</button>
             </div>
         </div>
@@ -44,9 +47,11 @@
 
     <main class="container">
         <div class="content-box">
-            <h1>İnteraktif GRC & KVKK Risk Testi</h1>
+            <h1 class="text-center mb-4">İnteraktif GRC & KVKK Risk Testi</h1>
             <p class="lead text-center mb-4">İşletmenizin mevcut risk durumunu 15 basit soruyla değerlendirin ve size özel öneriler alın.</p>
+
             <form id="riskTestForm" class="risk-test-form">
+                <!-- Soru 1 -->
                 <div class="question-item">
                     <h4>1. Yazılı bir Bilgi Güvenliği Politikanız var mı ve düzenli olarak güncelleniyor mu?</h4>
                     <div class="radio-group">
@@ -55,6 +60,7 @@
                         <label><input type="radio" name="q1" value="1"> Bilmiyorum</label>
                     </div>
                 </div>
+                <!-- Soru 2 -->
                 <div class="question-item">
                     <h4>2. Çalışanlarınıza düzenli olarak siber güvenlik ve KVKK farkındalık eğitimi veriyor musunuz?</h4>
                     <div class="radio-group">
@@ -63,6 +69,7 @@
                         <label><input type="radio" name="q2" value="1"> Bilmiyorum</label>
                     </div>
                 </div>
+                 <!-- Soru 3 -->
                 <div class="question-item">
                     <h4>3. İşlenen kişisel verileri (hassas, gizli, genel) sınıflandırdığınız bir veri envanteriniz var mı?</h4>
                     <div class="radio-group">
@@ -71,114 +78,120 @@
                         <label><input type="radio" name="q3" value="1"> Bilmiyorum</label>
                     </div>
                 </div>
+                <!-- Soru 4 -->
                  <div class="question-item">
-                    <h4>4. Çalışanların verilere erişim yetkileri 'bilmesi gereken' prensibine göre kısıtlanmış mı?</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="q4" value="2" required> Evet</label>
-                        <label><input type="radio" name="q4" value="0"> Hayır</label>
-                        <label><input type="radio" name="q4" value="1"> Bilmiyorum</label>
-                    </div>
-                </div>
+                     <h4>4. Çalışanların verilere erişim yetkileri 'bilmesi gereken' prensibine göre kısıtlanmış mı?</h4>
+                     <div class="radio-group">
+                         <label><input type="radio" name="q4" value="2" required> Evet</label>
+                         <label><input type="radio" name="q4" value="0"> Hayır</label>
+                         <label><input type="radio" name="q4" value="1"> Bilmiyorum</label>
+                     </div>
+                 </div>
+                 <!-- Soru 5 -->
                  <div class="question-item">
-                    <h4>5. Kritik verilerinizin düzenli olarak yedeklendiği ve geri yüklenebildiği test edilmiş bir prosedürünüz var mı?</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="q5" value="2" required> Evet</label>
-                        <label><input type="radio" name="q5" value="0"> Hayır</label>
-                        <label><input type="radio" name="q5" value="1"> Bilmiyorum</label>
-                    </div>
-                </div>
+                     <h4>5. Kritik verilerinizin düzenli olarak yedeklendiği ve geri yüklenebildiği test edilmiş bir prosedürünüz var mı?</h4>
+                     <div class="radio-group">
+                         <label><input type="radio" name="q5" value="2" required> Evet</label>
+                         <label><input type="radio" name="q5" value="0"> Hayır</label>
+                         <label><input type="radio" name="q5" value="1"> Bilmiyorum</label>
+                     </div>
+                 </div>
+                 <!-- Soru 6 -->
                  <div class="question-item">
-                    <h4>6. Web sitenizde ve veri toplama noktalarında güncel KVKK aydınlatma metni ve (gerekliyse) açık rıza mekanizması bulunuyor mu?</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="q6" value="2" required> Evet</label>
-                        <label><input type="radio" name="q6" value="0"> Hayır</label>
-                        <label><input type="radio" name="q6" value="1"> Bilmiyorum</label>
-                    </div>
-                </div>
+                     <h4>6. Web sitenizde ve veri toplama noktalarında güncel KVKK aydınlatma metni ve (gerekliyse) açık rıza mekanizması bulunuyor mu?</h4>
+                     <div class="radio-group">
+                         <label><input type="radio" name="q6" value="2" required> Evet</label>
+                         <label><input type="radio" name="q6" value="0"> Hayır</label>
+                         <label><input type="radio" name="q6" value="1"> Bilmiyorum</label>
+                     </div>
+                 </div>
+                 <!-- Soru 7 -->
                  <div class="question-item">
-                    <h4>7. Üçüncü partilerle (tedarikçiler, iş ortakları) veri paylaşımı yaparken KVKK uyumlu sözleşmeleriniz var mı?</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="q7" value="2" required> Evet</label>
-                        <label><input type="radio" name="q7" value="0"> Hayır</label>
-                        <label><input type="radio" name="q7" value="1"> Bilmiyorum</label>
-                    </div>
-                </div>
+                     <h4>7. Üçüncü partilerle (tedarikçiler, iş ortakları) veri paylaşımı yaparken KVKK uyumlu sözleşmeleriniz var mı?</h4>
+                     <div class="radio-group">
+                         <label><input type="radio" name="q7" value="2" required> Evet</label>
+                         <label><input type="radio" name="q7" value="0"> Hayır</label>
+                         <label><input type="radio" name="q7" value="1"> Bilmiyorum</label>
+                     </div>
+                 </div>
+                 <!-- Soru 8 -->
                  <div class="question-item">
-                    <h4>8. Sistemlerinize yetkisiz erişimi engellemek için güvenlik duvarı (firewall), antivirüs gibi teknik önlemler alıyor musunuz?</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="q8" value="2" required> Evet</label>
-                        <label><input type="radio" name="q8" value="0"> Hayır</label>
-                        <label><input type="radio" name="q8" value="1"> Bilmiyorum</label>
-                    </div>
-                </div>
+                     <h4>8. Sistemlerinize yetkisiz erişimi engellemek için güvenlik duvarı (firewall), antivirüs gibi teknik önlemler alıyor musunuz?</h4>
+                     <div class="radio-group">
+                         <label><input type="radio" name="q8" value="2" required> Evet</label>
+                         <label><input type="radio" name="q8" value="0"> Hayır</label>
+                         <label><input type="radio" name="q8" value="1"> Bilmiyorum</label>
+                     </div>
+                 </div>
+                 <!-- Soru 9 -->
                  <div class="question-item">
-                    <h4>9. Veri sahibi başvurularını (bilgi alma, düzeltme, silme vb.) yönetmek için bir prosedürünüz var mı?</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="q9" value="2" required> Evet</label>
-                        <label><input type="radio" name="q9" value="0"> Hayır</label>
-                        <label><input type="radio" name="q9" value="1"> Bilmiyorum</label>
-                    </div>
-                </div>
+                     <h4>9. Veri sahibi başvurularını (bilgi alma, düzeltme, silme vb.) yönetmek için bir prosedürünüz var mı?</h4>
+                     <div class="radio-group">
+                         <label><input type="radio" name="q9" value="2" required> Evet</label>
+                         <label><input type="radio" name="q9" value="0"> Hayır</label>
+                         <label><input type="radio" name="q9" value="1"> Bilmiyorum</label>
+                     </div>
+                 </div>
+                 <!-- Soru 10 -->
                  <div class="question-item">
-                    <h4>10. Artık ihtiyaç duyulmayan kişisel verileri güvenli bir şekilde imha etmek için bir politikanız ve prosedürünüz var mı?</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="q10" value="2" required> Evet</label>
-                        <label><input type="radio" name="q10" value="0"> Hayır</label>
-                        <label><input type="radio" name="q10" value="1"> Bilmiyorum</label>
-                    </div>
-                </div>
+                     <h4>10. Artık ihtiyaç duyulmayan kişisel verileri güvenli bir şekilde imha etmek için bir politikanız ve prosedürünüz var mı?</h4>
+                     <div class="radio-group">
+                         <label><input type="radio" name="q10" value="2" required> Evet</label>
+                         <label><input type="radio" name="q10" value="0"> Hayır</label>
+                         <label><input type="radio" name="q10" value="1"> Bilmiyorum</label>
+                     </div>
+                 </div>
+                 <!-- Soru 11 -->
                  <div class="question-item">
-                    <h4>11. Olası bir veri ihlali durumunda izlenecek adımları içeren yazılı bir "Veri İhlali Müdahale Planı"nız var mı?</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="q11" value="2" required> Evet</label>
-                        <label><input type="radio" name="q11" value="0"> Hayır</label>
-                        <label><input type="radio" name="q11" value="1"> Bilmiyorum</label>
-                    </div>
-                </div>
+                     <h4>11. Olası bir veri ihlali durumunda izlenecek adımları içeren yazılı bir "Veri İhlali Müdahale Planı"nız var mı?</h4>
+                     <div class="radio-group">
+                         <label><input type="radio" name="q11" value="2" required> Evet</label>
+                         <label><input type="radio" name="q11" value="0"> Hayır</label>
+                         <label><input type="radio" name="q11" value="1"> Bilmiyorum</label>
+                     </div>
+                 </div>
+                 <!-- Soru 12 -->
                  <div class="question-item">
-                    <h4>12. İşletmenizin VERBİS'e kayıt yükümlülüğü olup olmadığını kontrol ettiniz mi ve (gerekliyse) kaydınızı tamamladınız mı?</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="q12" value="2" required> Evet</label>
-                        <label><input type="radio" name="q12" value="0"> Hayır</label>
-                        <label><input type="radio" name="q12" value="1"> Bilmiyorum</label>
-                    </div>
-                </div>
+                     <h4>12. İşletmenizin VERBİS'e kayıt yükümlülüğü olup olmadığını kontrol ettiniz mi ve (gerekliyse) kaydınızı tamamladınız mı?</h4>
+                     <div class="radio-group">
+                         <label><input type="radio" name="q12" value="2" required> Evet</label>
+                         <label><input type="radio" name="q12" value="0"> Hayır</label>
+                         <label><input type="radio" name="q12" value="1"> Bilmiyorum</label>
+                     </div>
+                 </div>
+                 <!-- Soru 13 -->
                  <div class="question-item">
-                    <h4>13. Fiziksel güvenlik önlemleri (kilitli dolaplar, kamera sistemleri vb.) yeterli mi?</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="q13" value="2" required> Evet</label>
-                        <label><input type="radio" name="q13" value="0"> Hayır</label>
-                        <label><input type="radio" name="q13" value="1"> Bilmiyorum</label>
-                    </div>
-                </div>
+                     <h4>13. Fiziksel güvenlik önlemleri (kilitli dolaplar, kamera sistemleri vb.) yeterli mi?</h4>
+                     <div class="radio-group">
+                         <label><input type="radio" name="q13" value="2" required> Evet</label>
+                         <label><input type="radio" name="q13" value="0"> Hayır</label>
+                         <label><input type="radio" name="q13" value="1"> Bilmiyorum</label>
+                     </div>
+                 </div>
+                 <!-- Soru 14 -->
                  <div class="question-item">
-                    <h4>14. Uzaktan çalışan personeliniz için güvenli bağlantı (VPN vb.) ve veri koruma politikalarınız var mı?</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="q14" value="2" required> Evet</label>
-                        <label><input type="radio" name="q14" value="0"> Hayır</label>
-                        <label><input type="radio" name="q14" value="1"> Bilmiyorum</label>
-                    </div>
-                </div>
+                     <h4>14. Uzaktan çalışan personeliniz için güvenli bağlantı (VPN vb.) ve veri koruma politikalarınız var mı?</h4>
+                     <div class="radio-group">
+                         <label><input type="radio" name="q14" value="2" required> Evet</label>
+                         <label><input type="radio" name="q14" value="0"> Hayır</label>
+                         <label><input type="radio" name="q14" value="1"> Bilmiyorum</label>
+                     </div>
+                 </div>
+                 <!-- Soru 15 -->
                  <div class="question-item">
-                    <h4>15. GRC ve KVKK uyum süreçlerinizi düzenli olarak (örn: yılda bir) gözden geçirip güncelliyor musunuz?</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="q15" value="2" required> Evet</label>
-                        <label><input type="radio" name="q15" value="0"> Hayır</label>
-                        <label><input type="radio" name="q15" value="1"> Bilmiyorum</label>
-                    </div>
-                </div>
+                     <h4>15. GRC ve KVKK uyum süreçlerinizi düzenli olarak (örn: yılda bir) gözden geçirip güncelliyor musunuz?</h4>
+                     <div class="radio-group">
+                         <label><input type="radio" name="q15" value="2" required> Evet</label>
+                         <label><input type="radio" name="q15" value="0"> Hayır</label>
+                         <label><input type="radio" name="q15" value="1"> Bilmiyorum</label>
+                     </div>
+                 </div>
 
                 <button type="submit" class="button mt-4">Sonucu Hesapla</button>
             </form>
 
             <div id="test-results" class="mt-4" style="display: none;">
                 <!-- Sonuçlar JS ile buraya yazılacak -->
-                <!-- Örnek Sonuç Yapısı (JS tarafından doldurulacak):
-                <div class="result-score">--%</div>
-                <div class="result-title">Risk Seviyeniz: --</div>
-                <p class="result-description">...</p>
-                <div class="result-recommendation"><strong>Öneriler:</strong> ...</div>
-                -->
             </div>
         </div>
     </main>
@@ -202,8 +215,4 @@
     <button id="scrollTopBtn" title="Yukarı Çık">&uarr;</button>
 </body>
 </html>
-
-
-
-
 
