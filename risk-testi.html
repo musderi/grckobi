@@ -35,10 +35,10 @@
     <main class="container">
         <div class="content-box">
             <h1>İnteraktif GRC & KVKK Risk Testi</h1>
-            <form id="riskTestForm">
-                <!-- Sorular buraya eklenecek -->
+            <p class="lead text-center mb-4">İşletmenizin mevcut risk durumunu 15 basit soruyla değerlendirin ve size özel öneriler alın.</p>
+            <form id="riskTestForm" class="risk-test-form">
                 <div class="question-item">
-                    <h4>1. Yazılı bir Bilgi Güvenliği Politikanız var mı?</h4>
+                    <h4>1. Yazılı bir Bilgi Güvenliği Politikanız var mı ve düzenli olarak güncelleniyor mu?</h4>
                     <div class="radio-group">
                         <label><input type="radio" name="q1" value="2" required> Evet</label>
                         <label><input type="radio" name="q1" value="0"> Hayır</label>
@@ -46,20 +46,129 @@
                     </div>
                 </div>
                 <div class="question-item">
-                    <h4>2. Çalışanlarınıza düzenli olarak siber güvenlik eğitimi veriyor musunuz?</h4>
+                    <h4>2. Çalışanlarınıza düzenli olarak siber güvenlik ve KVKK farkındalık eğitimi veriyor musunuz?</h4>
                     <div class="radio-group">
                         <label><input type="radio" name="q2" value="2" required> Evet</label>
                         <label><input type="radio" name="q2" value="0"> Hayır</label>
                         <label><input type="radio" name="q2" value="1"> Bilmiyorum</label>
                     </div>
                 </div>
-                <!-- ... Diğer 13 soru da benzer şekilde eklenecek ... -->
-                 <p>... (Diğer 13 soru buraya gelecek şekilde basitleştirilmiştir) ...</p>
+                <div class="question-item">
+                    <h4>3. İşlenen kişisel verileri (hassas, gizli, genel) sınıflandırdığınız bir veri envanteriniz var mı?</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="q3" value="2" required> Evet</label>
+                        <label><input type="radio" name="q3" value="0"> Hayır</label>
+                        <label><input type="radio" name="q3" value="1"> Bilmiyorum</label>
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <h4>4. Çalışanların verilere erişim yetkileri 'bilmesi gereken' prensibine göre kısıtlanmış mı?</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="q4" value="2" required> Evet</label>
+                        <label><input type="radio" name="q4" value="0"> Hayır</label>
+                        <label><input type="radio" name="q4" value="1"> Bilmiyorum</label>
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <h4>5. Kritik verilerinizin düzenli olarak yedeklendiği ve geri yüklenebildiği test edilmiş bir prosedürünüz var mı?</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="q5" value="2" required> Evet</label>
+                        <label><input type="radio" name="q5" value="0"> Hayır</label>
+                        <label><input type="radio" name="q5" value="1"> Bilmiyorum</label>
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <h4>6. Web sitenizde ve veri toplama noktalarında güncel KVKK aydınlatma metni ve (gerekliyse) açık rıza mekanizması bulunuyor mu?</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="q6" value="2" required> Evet</label>
+                        <label><input type="radio" name="q6" value="0"> Hayır</label>
+                        <label><input type="radio" name="q6" value="1"> Bilmiyorum</label>
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <h4>7. Üçüncü partilerle (tedarikçiler, iş ortakları) veri paylaşımı yaparken KVKK uyumlu sözleşmeleriniz var mı?</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="q7" value="2" required> Evet</label>
+                        <label><input type="radio" name="q7" value="0"> Hayır</label>
+                        <label><input type="radio" name="q7" value="1"> Bilmiyorum</label>
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <h4>8. Sistemlerinize yetkisiz erişimi engellemek için güvenlik duvarı (firewall), antivirüs gibi teknik önlemler alıyor musunuz?</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="q8" value="2" required> Evet</label>
+                        <label><input type="radio" name="q8" value="0"> Hayır</label>
+                        <label><input type="radio" name="q8" value="1"> Bilmiyorum</label>
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <h4>9. Veri sahibi başvurularını (bilgi alma, düzeltme, silme vb.) yönetmek için bir prosedürünüz var mı?</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="q9" value="2" required> Evet</label>
+                        <label><input type="radio" name="q9" value="0"> Hayır</label>
+                        <label><input type="radio" name="q9" value="1"> Bilmiyorum</label>
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <h4>10. Artık ihtiyaç duyulmayan kişisel verileri güvenli bir şekilde imha etmek için bir politikanız ve prosedürünüz var mı?</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="q10" value="2" required> Evet</label>
+                        <label><input type="radio" name="q10" value="0"> Hayır</label>
+                        <label><input type="radio" name="q10" value="1"> Bilmiyorum</label>
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <h4>11. Olası bir veri ihlali durumunda izlenecek adımları içeren yazılı bir "Veri İhlali Müdahale Planı"nız var mı?</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="q11" value="2" required> Evet</label>
+                        <label><input type="radio" name="q11" value="0"> Hayır</label>
+                        <label><input type="radio" name="q11" value="1"> Bilmiyorum</label>
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <h4>12. İşletmenizin VERBİS'e kayıt yükümlülüğü olup olmadığını kontrol ettiniz mi ve (gerekliyse) kaydınızı tamamladınız mı?</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="q12" value="2" required> Evet</label>
+                        <label><input type="radio" name="q12" value="0"> Hayır</label>
+                        <label><input type="radio" name="q12" value="1"> Bilmiyorum</label>
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <h4>13. Fiziksel güvenlik önlemleri (kilitli dolaplar, kamera sistemleri vb.) yeterli mi?</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="q13" value="2" required> Evet</label>
+                        <label><input type="radio" name="q13" value="0"> Hayır</label>
+                        <label><input type="radio" name="q13" value="1"> Bilmiyorum</label>
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <h4>14. Uzaktan çalışan personeliniz için güvenli bağlantı (VPN vb.) ve veri koruma politikalarınız var mı?</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="q14" value="2" required> Evet</label>
+                        <label><input type="radio" name="q14" value="0"> Hayır</label>
+                        <label><input type="radio" name="q14" value="1"> Bilmiyorum</label>
+                    </div>
+                </div>
+                 <div class="question-item">
+                    <h4>15. GRC ve KVKK uyum süreçlerinizi düzenli olarak (örn: yılda bir) gözden geçirip güncelliyor musunuz?</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="q15" value="2" required> Evet</label>
+                        <label><input type="radio" name="q15" value="0"> Hayır</label>
+                        <label><input type="radio" name="q15" value="1"> Bilmiyorum</label>
+                    </div>
+                </div>
+
                 <button type="submit" class="button mt-4">Sonucu Hesapla</button>
             </form>
 
-            <div id="test-results" style="display: none;">
+            <div id="test-results" class="mt-4" style="display: none;">
                 <!-- Sonuçlar JS ile buraya yazılacak -->
+                <!-- Örnek Sonuç Yapısı (JS tarafından doldurulacak):
+                <div class="result-score">--%</div>
+                <div class="result-title">Risk Seviyeniz: --</div>
+                <p class="result-description">...</p>
+                <div class="result-recommendation"><strong>Öneriler:</strong> ...</div>
+                -->
             </div>
         </div>
     </main>
@@ -68,8 +177,8 @@
         <div class="container text-center">
             <p>© 2025 GRCKobi. Tüm hakları saklıdır.</p>
             <p class="mt-2">
-                <a href="gizlilik-politikasi.html">Gizlilik Politikası</a> | 
-                <a href="kullanim-sartlari.html">Kullanım Şartları</a> | 
+                <a href="gizlilik-politikasi.html">Gizlilik Politikası</a> |
+                <a href="kullanim-sartlari.html">Kullanım Şartları</a> |
                 <a href="iletisim.html">İletişim</a>
             </p>
         </div>
