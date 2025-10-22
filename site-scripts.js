@@ -287,3 +287,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
 }); // DOMContentLoaded Sonu
 
+// ===================================
+// V3.5 CİLASI: Hamburger Menü Mantığı
+// ===================================
+const navToggle = document.getElementById('navToggle');
+const mainNavMenu = document.getElementById('mainNavMenu');
+const navMenuLinks = mainNavMenu ? mainNavMenu.querySelectorAll('a') : []; // Menüdeki linkleri seç
+
+if (navToggle && mainNavMenu) {
+    navToggle.addEventListener('click', function() {
+        // Butona ve Menüye .active class'ını ekle/kaldır
+        navToggle.classList.toggle('active');
+        mainNavMenu.classList.toggle('active');
+
+        // ARIA özelliğini güncelle (Erişilebilirlik için)
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+
+        // Menü açıldığında body'nin kaymasını engelle (Opsiyonel ama şık)
+        // if (mainNavMenu.classList.contains('active')) {
+        //     document.body.style.overflow = 'hidden';
+        // } else {
+        //     document.body.style.overflow = '';
+        // }
+    });
+
+    // Menüdeki bir linke tıklandığında menüyü kapat
+    navMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navToggle.classList.contains('active')) { // Sadece mobil menü açıksa kapat
+                navToggle.classList.remove('active');
+                mainNavMenu.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                // document.body.style.overflow = ''; // Kaydırmayı tekrar aktif et
+            }
+        });
+    });
+
+} else {
+    console.warn('Hamburger menü elementleri (#navToggle veya #mainNavMenu) bulunamadı!');
+}
