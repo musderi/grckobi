@@ -365,10 +365,10 @@ a:hover {
     transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner {
+.flip-card:hover .flip-card-inner,
+.flip-card-inner.is-flipped { /* Bu satır eklendi */
     transform: rotateY(180deg);
 }
-
 .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
@@ -889,4 +889,5 @@ body.dark-mode .nav-toggle .bar {
     .flip-card { height: 280px; }
 
 } /* @media sonu */
+
 
