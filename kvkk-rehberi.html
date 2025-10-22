@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <!-- Meta Etiketleri -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KOBİ'ler için pratik KVKK rehberi. KVKK uyumu için adım adım kılavuz ve sıkça sorulan sorular.">
+    <meta name="keywords" content="KVKK, kişisel veri, KOBİ, GDPR, VERBİS, veri koruma, SSS">
+    <meta name="author" content="GRCKobi">
+
+    <!-- Sayfa Başlığı -->
     <title>KVKK Rehberi - GRCKobi</title>
+
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23005F73'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial, sans-serif' fill='white' text-anchor='middle' font-weight='bold'%3EGK%3C/text%3E%3C/svg%3E">
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Dosyası -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript Dosyası -->
     <script src="site-scripts.js" defer></script>
 </head>
+
 <body>
+    <!-- Header Bölümü -->
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-    <a href="index.html">GRC<span class="logo-kobi">Kobi</span></a>
-</div>
-                <nav class="main-navigation" id="mainNavMenu"> 
-    <!-- İçindeki <ul> listesi aynı kalacak -->
-
+                    <a href="index.html">GRC<span class="logo-kobi">Kobi</span></a>
+                </div>
+                <nav class="main-navigation" id="mainNavMenu">
                     <ul class="nav-menu">
                         <li><a href="index.html">Ana Sayfa</a></li>
                         <li><a href="grc-nedir.html">GRC Nedir?</a></li>
@@ -30,66 +44,286 @@
                         <li><a href="iletisim.html">İletişim</a></li>
                     </ul>
                 </nav>
-                <!-- Hamburger Menü Butonu (Sadece Mobilde Görünecek) -->
-<button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-</button>
+                <!-- Hamburger Menü Butonu -->
+                <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
                 <button id="theme-toggle-button" class="dark-mode-toggle" aria-label="Tema değiştir" title="Tema değiştir">🌙</button>
             </div>
         </div>
     </header>
 
+    <!-- Akıllı Geri Dön Butonu -->
     <button id="smartBackButton" title="Geri Dön">←</button>
 
+    <!-- Ana İçerik Alanı -->
     <main class="container">
+        <!-- Ana İçerik Kutusu -->
         <div class="content-box">
-            <h1>KOBİ'ler için Pratik KVKK Rehberi</h1>
-            <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK), müşteri ve çalışan verilerini işleyen tüm işletmeleri kapsar. KVKK uyumu, yalnızca yasal bir zorunluluk değil, aynı zamanda müşteri güvenini artıran bir fırsattır.</p>
+            <!-- Sayfa Başlığı -->
+            <h1 class="text-center mb-4">KOBİ'ler için Pratik KVKK Rehberi</h1>
 
-            <h2 class="mt-4">Sıkça Sorulan Sorular (SSS)</h2>
-            <details class="faq-item">
-                <summary>VERBİS nedir ve kayıt zorunlu mudur?</summary>
-                <div class="faq-answer"><p>VERBİS (Veri Sorumluları Sicil Bilgi Sistemi), veri sorumlularının kayıt olması gereken resmi sistemdir. Yıllık çalışan sayısı 50'den veya mali bilanço 25 milyon TL'den çok olanlar için zorunludur. Bu kriterleri sağlamayan KOBİ'ler kayıt zorunda değildir ama KVKK'ya uyum yükümlülükleri devam eder.</p></div>
-            </details>
-            <details class="faq-item">
-                <summary>Çerez (Cookie) politikaları KVKK kapsamında mıdır?</summary>
-                <div class="faq-answer"><p>Evet. Çerezler, kullanıcıları tanımlayabilen veriler topluyorsa kişisel veri sayılır. Web sitenizde çerez kullanıyorsanız, kullanıcıları bu konuda bilgilendiren bir çerez politikası yayınlamalı ve gerekli durumlarda açık rızalarını almalısınız.</p></div>
-            </details>
-            <details class="faq-item">
-                <summary>Veri ihlali durumunda ne yapmalıyım?</summary>
-                <div class="faq-answer"><p>Bir veri ihlali tespit ettiğinizde, durumu en geç 72 saat içinde Kişisel Verileri Koruma Kurumu'na bildirmekle yükümlüsünüz. Ayrıca, ihlalden etkilenen kişileri de uygun bir yöntemle bilgilendirmeniz gerekir. Bunun için önceden hazırlanmış bir "Veri İhlali Müdahale Planı"nızın olması kritiktir.</p></div>
-            </details>
+            <!-- Giriş Paragrafı -->
+            <p class="lead text-center mb-4">6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK), müşterilerinizin, çalışanlarınızın ve iş ortaklarınızın kişisel verilerini işleyen tüm işletmeleri kapsar. KOBİ'ler için KVKK uyumu, yalnızca yasal bir zorunluluk değil, aynı zamanda müşteri güvenini artıran ve rekabet avantajı sağlayan bir fırsattır.</p>
 
-            <!-- Resmi Kaynak Bölümü -->
-            <div class="content-box resource-box mt-4">
-                <h3>Resmi Kaynak: 6698 Sayılı Kanun</h3>
-                <p>Kişisel Verilerin Korunması Kanunu'nun en güncel ve tam metnine doğrudan T.C. Cumhurbaşkanlığı Mevzuat Bilgi Sistemi üzerinden ulaşabilirsiniz.</p>
-                <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5" class="button mt-2" target="_blank" rel="noopener noreferrer">
-                    Kanun Metnini Görüntüle
-                </a>
+            <!-- KVKK'nın Önemi -->
+            <div class="importance-section mt-4 mb-4">
+                 <h2 class="text-center">KVKK Neden Önemli?</h2>
+                 <div class="grid mt-3" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                     <div class="info-card text-center" style="padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                         <h4>💰 Yüksek Cezalar</h4>
+                         <p style="font-size: 0.9em; margin-bottom: 0;">KVKK ihlalleri ciddi idari para cezaları getirebilir.</p>
+                     </div>
+                     <div class="info-card text-center" style="padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                         <h4>🤝 Müşteri Güveni</h4>
+                         <p style="font-size: 0.9em; margin-bottom: 0;">Veri güvenliği, müşterilerin işletmenize olan güvenini artırır.</p>
+                     </div>
+                     <div class="info-card text-center" style="padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--border-radius);">
+                         <h4>🏆 Rekabet Avantajı</h4>
+                         <p style="font-size: 0.9em; margin-bottom: 0;">KVKK uyumlu çalışmak, rakiplerinizden sizi ayırır.</p>
+                     </div>
+                 </div>
             </div>
-        </div>
+
+            <!-- Genişletilmiş SSS Bölümü -->
+            <div class="faq-section mt-4">
+                <h2 class="text-center">Sıkça Sorulan Sorular (SSS)</h2>
+                <p class="text-center mb-4">KOBİ'ler için KVKK ile ilgili en çok merak edilen konular ve detaylı açıklamalar:</p>
+
+                <!-- Soru 1: VERBİS -->
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        VERBİS nedir ve kayıt zorunlu mudur?
+                        <span class="faq-toggle">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p><strong>VERBİS (Veri Sorumluları Sicil Bilgi Sistemi)</strong>, Kişisel Verileri Koruma Kurumu tarafından oluşturulan, veri sorumlularının kayıt olması gereken resmi sistemdir.</p>
+                        <h5>Kimler VERBİS'e kayıt olmalı?</h5>
+                        <ul>
+                            <li>Yıllık çalışan sayısı 50'den çok olan gerçek ve tüzel kişiler</li>
+                            <li>Yıllık mali bilançosu 100 milyon TL'den (Not: Bu rakam değişebilir, güncel tutarı kontrol edin) çok olan gerçek ve tüzel kişiler</li>
+                            <li>Ana faaliyet konusu özel nitelikli kişisel veri işleme olan veri sorumluları</li>
+                            <li>Yurtdışında yerleşik veri sorumluları</li>
+                        </ul>
+                        <p class="mt-3"><strong>Not:</strong> Bu kriterleri sağlamayan KOBİ'ler VERBİS'e kayıt olmak zorunda değildir, ancak KVKK'ya uyum yükümlülükleri (aydınlatma, veri güvenliği vb.) devam eder.</p>
+                    </div>
+                </details>
+
+                <!-- Soru 2: Veri Sorumlusu -->
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Veri Sorumlusu kimdir ve sorumlulukları nelerdir?
+                        <span class="faq-toggle">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p><strong>Veri Sorumlusu</strong>, kişisel verilerin işleme amaçlarını ve vasıtalarını belirleyen, veri kayıt sisteminin kurulmasından ve yönetilmesinden sorumlu olan gerçek veya tüzel kişidir (Yani genellikle işletmenin kendisi).</p>
+                        <h5>Veri Sorumlusunun Temel Sorumlulukları:</h5>
+                        <ul>
+                            <li><strong>Aydınlatma Yükümlülüğü:</strong> Veri sahiplerini bilgilendirmek.</li>
+                            <li><strong>Veri Güvenliği:</strong> Teknik ve idari tedbirleri almak.</li>
+                            <li><strong>Başvuru Yönetimi:</strong> Veri sahiplerinin taleplerini (silme, düzeltme vb.) 30 gün içinde yanıtlamak.</li>
+                            <li><strong>Veri İşleme Envanteri:</strong> (VERBİS'e tabi ise) Hangi verileri, neden topladığını kayıt altına almak.</li>
+                            <li><strong>Veri İhlal Bildirimi:</strong> İhlal durumunda 72 saat içinde Kurul'a ve ilgili kişilere bildirim yapmak.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Soru 3: Aydınlatma Yükümlülüğü -->
+                <details class="faq-item">
+                     <summary class="faq-question">
+                         Aydınlatma Yükümlülüğü nedir ve nasıl yerine getirilir?
+                         <span class="faq-toggle">+</span>
+                     </summary>
+                     <div class="faq-answer">
+                         <p><strong>Aydınlatma Yükümlülüğü</strong>, kişisel verilerini işlediğiniz kişilere (müşteriler, çalışanlar vb.) bu verileri neden topladığınızı, nasıl işlediğinizi, kimlerle paylaştığınızı ve haklarının neler olduğunu açıkça anlatma zorunluluğudur.</p>
+                         <h5>Nasıl Yerine Getirilir?</h5>
+                         <ul>
+                             <li><strong>Web Sitesi:</strong> Gizlilik Politikası ve Aydınlatma Metni yayınlayarak.</li>
+                             <li><strong>Formlar:</strong> İletişim, üyelik gibi formların altında kısa aydınlatma metinleri ve onay kutucukları (gerekiyorsa) ekleyerek.</li>
+                             <li><strong>Fiziksel Ortam:</strong> Kameralı alanlarda bilgilendirme yazıları asarak, iş başvurularında metin sunarak.</li>
+                         </ul>
+                         <p class="mt-3">Aydınlatma metni, veri toplamadan *önce* veya en geç toplama sırasında yapılmalıdır.</p>
+                     </div>
+                </details>
+
+                <!-- Soru 4: Çerez Politikası -->
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Çerez (Cookie) politikaları KVKK kapsamında mıdır?
+                        <span class="faq-toggle">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p><strong>Evet.</strong> Çerezler, özellikle kullanıcıları takip eden veya profilleyen türdeyse, kişisel veri toplama aracı olarak kabul edilir. Bu nedenle KVKK kapsamındadır.</p>
+                        <h5>Ne Yapılmalı?</h5>
+                        <ul>
+                            <li>Web sitenizde hangi çerezlerin kullanıldığını belirten bir **Çerez Politikası** yayınlamalısınız.</li>
+                            <li>Zorunlu olmayan çerezler (analitik, reklam vb.) için kullanıcıdan **açık rıza** almalısınız (genellikle bir çerez banner'ı ile).</li>
+                            <li>Kullanıcılara çerez tercihlerini yönetme imkanı sunmalısınız.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Soru 5: Veri İhlali -->
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Veri ihlali durumunda ne yapmalıyım?
+                        <span class="faq-toggle">+</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Bir veri ihlali (örn: siber saldırı, veri sızıntısı) tespit ettiğinizde sakin kalmalı ve şu adımları izlemelisiniz:</p>
+                        <ol>
+                            <li><strong>İhlali Durdur ve Sınırla:</strong> Güvenlik açığını kapatın, yayılmasını engelleyin.</li>
+                            <li><strong>Tespit ve Analiz:</strong> İhlalin kapsamını (hangi veriler, kaç kişi etkilendi) belirleyin.</li>
+                            <li><strong>Kurul'a Bildirim:</strong> İhlali öğrendikten sonra **en geç 72 saat içinde** Kişisel Verileri Koruma Kurumu'na bildirin.</li>
+                            <li><strong>İlgili Kişilere Bildirim:</strong> İhlalden etkilenen kişileri "gecikmeksizin" uygun bir yöntemle (e-posta vb.) bilgilendirin.</li>
+                            <li><strong>Kayıt Tutma:</strong> İhlalle ilgili tüm adımları kayıt altına alın.</li>
+                        </ol>
+                        <p class="mt-3">Bu süreci sorunsuz yönetmek için önceden hazırlanmış bir **"Veri İhlali Müdahale Planı"** olması kritiktir.</p>
+                    </div>
+                </details>
+
+                <!-- Soru 6: Açık Rıza -->
+                 <details class="faq-item">
+                     <summary class="faq-question">
+                         Her veri işleme için Açık Rıza almak zorunda mıyım?
+                         <span class="faq-toggle">+</span>
+                     </summary>
+                     <div class="faq-answer">
+                         <p><strong>Hayır.</strong> KVKK, veri işlemek için birden fazla hukuki sebep sunar. Açık rıza bunlardan sadece biridir ve *diğer şartlar* (kanunda öngörülme, sözleşmenin kurulması/ifası, hukuki yükümlülük, meşru menfaat vb.) geçerli değilse başvurulması gereken son çaredir.</p>
+                         <h5>Ne Zaman Açık Rıza Gerekir?</h5>
+                         <ul>
+                             <li>Pazarlama amaçlı e-posta/SMS gönderimi.</li>
+                             <li>Özel nitelikli kişisel verilerin (sağlık, biyometrik vb.) işlenmesi (istisnalar hariç).</li>
+                             <li>Verilerin yurtdışına aktarılması (istisnalar hariç).</li>
+                         </ul>
+                         <p class="mt-3">Birçok durumda (örn: fatura kesmek, sipariş teslim etmek, yasal zorunlulukları yerine getirmek) açık rıza almadan veri işleyebilirsiniz, ancak aydınlatma yükümlülüğünüz devam eder.</p>
+                     </div>
+                 </details>
+
+                 <!-- Soru 7: Veri Minimizasyonu -->
+                 <details class="faq-item">
+                     <summary class="faq-question">
+                         Veri Minimizasyonu ilkesi ne anlama geliyor?
+                         <span class="faq-toggle">+</span>
+                     </summary>
+                     <div class="faq-answer">
+                         <p><strong>Veri Minimizasyonu</strong>, KVKK'nın temel ilkelerinden biridir ve işleme amacıyla bağlantılı, sınırlı ve ölçülü olma anlamına gelir.</p>
+                         <p>Yani, bir işi yapmak için **gerekli olandan fazla kişisel veri toplamamalı, işlememeli ve saklamamalısınız.**</p>
+                         <h5>Örnek:</h5>
+                         <p>Bir e-bülten üyeliği için sadece e-posta adresi yeterliyken, doğum tarihi veya TC kimlik numarası gibi ilgisiz bilgileri istemek veri minimizasyonu ilkesine aykırıdır.</p>
+                         <p class="mt-3">Bu ilke, hem yasal uyumu sağlar hem de olası bir veri ihlalinin etkisini azaltır.</p>
+                     </div>
+                 </details>
+
+                 <!-- Soru 8: Veri Saklama ve İmha -->
+                 <details class="faq-item">
+                     <summary class="faq-question">
+                         Kişisel verileri ne kadar süreyle saklayabilirim? Silmek zorunda mıyım?
+                         <span class="faq-toggle">+</span>
+                     </summary>
+                     <div class="faq-answer">
+                         <p>Kişisel verileri, ancak işlendikleri amaç için **gerekli olan süre kadar** saklayabilirsiniz. Bu süre dolduğunda veya işleme amacı ortadan kalktığında verileri silmek, yok etmek veya anonim hale getirmek zorundasınız.</p>
+                         <h5>Saklama Süreleri Nasıl Belirlenir?</h5>
+                         <ul>
+                             <li><strong>Yasal Mevzuat:</strong> Bazı kanunlar (örn: Vergi Usul Kanunu, Türk Ticaret Kanunu) belirli belgeler için minimum saklama süreleri öngörür.</li>
+                             <li><strong>İşleme Amacı:</strong> Amacın gerektirdiği makul süre (örn: müşteri şikayetleri için garanti süresi + makul bir süre).</li>
+                         </ul>
+                         <p class="mt-3">Bu süreleri belirlemek ve uygulamak için bir **"Kişisel Veri Saklama ve İmha Politikası"** oluşturmanız önerilir.</p>
+                     </div>
+                 </details>
+
+                 <!-- Soru 9: Teknik ve İdari Tedbirler -->
+                 <details class="faq-item">
+                     <summary class="faq-question">
+                         KVKK için alınması gereken "Teknik ve İdari Tedbirler" nelerdir?
+                         <span class="faq-toggle">+</span>
+                     </summary>
+                     <div class="faq-answer">
+                         <p>Veri güvenliğini sağlamak için hem teknolojik hem de organizasyonel önlemler almanız gerekir.</p>
+                         <h5>Teknik Tedbirler (Örnekler):</h5>
+                         <ul>
+                             <li>Güvenlik duvarları (Firewall)</li>
+                             <li>Antivirüs yazılımları</li>
+                             <li>Veri yedekleme</li>
+                             <li>Erişim yetki kontrolleri</li>
+                             <li>Şifreleme (SSL vb.)</li>
+                             <li>Sızma (Penetrasyon) testleri</li>
+                         </ul>
+                         <h5>İdari Tedbirler (Örnekler):</h5>
+                         <ul>
+                             <li>KVKK politikaları ve prosedürleri oluşturma</li>
+                             <li>Çalışan eğitimleri ve farkındalık artırma</li>
+                             <li>Gizlilik taahhütnameleri imzalama</li>
+                             <li>Veri işleme envanteri hazırlama</li>
+                             <li>Risk analizleri yapma</li>
+                             <li>Veri minimizasyonu uygulama</li>
+                         </ul>
+                         <p class="mt-3">Alınacak tedbirler, işlediğiniz verinin türüne ve taşıdığı riske göre değişir.</p>
+                     </div>
+                 </details>
+
+                 <!-- Soru 10: Yurtdışına Veri Aktarımı -->
+                 <details class="faq-item">
+                     <summary class="faq-question">
+                         Yurtdışındaki bir servisi (örn: Mailchimp, Google Analytics) kullanmak KVKK açısından sorun mu?
+                         <span class="faq-toggle">+</span>
+                     </summary>
+                     <div class="faq-answer">
+                         <p>Kişisel verilerin yurtdışına aktarımı KVKK'da özel kurallara tabidir. Verilerin aktarılacağı ülke veya uluslararası kuruluşun "yeterli korumaya" sahip olması veya belirli şartların sağlanması gerekir.</p>
+                         <h5>Ne Yapılmalı?</h5>
+                         <ul>
+                             <li>Kullandığınız yurtdışı servis sağlayıcının bulunduğu ülkenin Kurul tarafından "yeterli korumaya sahip" ilan edilip edilmediğini kontrol edin (Şu an için ilan edilmiş bir ülke yok).</li>
+                             <li>Eğer yeterli koruma yoksa, veri aktarımı için şu şartlardan biri sağlanmalı:
+                                 <ul>
+                                     <li>İlgili kişinin **açık rızası**.</li>
+                                     <li>Kurul tarafından onaylanmış **taahhütnameler** veya **bağlayıcı şirket kuralları**.</li>
+                                     <li>Kanundaki diğer istisnai durumlar (nadir).</li>
+                                 </ul>
+                             </li>
+                             <li>Kullanıcıları aydınlatma metninizde ve gizlilik politikanızda yurtdışına veri aktarımı konusunda bilgilendirin.</li>
+                         </ul>
+                         <p class="mt-3">Bu konu karmaşık olabildiğinden, yurtdışı servisleri kullanmadan önce hukuki görüş almanız önerilir.</p>
+                     </div>
+                 </details>
+
+            </div> <!-- faq-section sonu -->
+
+             <!-- Resmi Kaynak Bölümü -->
+             <div class="content-box resource-box mt-4">
+                 <h3>Resmi Kaynak: 6698 Sayılı Kanun</h3>
+                 <p>Kişisel Verilerin Korunması Kanunu'nun en güncel ve tam metnine doğrudan T.C. Cumhurbaşkanlığı Mevzuat Bilgi Sistemi üzerinden ulaşabilirsiniz.</p>
+                 <a href="https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=6698&MevzuatTur=1&MevzuatTertip=5" class="button mt-2" target="_blank" rel="noopener noreferrer">
+                     Kanun Metnini Görüntüle
+                 </a>
+             </div>
+
+        </div> <!-- content-box sonu -->
     </main>
 
+    <!-- Footer Bölümü -->
     <footer>
         <div class="container text-center">
             <p>© 2025 GRCKobi. Tüm hakları saklıdır.</p>
             <p class="mt-2">
-                <a href="gizlilik-politikasi.html">Gizlilik Politikası</a> | 
-                <a href="kullanim-sartlari.html">Kullanım Şartları</a> | 
+                <a href="gizlilik-politikasi.html">Gizlilik Politikası</a> |
+                <a href="kullanim-sartlari.html">Kullanım Şartları</a> |
                 <a href="iletisim.html">İletişim</a>
             </p>
         </div>
     </footer>
 
+    <!-- Hoş Geldiniz Baloncuğu -->
     <div class="welcome-bubble">
         <button class="close-btn" aria-label="Kapat" title="Kapat">&times;</button>
         <h3>Merhaba!</h3>
         <p>GRCKobi'ye hoş geldiniz!</p>
     </div>
+
+    <!-- Yukarı Çık Butonu -->
     <button id="scrollTopBtn" title="Yukarı Çık">&uarr;</button>
+
 </body>
 </html>
 
