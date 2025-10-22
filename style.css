@@ -403,13 +403,37 @@ body.dark-mode .nav-toggle .bar {
 }
 
 
-/* --- Mobil Ekran Ayarları (@media sorgusu) --- */
-@media (max-width: 768px) { /* Bu değeri ihtiyaca göre ayarlayabilirsin */
+/* ===================================
+   V3.5 CİLASI: Düzeltilmiş Mobil Menü Stilleri
+   =================================== */
+
+@media (max-width: 768px) {
+
+    .header-content {
+        /* Mobil header içindeki elemanları daha iyi hizala */
+        position: relative; /* Butonların konumlanması için */
+        height: 60px; /* Sabit yükseklik verelim */
+    }
 
     /* Hamburger ikonunu göster */
     .nav-toggle {
         display: flex;
+         /* Konumunu ayarla (sağa yasla) */
+        position: absolute;
+        top: 50%;
+        right: 60px; /* Tema butonundan önce */
+        transform: translateY(-50%);
     }
+
+    /* Tema butonunu sağa yasla */
+     #theme-toggle-button {
+         position: absolute;
+         top: 50%;
+         right: 10px; /* En sağda */
+         transform: translateY(-50%);
+         margin-left: 0; /* Soldaki boşluğu kaldır */
+     }
+
 
     /* Normal menüyü gizle ve mobil için hazırla */
     .main-navigation {
@@ -423,7 +447,7 @@ body.dark-mode .nav-toggle .bar {
         background-color: var(--color-background-content);
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
         z-index: 1000;
-        padding-top: 80px; /* Header yüksekliği kadar boşluk */
+        padding-top: 60px; /* Header yüksekliği kadar boşluk */
         transition: left 0.3s ease-in-out; /* Kayma animasyonu */
         overflow-y: auto; /* Çok link olursa kaydırılabilsin */
     }
@@ -438,24 +462,26 @@ body.dark-mode .nav-toggle .bar {
     .nav-menu {
         display: flex; /* Flexbox'ı burada tekrar aktif et */
         flex-direction: column; /* Linkleri alt alta sırala */
-        align-items: center; /* Ortala */
-        padding: 2rem 0;
+        align-items: stretch; /* Linklerin genişlemesini sağla */
+        padding: 1rem 0; /* Üst ve alt boşluk */
     }
 
-    /* Mobil menüdeki her bir link */
+    /* Mobil menüdeki her bir link öğesi */
     .nav-menu li {
         display: block;
         margin: 0; /* Soldaki boşluğu sıfırla */
         width: 100%;
-        text-align: center;
+        text-align: left; /* Linkleri sola yasla */
     }
 
+    /* Mobil menüdeki her bir link */
     .nav-menu a {
         display: block; /* Tüm satırı kaplasın */
-        padding: 1rem 0; /* Daha büyük tıklama alanı */
+        padding: 1rem 1.5rem; /* Daha büyük tıklama alanı ve iç boşluk */
         width: 100%;
         border-bottom: 1px solid var(--color-border); /* Aralarına çizgi */
-        font-size: 1.1rem;
+        font-size: 1rem; /* Font boyutunu ayarla */
+        text-align: left; /* Metni sola yasla */
     }
      .nav-menu li:last-child a {
          border-bottom: none; /* Son linkin alt çizgisini kaldır */
@@ -465,7 +491,7 @@ body.dark-mode .nav-toggle .bar {
         display: none; /* Mobilde aktif link alt çizgisini kaldır */
     }
 
-    /* --- Hamburger "X" Animasyonu --- */
+    /* --- Hamburger "X" Animasyonu (Aynı kalabilir) --- */
     .nav-toggle.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
@@ -475,4 +501,10 @@ body.dark-mode .nav-toggle .bar {
     .nav-toggle.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
+    /* Mobil için diğer sayfa elemanlarının ayarları (gerekirse) */
+    main {
+        padding-top: 60px; /* Sabit header için içeriğe üst boşluk ver */
+    }
+
 } /* @media sonu */
