@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="GRC (Yönetişim, Risk ve Uyum) nedir? KOBİ'ler için GRC bileşenlerini ve pratik adımları öğrenin.">
     <meta name="author" content="GRCKobi">
-    
+
     <!-- Sayfa Başlığı -->
     <title>GRC Nedir? - GRCKobi</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23005F73'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial, sans-serif' fill='white' text-anchor='middle' font-weight='bold'%3EGK%3C/text%3E%3C/svg%3E">
@@ -14,10 +14,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- CSS Dosyası -->
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- JavaScript Dosyası -->
     <script src="site-scripts.js" defer></script>
 </head>
@@ -27,12 +27,11 @@
     <header>
         <div class="container">
             <div class="header-content">
-               <div class="logo">
-    <a href="index.html">GRC<span class="logo-kobi">Kobi</span></a>
-</div>
-                <nav class="main-navigation" id="mainNavMenu"> 
-    <!-- İçindeki <ul> listesi aynı kalacak -->
-
+                <div class="logo">
+                    <a href="index.html">GRC<span class="logo-kobi">Kobi</span></a>
+                </div>
+                <!-- === DÜZELTİLMİŞ NAV YAPISI === -->
+                <nav class="main-navigation" id="mainNavMenu">
                     <ul class="nav-menu">
                         <li><a href="index.html">Ana Sayfa</a></li>
                         <li><a href="grc-nedir.html" class="active">GRC Nedir?</a></li>
@@ -42,12 +41,14 @@
                         <li><a href="iletisim.html">İletişim</a></li>
                     </ul>
                 </nav>
+                <!-- === DÜZELTİLMİŞ NAV YAPISI SONU === -->
+
                 <!-- Hamburger Menü Butonu (Sadece Mobilde Görünecek) -->
-<button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-</button>
+                <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
                 <button id="theme-toggle-button" class="dark-mode-toggle" aria-label="Tema değiştir" title="Tema değiştir">🌙</button>
             </div>
         </div>
@@ -61,7 +62,7 @@
         <div class="content-box">
             <h1 class="text-center">GRC: Yönetişim, Risk ve Uyum Nedir?</h1>
             <p class="text-center">Modern işletmeler için kritik öneme sahip üç temel bileşeni ve KOBİ'niz için pratik yol haritasını keşfedin.</p>
-            
+
             <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
                 <!-- Kart 1: Governance -->
                 <div class="flip-card">
@@ -70,7 +71,7 @@
                             <h3>Yönetişim (Governance)</h3>
                         </div>
                         <div class="flip-card-back">
-                            <h3>Yönetişim Nedir?</h3>
+                            <h4>Yönetişim Nedir?</h4>
                             <p>Bir organizasyonun hedeflerine ulaşması için gerekli olan liderlik, yapı ve süreçlerin oluşturulmasıdır.</p>
                         </div>
                     </div>
@@ -82,7 +83,7 @@
                             <h3>Risk (Risk Management)</h3>
                         </div>
                         <div class="flip-card-back">
-                            <h3>Risk Yönetimi Nedir?</h3>
+                            <h4>Risk Yönetimi Nedir?</h4>
                             <p>İşletmenizi tehdit eden potansiyel sorunları önceden belirleme ve bunlara karşı önlem alma sürecidir.</p>
                         </div>
                     </div>
@@ -94,7 +95,7 @@
                             <h3>Uyum (Compliance)</h3>
                         </div>
                         <div class="flip-card-back">
-                            <h3>Uyum Nedir?</h3>
+                            <h4>Uyum Nedir?</h4>
                             <p>İşletmenizin tüm yasal düzenlemelere, sektör standartlarına ve iç politikalara uygun hareket etmesini sağlamaktır.</p>
                         </div>
                     </div>
@@ -105,39 +106,39 @@
         <div class="content-box">
             <h2>KOBİ'ler için Adım Adım GRC Yol Haritası</h2>
             <p>GRC, karmaşık bir süreç olmak zorunda değil. İşte KOBİ'nizin uyum ve güvenlik seviyesini artırmak için atabileceğiniz pratik adımlar:</p>
-            
+
             <details class="faq-item mt-3">
-                <summary>Adım 1: Mevcut Durumu Değerlendir (Check-up Yap)</summary>
+                <summary><span class="faq-question">Adım 1: Mevcut Durumu Değerlendir (Check-up Yap)</span><span class="faq-toggle">+</span></summary>
                 <div class="faq-answer">
                     <p>Nerede olduğunuzu bilmeden nereye gideceğinizi planlayamazsınız. Mevcut politikalarınızı, teknolojik altyapınızı ve çalışanlarınızın bilgi seviyesini dürüstçe değerlendirin. Hangi verileri topluyorsunuz? Bu verileri nerede saklıyorsunuz? Kimlerin erişimi var?</p>
                 </div>
             </details>
             <details class="faq-item">
-                <summary>Adım 2: Öncelikleri Belirle (Yol Haritası Çiz)</summary>
+                <summary><span class="faq-question">Adım 2: Öncelikleri Belirle (Yol Haritası Çiz)</span><span class="faq-toggle">+</span></summary>
                 <div class="faq-answer">
                     <p>Her şeyi aynı anda yapamazsınız. İşletmeniz için en büyük riskler nerede? (Örn: Müşteri verileri, finansal bilgiler). Yasal olarak uymak zorunda olduğunuz en acil konular neler? (Örn: KVKK aydınlatma metni). En yüksek riskli ve en acil konulardan başlayarak bir yol haritası oluşturun.</p>
                 </div>
             </details>
             <details class="faq-item">
-                <summary>Adım 3: Temel Politikaları Oluştur (Anayasanı Yaz)</summary>
+                <summary><span class="faq-question">Adım 3: Temel Politikaları Oluştur (Anayasanı Yaz)</span><span class="faq-toggle">+</span></summary>
                 <div class="faq-answer">
                     <p>Karmaşık olmak zorunda değil. Başlangıç için "Bilgi Güvenliği Politikası", "Kişisel Veri Saklama ve İmha Politikası" gibi temel belgeleri hazırlayın. Bu belgeler, tüm çalışanlar için kuralları netleştirir.</p>
                 </div>
             </details>
              <details class="faq-item">
-                <summary>Adım 4: Sorumlulukları Dağıt (Kaptanları Belirle)</summary>
+                <summary><span class="faq-question">Adım 4: Sorumlulukları Dağıt (Kaptanları Belirle)</span><span class="faq-toggle">+</span></summary>
                 <div class="faq-answer">
                     <p>"Herkesin işi, kimsenin işidir." KVKK ve veri güvenliği konularından kimin sorumlu olacağını net bir şekilde belirleyin. Bu bir kişi veya küçük bir ekip olabilir. Önemli olan, sorumluluğun net olmasıdır.</p>
                 </div>
             </details>
              <details class="faq-item">
-                <summary>Adım 5: Eğit ve Bilinçlendir (Farkındalık Yarat)</summary>
+                <summary><span class="faq-question">Adım 5: Eğit ve Bilinçlendir (Farkındalık Yarat)</span><span class="faq-toggle">+</span></summary>
                 <div class="faq-answer">
                     <p>En güçlü güvenlik sisteminiz, bilinçli çalışanlarınızdır. Oltalama (phishing) e-postaları, güçlü şifre kullanımı ve veri gizliliği konularında düzenli, kısa ve anlaşılır eğitimler düzenleyin.</p>
                 </div>
             </details>
              <details class="faq-item">
-                <summary>Adım 6: İzle ve Gözden Geçir (Sürekli İyileştir)</summary>
+                <summary><span class="faq-question">Adım 6: İzle ve Gözden Geçir (Sürekli İyileştir)</span><span class="faq-toggle">+</span></summary>
                 <div class="faq-answer">
                     <p>GRC, bir kerelik bir proje değil, sürekli bir süreçtir. Belirlediğiniz politikaların işe yarayıp yaramadığını 3-6 ayda bir kontrol edin. Yeni riskler ortaya çıktı mı? Mevzuat değişti mi? Süreçlerinizi bu değişikliklere göre güncelleyin.</p>
                 </div>
@@ -150,8 +151,8 @@
         <div class="container text-center">
             <p>© 2025 GRCKobi. Tüm hakları saklıdır.</p>
             <p class="mt-2">
-                <a href="gizlilik-politikasi.html">Gizlilik Politikası</a> | 
-                <a href="kullanim-sartlari.html">Kullanım Şartları</a> | 
+                <a href="gizlilik-politikasi.html">Gizlilik Politikası</a> |
+                <a href="kullanim-sartlari.html">Kullanım Şartları</a> |
                 <a href="iletisim.html">İletişim</a>
             </p>
         </div>
@@ -168,8 +169,4 @@
     <button id="scrollTopBtn" title="Yukarı Çık">&uarr;</button>
 </body>
 </html>
-
-
-
-
 
