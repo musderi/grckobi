@@ -369,3 +369,110 @@ footer {
     /* Eğer farklı bir font istersen buraya ekleyebilirsin, örn: */
     /* font-family: 'Georgia', serif; */
 }
+
+/* ===================================
+   V3.5 CİLASI: Hamburger Menü Stilleri
+   =================================== */
+
+/* --- Hamburger Butonu --- */
+.nav-toggle {
+    display: none; /* Masaüstünde gizli */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001; /* Açık menünün üzerinde kalması için */
+    margin-left: 1rem; /* Tema butonuyla arasına boşluk */
+}
+
+.nav-toggle .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-primary); /* Ana rengimizi kullan */
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+body.dark-mode .nav-toggle .bar {
+    background-color: var(--color-secondary); /* Koyu modda farklı renk */
+}
+
+
+/* --- Mobil Ekran Ayarları (@media sorgusu) --- */
+@media (max-width: 768px) { /* Bu değeri ihtiyaca göre ayarlayabilirsin */
+
+    /* Hamburger ikonunu göster */
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* Normal menüyü gizle ve mobil için hazırla */
+    .main-navigation {
+        display: none; /* Başlangıçta gizli */
+        position: fixed; /* Ekranı kaplaması için */
+        top: 0;
+        left: -100%; /* Başlangıçta ekranın solunda */
+        width: 80%; /* Ekranın %80'ini kaplasın */
+        max-width: 300px; /* Maksimum genişlik */
+        height: 100vh; /* Tüm yüksekliği kaplasın */
+        background-color: var(--color-background-content);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding-top: 80px; /* Header yüksekliği kadar boşluk */
+        transition: left 0.3s ease-in-out; /* Kayma animasyonu */
+        overflow-y: auto; /* Çok link olursa kaydırılabilsin */
+    }
+
+    /* Menü açıldığında (.active class'ı eklenince) */
+    .main-navigation.active {
+        display: block; /* Görünür yap */
+        left: 0; /* Ekranın soluna getir */
+    }
+
+    /* Mobil menüdeki link listesi */
+    .nav-menu {
+        display: flex; /* Flexbox'ı burada tekrar aktif et */
+        flex-direction: column; /* Linkleri alt alta sırala */
+        align-items: center; /* Ortala */
+        padding: 2rem 0;
+    }
+
+    /* Mobil menüdeki her bir link */
+    .nav-menu li {
+        display: block;
+        margin: 0; /* Soldaki boşluğu sıfırla */
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        display: block; /* Tüm satırı kaplasın */
+        padding: 1rem 0; /* Daha büyük tıklama alanı */
+        width: 100%;
+        border-bottom: 1px solid var(--color-border); /* Aralarına çizgi */
+        font-size: 1.1rem;
+    }
+     .nav-menu li:last-child a {
+         border-bottom: none; /* Son linkin alt çizgisini kaldır */
+     }
+
+    .nav-menu a.active::after {
+        display: none; /* Mobilde aktif link alt çizgisini kaldır */
+    }
+
+    /* --- Hamburger "X" Animasyonu --- */
+    .nav-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .nav-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+} /* @media sonu */
