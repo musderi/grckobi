@@ -1,373 +1,732 @@
 /* ===================================
-   GRCKOBI V3.5 - FİNAL STİL DOSYASI
+   GRCKOBI V3.5 - Style Sheet (Final)
    =================================== */
 
-/* --- CSS Değişkenleri (Renk Paleti) --- */
+/* CSS Değişkenleri - Renk Paleti */
 :root {
-  --color-primary: #005F73;
-  --color-secondary: #D4A017;
-  --color-text: #333333;
-  --color-background-content: #FFFFFF;
-  --color-border: #E5E7EB;
-  --color-shadow: rgba(0, 0, 0, 0.05);
-  --transition-speed: 0.3s;
-  --border-radius: 12px;
+    --color-primary: #005F73; /* Ana Teal/Lacivert */
+    --color-secondary: #D4A017; /* İkincil Altın/Hardal */
+    --color-text: #333333; /* Ana Metin Rengi (Açık Mod) */
+    --color-text-muted: #6c757d; /* Daha soluk metin */
+    --color-background-body: #f8f9fa; /* Sayfa Arka Planı (Açık Mod) */
+    --color-background-content: #FFFFFF; /* İçerik Kutusu Arka Planı (Açık Mod) */
+    --color-border: #dee2e6; /* Kenarlık Rengi (Açık Mod) */
+    --color-shadow: rgba(0, 0, 0, 0.05); /* Gölge Rengi (Açık Mod) */
+    --transition-speed: 0.3s;
+    --border-radius: 8px; /* Köşe Yuvarlaklığı */
+    --container-max-width: 1140px; /* Ana içerik genişliği */
 }
 
-/* --- Dark Mode Değişkenleri --- */
+/* Dark Mode Değişkenleri */
 body.dark-mode {
-  --color-text: #E2E8F0;
-  --color-background-content: #2D3748;
-  --color-border: #4A5568;
-  --color-shadow: rgba(0, 0, 0, 0.3);
+    --color-primary: #007A94; /* Koyu modda biraz daha parlak Teal */
+    --color-secondary: #E6B325; /* Koyu modda biraz daha parlak Altın */
+    --color-text: #E2E8F0; /* Ana Metin Rengi (Koyu Mod) */
+    --color-text-muted: #94a3b8; /* Daha soluk metin (Koyu Mod) */
+    --color-background-body: #1a202c; /* Sayfa Arka Planı (Koyu Mod) */
+    --color-background-content: #2d3748; /* İçerik Kutusu Arka Planı (Koyu Mod) */
+    --color-border: #4a5568; /* Kenarlık Rengi (Koyu Mod) */
+    --color-shadow: rgba(0, 0, 0, 0.3); /* Gölge Rengi (Koyu Mod) */
 }
 
-/* --- Temel Reset ve Body Stilleri --- */
+/* Temel Reset ve Body Stilleri */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Yumuşak kaydırma */
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.6;
-  color: var(--color-text);
-  background-color: #F7FAFC;
-  min-height: 100vh;
-  position: relative;
-  transition: all var(--transition-speed) ease;
+    font-family: 'Inter', sans-serif; /* Ana font */
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-background-body);
+    min-height: 100vh;
+    position: relative;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- Arka Plan Deseni (Mandala) --- */
+/* Arka Plan Deseni (Mandala) */
 body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('arka-plan-deseni.jpg');
-  background-repeat: repeat;
-  background-attachment: fixed;
-  opacity: 0.65;
-  z-index: -1;
-  pointer-events: none;
-  transition: opacity var(--transition-speed) ease;
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('arka-plan-deseni.jpg');
+    background-repeat: repeat;
+    background-size: auto; /* Desenin orijinal boyutunu koru */
+    background-position: top left;
+    opacity: 0.65; /* %65 Görünürlük */
+    z-index: -1;
+    pointer-events: none;
+    transition: opacity var(--transition-speed) ease;
 }
 
+/* Dark Mode Arka Plan Opaklığı */
 body.dark-mode::before {
-  opacity: 0.15;
+    opacity: 0.15; /* Koyu modda daha soluk */
 }
 
-/* --- Header Stilleri --- */
+/* Container */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 1rem; /* Yan boşluklar */
+}
+
+/* Header Stilleri */
 header {
-  background-color: var(--color-background-content);
-  box-shadow: 0 2px 10px var(--color-shadow);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  transition: all var(--transition-speed) ease;
+    background-color: var(--color-background-content);
+    box-shadow: 0 2px 5px var(--color-shadow);
+    position: sticky; /* Yukarı yapışık */
+    top: 0;
+    z-index: 100;
+    transition: background-color var(--transition-speed) ease;
 }
 
 .header-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
-  min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 70px;
+    position: relative; /* Mobil butonların konumlanması için */
 }
 
+/* Logo Stili */
 .logo a {
-  color: var(--color-primary);
-  text-decoration: none;
-  font-size: 1.75rem;
-  font-weight: 700;
-  font-family: 'Lexend', sans-serif;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: 700;
+    font-family: 'Lexend', sans-serif; /* Logo için farklı font */
 }
 
+.logo a:hover {
+    color: var(--color-secondary);
+}
+
+.logo .logo-kobi {
+    font-style: italic; /* "Kobi" kısmını italik yapar */
+    font-weight: 500;
+}
+
+/* Ana Navigasyon */
 .main-navigation {
-  margin: 0 2rem;
+    /* Masaüstü stilleri (mobilde @media içinde ezilecek) */
 }
 
 .nav-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+    list-style: none;
+    display: flex;
 }
 
 .nav-menu li {
-  margin-left: 2rem;
+    margin-left: 1.8rem;
 }
 
 .nav-menu a {
-  color: var(--color-text);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 0;
-  position: relative;
-  transition: color var(--transition-speed) ease;
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0; /* Alt çizgi için boşluk */
+    position: relative;
+    transition: color var(--transition-speed) ease;
 }
 
-.nav-menu a:hover,
+.nav-menu a:hover {
+    color: var(--color-primary);
+}
+
+/* Aktif Sayfa Göstergesi (Alt Çizgi) */
 .nav-menu a.active {
-  color: var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 600;
 }
 
 .nav-menu a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background-color: var(--color-primary);
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
 }
 
-/* --- Genel İçerik Stilleri --- */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem;
+/* Tema Değiştirme Butonu */
+.dark-mode-toggle {
+    background: none;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-speed) ease;
+    margin-left: 1rem; /* Hamburger butonuyla arasına boşluk */
 }
 
+.dark-mode-toggle:hover {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+/* Akıllı Geri Dön Butonu */
+#smartBackButton {
+    position: fixed;
+    top: 90px;
+    left: 20px;
+    display: none; /* JS ile gösterilecek */
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+    line-height: 1; /* Oku ortalamak için */
+    cursor: pointer;
+    box-shadow: 0 4px 12px var(--color-shadow);
+    transition: all var(--transition-speed) ease;
+    z-index: 998; /* Diğer butonların altında */
+}
+
+#smartBackButton:hover {
+    background-color: var(--color-secondary);
+    transform: translateX(-2px);
+}
+
+/* Ana İçerik Alanı */
 main {
-  padding: 2rem 0;
+    padding-top: 2rem; /* Header'dan sonra boşluk */
+    padding-bottom: 2rem;
 }
 
-.content-box {
-  background-color: var(--color-background-content);
-  border-radius: var(--border-radius);
-  padding: 2rem;
-  margin: 1.5rem 0;
-  box-shadow: 0 4px 12px var(--color-shadow);
-  border: 1px solid var(--color-border);
-  transition: all var(--transition-speed) ease;
-}
-
-h1, h2, h3 {
-  font-family: 'Lexend', sans-serif;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
-}
-
-/* --- Hero Bölümü --- */
+/* Hero (Karşılama) Bölümü */
 .hero {
-  padding: 4rem 0;
+    padding: 4rem 0;
+    text-align: center;
+    /* Hero bölümüne özel stil eklemeye gerek yok, content-box içinde değil */
 }
 
 .hero h1 {
-  font-size: 2.8rem;
+    font-size: 2.8rem;
+    font-family: 'Lexend', sans-serif;
+    margin-bottom: 1rem;
+    color: var(--color-primary); /* Ana sayfadaki başlık rengi */
 }
+body.dark-mode .hero h1 { color: var(--color-secondary); } /* Koyu modda farklı */
+
 
 .hero .lead {
-  font-size: 1.2rem;
-  color: var(--color-text);
-  opacity: 0.8;
-  max-width: 600px;
-  margin: 1rem auto 0;
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
 }
-
+/* V3.5 DÜZELTMESİ: Koyu Tema Okunurluk */
 body.dark-mode .hero .lead {
     color: var(--color-text);
     opacity: 0.85;
 }
 
-/* --- Butonlar --- */
-.button, button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--color-primary);
-  color: #FFFFFF;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all var(--transition-speed) ease;
+.hero-buttons a {
+    margin: 0.5rem;
 }
 
-.button:hover, button:hover {
-  background-color: var(--color-secondary);
-  transform: translateY(-2px);
+/* İçerik Bölümleri (Ana Sayfa Akışı) */
+.content-section {
+    padding: 3rem 0; /* Bölümler arası boşluk */
+}
+
+/* İçerik Kutuları */
+.content-box {
+    background-color: var(--color-background-content);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px var(--color-shadow);
+    border: 1px solid var(--color-border);
+    transition: box-shadow var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.content-box:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+}
+body.dark-mode .content-box:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Başlıklar */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-primary);
+    font-family: 'Lexend', sans-serif; /* Başlıklar için farklı font */
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+
+/* Paragraflar */
+p {
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+p.lead {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+}
+
+/* Linkler */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+a:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+/* Butonlar */
+.button, button[type="submit"] { /* Form butonu da dahil */
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background-color: var(--color-primary);
+    color: #FFFFFF !important; /* Link içindeyse bile beyaz kalsın */
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    text-align: center;
+    text-decoration: none !important; /* Alt çizgiyi kaldır */
+}
+
+.button:hover, button[type="submit"]:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .button-secondary {
-  background-color: var(--color-secondary);
+    background-color: var(--color-secondary);
 }
-
 .button-secondary:hover {
-  background-color: var(--color-primary);
+    background-color: var(--color-primary);
 }
 
-/* --- Dark Mode, Geri ve Yukarı Butonları --- */
-.dark-mode-toggle, #scrollTopBtn, #smartBackButton {
+
+/* 3D Flip Card Yapısı (grc-nedir.html) */
+.flip-card {
+    background-color: transparent;
+    width: 100%; /* Konteynerine göre genişlesin */
+    max-width: 320px; /* Maksimum genişlik */
+    height: 300px; /* Yükseklik */
+    perspective: 1000px;
+    margin: 1rem auto; /* Otomatik ortala */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 18px var(--color-shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.flip-card-front {
     background-color: var(--color-background-content);
     color: var(--color-text);
     border: 1px solid var(--color-border);
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    box-shadow: 0 4px 12px var(--color-shadow);
-    transition: all var(--transition-speed) ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+.flip-card-front h3 { margin-bottom: 0.5rem; }
+
+.flip-card-back {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    transform: rotateY(180deg);
 }
 
-.dark-mode-toggle:hover, #scrollTopBtn:hover, #smartBackButton:hover {
+.flip-card-back h4 {
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+}
+
+.flip-card-back p {
+    color: #FFFFFF;
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+
+/* Grid Yapısı */
+.grid {
+    display: grid;
+    gap: 1.5rem; /* Öğeler arası boşluk */
+}
+/* Gerekirse sütun sayılarını burada tanımlayabiliriz, örn: */
+/* .grid-3-cols { grid-template-columns: repeat(3, 1fr); } */
+
+
+/* ===================================
+   V3.5 CİLASI: Şık SSS (Accordion) Stilleri
+   =================================== */
+.faq-section {
+    margin-top: 3rem;
+}
+
+.faq-item {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    background-color: var(--color-background-content);
+    transition: all var(--transition-speed) ease;
+    overflow: hidden; /* İçerik taşmasını engelle */
+}
+
+.faq-item summary {
+    display: flex; /* İkonu sağa yaslamak için */
+    justify-content: space-between; /* Soru ve ikonu ayır */
+    align-items: center; /* Dikeyde ortala */
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    list-style: none; /* Varsayılan oku kaldır */
+    transition: background-color var(--transition-speed) ease;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none; /* Chrome/Safari varsayılan oku */
+}
+
+.faq-item summary:hover {
+    background-color: #f8f9fa; /* Hafif hover efekti */
+}
+body.dark-mode .faq-item summary:hover {
+    background-color: #4a5568;
+}
+
+.faq-item .faq-question {
+    flex-grow: 1; /* Sorunun tüm alanı kaplamasını sağla */
+    margin-right: 1rem; /* İkonla arasına boşluk */
+}
+
+.faq-item .faq-toggle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    transition: transform var(--transition-speed) ease;
+}
+
+.faq-item[open] summary {
     background-color: var(--color-primary);
     color: white;
+    border-bottom: 1px solid var(--color-border); /* Açıkken alt çizgi */
+}
+.faq-item[open] summary .faq-question {
+    color: white; /* Başlık rengini de beyaz yap */
+}
+.faq-item[open] summary .faq-toggle {
+    color: white;
+    transform: rotate(45deg); /* Artı işaretini X'e çevir */
 }
 
-#scrollTopBtn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    display: none; /* JS ile kontrol edilir */
-    z-index: 999;
+.faq-answer {
+    padding: 1.5rem;
+    border-top: 1px dashed var(--color-border); /* Cevap kısmını ayır */
+    line-height: 1.8;
 }
 
-#smartBackButton {
-    position: fixed;
-    top: 90px;
-    left: 20px;
-    display: none; /* JS ile kontrol edilir */
-    z-index: 999;
+.faq-answer p, .faq-answer ul, .faq-answer ol {
+    margin-bottom: 1rem;
+}
+.faq-answer ul, .faq-answer ol {
+     padding-left: 1.5rem;
+}
+.faq-answer h5 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--color-primary);
+}
+.faq-answer strong {
+    color: var(--color-primary);
+}
+body.dark-mode .faq-answer strong {
+    color: var(--color-secondary);
 }
 
 
-/* --- Diğer V3.5 Özellikleri (Flip Card, Risk Testi vb.) --- */
-/* Bu kodlar diğer sayfalarda kullanılmak üzere burada kalmalı */
-
-/* 3D Flip Card */
-.flip-card {
-  background-color: transparent;
-  width: 100%;
-  max-width: 320px;
-  height: 350px;
-  perspective: 1000px;
-  margin: 1rem auto;
-}
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: var(--border-radius);
-  box-shadow: 0 8px 20px var(--color-shadow);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  text-align: center;
-}
-.flip-card-front {
-  background-color: var(--color-background-content);
-}
-.flip-card-back {
-  background-color: var(--color-primary);
-  color: white;
-  transform: rotateY(180deg);
-}
-.flip-card-back h3, .flip-card-back p {
-  color: white;
-}
-
-/* Risk Testi */
-#riskTestForm .question-item { margin-bottom: 1.5rem; }
-#riskTestForm h4 { margin-bottom: 1rem; }
-#riskTestForm .radio-group label { display: block; margin-bottom: 0.5rem; }
-#test-results { margin-top: 2rem; padding: 1.5rem; border-radius: 8px; }
-.low-risk { background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
-.medium-risk { background-color: #fff3cd; border: 1px solid #ffeeba; color: #856404; }
-.high-risk { background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
-
-/* KVKK Kaynak Kutusu */
+/* Resmi Kaynak Kutusu */
 .resource-box {
     background-color: #f0f9ff;
     border-left: 5px solid var(--color-primary);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 body.dark-mode .resource-box {
     background-color: #1e293b;
+    border-left-color: var(--color-secondary);
+}
+.resource-box h3 {
+    margin-bottom: 0.8rem;
+    color: var(--color-primary);
+}
+body.dark-mode .resource-box h3 {
+    color: var(--color-secondary);
+}
+
+
+/* Risk Testi Stilleri */
+.risk-test-form {
+    /* Form genel stilleri buraya eklenebilir */
+}
+
+.question-item {
+    background: #f8f9fa;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--color-border);
+}
+body.dark-mode .question-item { background: #374151; }
+
+.question-item h4 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    background: var(--color-background-content);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    font-size: 1rem;
+}
+
+.radio-group label:hover {
+    border-color: var(--color-primary);
+    background: #f0f9ff;
+}
+body.dark-mode .radio-group label:hover {
+    border-color: var(--color-secondary);
+    background: #4a5568;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 0.8rem;
+    accent-color: var(--color-primary);
+    transform: scale(1.1);
+}
+body.dark-mode .radio-group input[type="radio"] { accent-color: var(--color-secondary); }
+
+
+.radio-group label:has(input:checked) {
+    border-color: var(--color-primary);
+    background: #e6f7ff;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+body.dark-mode .radio-group label:has(input:checked) {
+    border-color: var(--color-secondary);
+    background: #4a5568;
+    color: var(--color-secondary);
+}
+
+#test-results {
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    border: 3px solid;
+    display: none; /* Başlangıçta gizli */
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+
+.result-score {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.result-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.result-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Risk Seviyesi Renkleri */
+.low-risk { background-color: #d1e7dd; border-color: #0f5132; color: #0f5132; }
+.low-risk .result-score { color: #198754; }
+body.dark-mode .low-risk { background-color: #0f5132; border-color: #badbcc; color: #c3e6cb;}
+body.dark-mode .low-risk .result-score { color: #75b798; }
+
+
+.medium-risk { background-color: #fff3cd; border-color: #ffc107; color: #664d03; }
+.medium-risk .result-score { color: #ffc107; }
+body.dark-mode .medium-risk { background-color: #664d03; border-color: #ffecb5; color: #ffe69c;}
+body.dark-mode .medium-risk .result-score { color: #ffda6a; }
+
+.high-risk { background-color: #f8d7da; border-color: #dc3545; color: #842029; }
+.high-risk .result-score { color: #dc3545; }
+body.dark-mode .high-risk { background-color: #842029; border-color: #f5c2c7; color: #f1b0b7;}
+body.dark-mode .high-risk .result-score { color: #ea868f; }
+
+
+/* Footer */
+footer {
+    background-color: #343a40; /* Footer için koyu bir renk */
+    color: #adb5bd; /* Footer metin rengi */
+    padding: 2.5rem 0 1.5rem;
+    margin-top: 4rem; /* Main ile arasına boşluk */
+    font-size: 0.9em;
+}
+body.dark-mode footer {
+    background-color: #1a202c; /* Koyu modda daha da koyu */
+}
+
+footer a {
+    color: #dee2e6; /* Footer link rengi */
+}
+footer a:hover {
+    color: #ffffff;
 }
 
 /* Hoş Geldiniz Baloncuğu */
 .welcome-bubble {
-  position: fixed;
-  bottom: 30px;
-  right: 90px;
-  background-color: var(--color-primary);
-  color: #FFFFFF;
-  padding: 1rem 1.5rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  max-width: 320px;
-  z-index: 1000;
-  display: none; /* JS ile kontrol edilir */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    z-index: 1000;
+    display: none; /* Başlangıçta gizli, JS ile gösterilecek */
+    animation: slideInUp 0.5s ease-out forwards; /* 'forwards' ekledik */
 }
+body.dark-mode .welcome-bubble {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+@keyframes slideInUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
 .welcome-bubble .close-btn {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+}
+.welcome-bubble .close-btn:hover { color: #FFFFFF; }
+.welcome-bubble h3 { color: #FFFFFF; margin: 0 0 0.5rem 0; font-size: 1.1rem; }
+.welcome-bubble p { color: #FFFFFF; margin: 0; font-size: 0.9rem; opacity: 0.9;}
+
+/* Yukarı Çık Butonu */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px; /* Baloncukla aynı hizada */
+    display: none; /* JS ile gösterilecek */
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem; /* Oku büyüttük */
+    line-height: 50px; /* Tam ortalamak için */
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px var(--color-shadow);
+    transition: all var(--transition-speed) ease;
+    z-index: 999; /* Baloncuğun biraz altında */
 }
 
-/* Footer */
-footer {
-  padding: 2rem 0;
-  margin-top: 2rem;
-  border-top: 1px solid var(--color-border);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-menu {
-    display: none; /* Simplification for this example, a real site needs a hamburger menu */
-  }
-  .hero h1 {
-    font-size: 2rem;
-  }
-}
-
-/* Utility Classes */
-.text-center { text-align: center; }
-.mt-2 { margin-top: 1rem; }
-.mt-4 { margin-top: 2rem; }
-
-
-/* ===================================
-   V3.5 CİLASI: Logo Stili
-   =================================== */
-
-.logo .logo-kobi {
-    font-style: italic; /* "Kobi" kısmını italik yapar */
-    font-weight: 500;  /* Belki biraz daha normal kalınlıkta? (Opsiyonel) */
-    /* Eğer farklı bir font istersen buraya ekleyebilirsin, örn: */
-    /* font-family: 'Georgia', serif; */
+#scrollTopBtn:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
 }
 
 /* ===================================
@@ -403,22 +762,17 @@ body.dark-mode .nav-toggle .bar {
 }
 
 
-/* ===================================
-   V3.5 CİLASI: Düzeltilmiş Mobil Menü Stilleri
-   =================================== */
-
+/* --- Mobil Ekran Ayarları (@media sorgusu) --- */
 @media (max-width: 768px) {
 
     .header-content {
-        /* Mobil header içindeki elemanları daha iyi hizala */
-        position: relative; /* Butonların konumlanması için */
-        height: 60px; /* Sabit yükseklik verelim */
+        position: relative;
+        height: 60px;
     }
 
     /* Hamburger ikonunu göster */
     .nav-toggle {
         display: flex;
-         /* Konumunu ayarla (sağa yasla) */
         position: absolute;
         top: 50%;
         right: 60px; /* Tema butonundan önce */
@@ -431,25 +785,24 @@ body.dark-mode .nav-toggle .bar {
          top: 50%;
          right: 10px; /* En sağda */
          transform: translateY(-50%);
-         margin-left: 0; /* Soldaki boşluğu kaldır */
+         margin-left: 0;
      }
-
 
     /* Normal menüyü gizle ve mobil için hazırla */
     .main-navigation {
         display: none; /* Başlangıçta gizli */
-        position: fixed; /* Ekranı kaplaması için */
+        position: fixed;
         top: 0;
-        left: -100%; /* Başlangıçta ekranın solunda */
-        width: 80%; /* Ekranın %80'ini kaplasın */
-        max-width: 300px; /* Maksimum genişlik */
-        height: 100vh; /* Tüm yüksekliği kaplasın */
+        left: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
         background-color: var(--color-background-content);
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
         z-index: 1000;
         padding-top: 60px; /* Header yüksekliği kadar boşluk */
-        transition: left 0.3s ease-in-out; /* Kayma animasyonu */
-        overflow-y: auto; /* Çok link olursa kaydırılabilsin */
+        transition: left 0.3s ease-in-out;
+        overflow-y: auto;
     }
 
     /* Menü açıldığında (.active class'ı eklenince) */
@@ -460,38 +813,38 @@ body.dark-mode .nav-toggle .bar {
 
     /* Mobil menüdeki link listesi */
     .nav-menu {
-        display: flex; /* Flexbox'ı burada tekrar aktif et */
-        flex-direction: column; /* Linkleri alt alta sırala */
-        align-items: stretch; /* Linklerin genişlemesini sağla */
-        padding: 1rem 0; /* Üst ve alt boşluk */
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem 0;
     }
 
     /* Mobil menüdeki her bir link öğesi */
     .nav-menu li {
         display: block;
-        margin: 0; /* Soldaki boşluğu sıfırla */
+        margin: 0;
         width: 100%;
-        text-align: left; /* Linkleri sola yasla */
+        text-align: left;
     }
 
     /* Mobil menüdeki her bir link */
     .nav-menu a {
-        display: block; /* Tüm satırı kaplasın */
-        padding: 1rem 1.5rem; /* Daha büyük tıklama alanı ve iç boşluk */
+        display: block;
+        padding: 1rem 1.5rem;
         width: 100%;
-        border-bottom: 1px solid var(--color-border); /* Aralarına çizgi */
-        font-size: 1rem; /* Font boyutunu ayarla */
-        text-align: left; /* Metni sola yasla */
+        border-bottom: 1px solid var(--color-border);
+        font-size: 1rem;
+        text-align: left;
     }
      .nav-menu li:last-child a {
-         border-bottom: none; /* Son linkin alt çizgisini kaldır */
+         border-bottom: none;
      }
 
     .nav-menu a.active::after {
-        display: none; /* Mobilde aktif link alt çizgisini kaldır */
+        display: none;
     }
 
-    /* --- Hamburger "X" Animasyonu (Aynı kalabilir) --- */
+    /* --- Hamburger "X" Animasyonu --- */
     .nav-toggle.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
@@ -502,9 +855,34 @@ body.dark-mode .nav-toggle .bar {
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    /* Mobil için diğer sayfa elemanlarının ayarları (gerekirse) */
+    /* Mobil için diğer sayfa elemanlarının ayarları */
     main {
-        padding-top: 60px; /* Sabit header için içeriğe üst boşluk ver */
+        padding-top: 80px; /* Sabit header için içeriğe üst boşluk ver (header+akıllı geri butonu) */
     }
 
+    /* Akıllı geri butonunu biraz aşağı alalım */
+    #smartBackButton {
+        top: 75px;
+        left: 15px;
+    }
+
+    /* İçerik kutularının iç boşluğunu azalt */
+    .content-box { padding: 1.5rem; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+
+     /* Hero mobil */
+    .hero { padding: 2rem 0; }
+    .hero h1 { font-size: 2.2rem;}
+    .hero .lead { font-size: 1rem;}
+
+    /* Risk testi mobil */
+    .radio-group label { font-size: 0.9rem; padding: 0.6rem 0.8rem;}
+    .result-score { font-size: 2.8rem;}
+    .result-title { font-size: 1.3rem;}
+
+    /* Flip card mobil */
+    .flip-card { height: 280px; }
+
 } /* @media sonu */
+
