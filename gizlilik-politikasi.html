@@ -1,200 +1,144 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <!-- Meta Etiketleri -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gizlilik Politikası - GRCKobi</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23005F73'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial, sans-serif' fill='white' text-anchor='middle' font-weight='bold'%3EGK%3C/text%3E%3C/svg%3E">
     <meta name="description" content="GRCKobi gizlilik politikası. Kişisel verilerinizin nasıl toplandığı, işlendiği ve korunduğu hakkında detaylı bilgi.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="author" content="GRCKobi">
+
+    <!-- Sayfa Başlığı -->
+    <title>Gizlilik Politikası - GRCKobi</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23005F73'/%3E%3Ctext x='50' y='68' font-size='50' font-family='Arial, sans-serif' fill='white' text-anchor='middle' font-weight='bold'%3EGK%3C/text%3E%3C/svg%3E">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Dosyası -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript Dosyası -->
+    <script src="site-scripts.js" defer></script>
 </head>
+
 <body>
-    <header class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <a href="index.html">GRCKobi</a>
+    <!-- Header Bölümü -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">GRC<span class="logo-kobi">Kobi</span></a>
+                </div>
+
+                <!-- Navigasyon Menüsü -->
+                <nav class="main-navigation">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="grc-nedir.html">GRC Nedir?</a></li>
+                        <li><a href="kvkk-rehberi.html">KVKK Rehberi</a></li>
+                        <li><a href="risk-testi.html">Risk Testi</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Dark Mode Toggle Butonu -->
+                <button id="theme-toggle-button" class="dark-mode-toggle" aria-label="Tema değiştir" title="Tema değiştir">🌙</button>
             </div>
-            <nav class="nav-menu" id="navMenu">
-                <a href="index.html">Ana Sayfa</a>
-                <a href="grc-nedir.html">GRC Nedir?</a>
-                <a href="hizmetler.html">Hizmetler</a>
-                <a href="blog.html">Blog</a>
-                <a href="hakkimizda.html">Hakkımızda</a>
-                <a href="iletisim.html">İletişim</a>
-            </nav>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <button class="theme-toggle" id="themeToggle" aria-label="Tema değiştir">🌙</button>
         </div>
     </header>
 
-    <main>
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html">Ana Sayfa</a> &gt; 
-                <span>Gizlilik Politikası</span>
-            </div>
+    <!-- Akıllı Geri Dön Butonu -->
+    <button id="smartBackButton" title="Geri Dön">←</button>
 
-            <article class="content-box">
-                <h1>Gizlilik Politikası</h1>
-                <p class="article-meta">Son güncelleme: 15 Aralık 2024</p>
-                
-                <p>Bu gizlilik politikası, GRCKobi web sitesini ziyaret ettiğinizde kişisel verilerinizin nasıl toplandığı, işlendiği ve korunduğu konusunda sizi bilgilendirmek amacıyla hazırlanmıştır.</p>
+    <!-- Ana İçerik Alanı -->
+    <main class="container">
+        <article class="content-box"> <!-- article tag'i content-box içine alındı -->
+            <h1>Gizlilik Politikası</h1>
+            <p><small>Son güncelleme: 22 Ekim 2025</small></p>
 
-                <h2>Veri Sorumlusu</h2>
-                <div class="content-box mt-3">
-                    <p><strong>GRCKobi</strong>, 6698 sayılı Kişisel Verilerin Korunması Kanunu uyarınca "veri sorumlusu" sıfatıyla hareket etmektedir.</p>
-                    <p><strong>İletişim Bilgileri:</strong><br>
-                    E-posta: info@grckobi.com<br>
-                    Telefon: +90 212 XXX XX XX<br>
-                    Adres: [Şirket Adresi]</p>
-                </div>
+            <p>Bu gizlilik politikası, GRCKobi web sitesini ziyaret ettiğinizde kişisel verilerinizin nasıl toplandığı, işlendiği ve korunduğu konusunda sizi bilgilendirmek amacıyla hazırlanmıştır.</p>
 
-                <h2>İşlenen Kişisel Veriler</h2>
-                <p>Web sitemizi ziyaret ettiğinizde ve hizmetlerimizden yararlandığınızda aşağıdaki kişisel verileriniz işlenebilir:</p>
-                <ul>
-                    <li><strong>İletişim Verileri:</strong> Ad, soyad, e-posta adresi, telefon numarası</li>
-                    <li><strong>Teknik Veriler:</strong> IP adresi, tarayıcı bilgileri, işletim sistemi</li>
-                    <li><strong>Çerez Verileri:</strong> Site kullanım tercihleri, oturum bilgileri</li>
-                    <li><strong>İçerik Verileri:</strong> İletişim formları aracılığıyla paylaştığınız bilgiler</li>
-                </ul>
+            <h2>Veri Sorumlusu</h2>
+            <p><strong>GRCKobi</strong>, 6698 sayılı Kişisel Verilerin Korunması Kanunu uyarınca "veri sorumlusu" sıfatıyla hareket etmektedir.</p>
+            <p><strong>İletişim Bilgileri:</strong><br>
+               E-posta: mustafaerendnc@gmail.com <br>
+               <!-- Telefon ve Adres placeholder olarak bırakıldı, istersen ekleyebilirsin -->
+               <!-- Telefon: +90 XXX XXX XX XX --><br>
+               <!-- Adres: [Şirket Adresi] -->
+            </p>
 
-                <h2>Veri İşleme Amaçları</h2>
-                <p>Kişisel verileriniz aşağıdaki amaçlarla işlenmektedir:</p>
-                <ul>
-                    <li>Size hizmet sunmak ve destek sağlamak</li>
-                    <li>İletişim taleplerinizi karşılamak</li>
-                    <li>Web sitemizin güvenliğini sağlamak</li>
-                    <li>Kullanıcı deneyimini iyileştirmek</li>
-                    <li>Yasal yükümlülükleri yerine getirmek</li>
-                    <li>Hizmet kalitemizi artırmak için analiz yapmak</li>
-                </ul>
+            <h2>İşlenen Kişisel Veriler</h2>
+            <p>Web sitemizi ziyaret ettiğinizde ve hizmetlerimizden yararlandığınızda aşağıdaki kişisel verileriniz işlenebilir:</p>
+            <ul>
+                <li><strong>İletişim Verileri:</strong> (İletişim formu kullanırsak) Ad, soyad, e-posta adresi.</li>
+                <li><strong>Teknik Veriler:</strong> IP adresi, tarayıcı bilgileri, işletim sistemi (Sunucu logları aracılığıyla).</li>
+                <li><strong>Çerez Verileri:</strong> Site kullanım tercihleri (örn: tema seçimi), oturum bilgileri (gerekliyse).</li>
+            </ul>
 
-                <h2>Veri İşleme Hukuki Dayanakları</h2>
-                <div class="content-box mt-3">
-                    <p>Kişisel verilerinizi aşağıdaki hukuki dayanaklara göre işliyoruz:</p>
-                    <ul>
-                        <li><strong>Açık Rıza:</strong> İletişim formlarında verdiğiniz onaylar</li>
-                        <li><strong>Sözleşmenin İfası:</strong> Hizmet sözleşmelerinin yerine getirilmesi</li>
-                        <li><strong>Meşru Menfaat:</strong> Web sitesi güvenliği ve analitik</li>
-                        <li><strong>Hukuki Yükümlülük:</strong> Yasal gerekliliklerin karşılanması</li>
-                    </ul>
-                </div>
+            <h2>Veri İşleme Amaçları</h2>
+            <p>Kişisel verileriniz aşağıdaki amaçlarla işlenmektedir:</p>
+            <ul>
+                <li>İletişim taleplerinizi karşılamak (e-posta ile).</li>
+                <li>Web sitemizin güvenliğini sağlamak ve performansını analiz etmek (anonimleştirilmiş verilerle).</li>
+                <li>Kullanıcı deneyimini iyileştirmek (örn: tema tercihini hatırlamak).</li>
+                <li>Yasal yükümlülükleri yerine getirmek.</li>
+            </ul>
 
-                <h2>Çerez Politikası</h2>
-                <p>Web sitemiz, kullanıcı deneyimini iyileştirmek için çerezler kullanmaktadır:</p>
-                <ul>
-                    <li><strong>Zorunlu Çerezler:</strong> Site işlevselliği için gerekli</li>
-                    <li><strong>Performans Çerezler:</strong> Site performansını analiz etmek için</li>
-                    <li><strong>Tercih Çerezler:</strong> Tema seçimi gibi kullanıcı tercihlerini kaydetmek için</li>
-                </ul>
-                <p>Tarayıcı ayarlarınızdan çerezleri yönetebilirsiniz.</p>
+            <h2>Veri İşleme Hukuki Dayanakları</h2>
+             <ul>
+                 <li><strong>Açık Rıza:</strong> Gerekli durumlarda (örn: pazarlama iletişimleri için - şu an yok).</li>
+                 <li><strong>Meşru Menfaat:</strong> Web sitesi güvenliği, performans analizi, tema tercihi.</li>
+                 <li><strong>Hukuki Yükümlülük:</strong> Yasal taleplerin karşılanması.</li>
+             </ul>
 
-                <h2>Veri Paylaşımı</h2>
-                <div class="content-box mt-3">
-                    <p>Kişisel verilerinizi aşağıdaki durumlar dışında üçüncü taraflarla paylaşmıyoruz:</p>
-                    <ul>
-                        <li>Yasal zorunluluk olması durumunda</li>
-                        <li>Açık rızanızın bulunması halinde</li>
-                        <li>Teknik hizmet sağlayıcıları ile (veri işleyen sıfatıyla)</li>
-                        <li>Acil durumlarda yasal haklarımızı korumak için</li>
-                    </ul>
-                </div>
+            <h2>Çerez Politikası</h2>
+            <p>Web sitemiz, kullanıcı deneyimini iyileştirmek için yalnızca gerekli ve tercih çerezlerini kullanmaktadır:</p>
+            <ul>
+                <li><strong>localStorage ('theme'):</strong> Tema seçiminizi (açık/koyu) hatırlamak için kullanılır.</li>
+                <li><strong>localStorage ('welcomeBubbleClosed'):</strong> Hoş geldin baloncuğunu kapatıp kapatmadığınızı hatırlamak için kullanılır.</li>
+                <li><strong>sessionStorage ('backButtonClickCount'):</strong> Akıllı geri butonunun sayacını tutmak için kullanılır.</li>
+                 <!-- Analitik veya Reklam çerezi kullanmadığımız varsayıldı -->
+            </ul>
+            <p>Tarayıcı ayarlarınızdan çerezleri ve yerel depolamayı yönetebilirsiniz.</p>
 
-                <h2>Veri Saklama Süresi</h2>
-                <p>Kişisel verileriniz, işlenme amacının gerektirdiği süre boyunca saklanır:</p>
-                <ul>
-                    <li><strong>İletişim Verileri:</strong> 3 yıl</li>
-                    <li><strong>Teknik Loglar:</strong> 1 yıl</li>
-                    <li><strong>Çerez Verileri:</strong> 2 yıl (türüne göre değişir)</li>
-                    <li><strong>Hizmet Kayıtları:</strong> İlgili mevzuatta belirtilen süreler</li>
-                </ul>
+            <h2>Veri Paylaşımı</h2>
+             <p>Kişisel verilerinizi yasal zorunluluklar dışında üçüncü taraflarla paylaşmıyoruz.</p>
 
-                <h2>Veri Güvenliği</h2>
-                <div class="content-box mt-3">
-                    <p>Kişisel verilerinizin güvenliği için aşağıdaki önlemler alınmaktadır:</p>
-                    <ul>
-                        <li>SSL şifreleme ile güvenli veri aktarımı</li>
-                        <li>Düzenli güvenlik güncellemeleri</li>
-                        <li>Erişim kontrolü ve yetkilendirme sistemleri</li>
-                        <li>Düzenli yedekleme ve kurtarma sistemleri</li>
-                        <li>Çalışan eğitimleri ve gizlilik taahhütleri</li>
-                    </ul>
-                </div>
+            <h2>Veri Saklama Süresi</h2>
+            <p>Yerel depolamada saklanan tercihleriniz (tema, baloncuk durumu) siz tarayıcı verilerinizi temizleyene kadar saklanır. Sunucu logları gibi teknik veriler yasal süreler boyunca saklanabilir.</p>
 
-                <h2>Veri Sahibinin Hakları</h2>
-                <p>KVKK uyarınca sahip olduğunuz haklar:</p>
-                <ul>
-                    <li><strong>Bilgi Talep Etme:</strong> Hangi verilerinizin işlendiğini öğrenme</li>
-                    <li><strong>Erişim Hakkı:</strong> Verilerinizin bir kopyasını talep etme</li>
-                    <li><strong>Düzeltme Hakkı:</strong> Yanlış verilerin düzeltilmesini isteme</li>
-                    <li><strong>Silme Hakkı:</strong> Verilerinizin silinmesini talep etme</li>
-                    <li><strong>İşleme İtiraz:</strong> Veri işlenmesine itiraz etme</li>
-                    <li><strong>Veri Taşınabilirliği:</strong> Verilerinizi başka platforma aktarma</li>
-                </ul>
+            <h2>Veri Güvenliği</h2>
+             <p>Kişisel verilerinizin güvenliği için standart web güvenlik önlemleri (HTTPS vb.) alınmaktadır.</p>
 
-                <h2>Haklarınızı Kullanma</h2>
-                <div class="content-box mt-3">
-                    <p>Yukarıdaki haklarınızı kullanmak için:</p>
-                    <ul>
-                        <li><strong>E-posta:</strong> info@grckobi.com</li>
-                        <li><strong>Yazılı Başvuru:</strong> Şirket adresimize posta ile</li>
-                    </ul>
-                    <p>Başvurularınızı en geç 30 gün içinde değerlendirip sonuçlandırıyoruz.</p>
-                </div>
+            <h2>Veri Sahibinin Hakları</h2>
+            <p>KVKK uyarınca sahip olduğunuz haklar (bilgi talep etme, erişim, düzeltme, silme vb.) için yukarıda belirtilen e-posta adresi üzerinden bizimle iletişime geçebilirsiniz.</p>
 
-                <h2>İletişim</h2>
-                <p>Bu gizlilik politikası hakkında sorularınız için:</p>
-                <ul>
-                    <li>E-posta: info@grckobi.com</li>
-                    <li>Telefon: +90 212 XXX XX XX</li>
-                </ul>
+            <h2>Haklarınızı Kullanma</h2>
+             <p>Haklarınızı kullanmak için: mustafaerendnc@gmail.com adresine e-posta gönderebilirsiniz. Başvurularınızı en geç 30 gün içinde değerlendirip sonuçlandırıyoruz.</p>
 
-                <h2>Değişiklikler</h2>
-                <div class="content-box mt-3">
-                    <p>Bu gizlilik politikasında yapılacak değişiklikler web sitemizde yayınlanacaktır. Önemli değişiklikler için e-posta ile bilgilendirme yapılabilir.</p>
-                </div>
-            </article>
-        </div>
+            <h2>İletişim</h2>
+            <p>Bu gizlilik politikası hakkında sorularınız için: mustafaerendnc@gmail.com</p>
+
+            <h2>Değişiklikler</h2>
+             <p>Bu gizlilik politikasında yapılacak değişiklikler bu sayfada yayınlanacaktır.</p>
+        </article>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>GRCKobi</h3>
-                    <p>KOBİ'ler için GRC çözümleri</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Hızlı Linkler</h4>
-                    <ul>
-                        <li><a href="grc-nedir.html">GRC Nedir?</a></li>
-                        <li><a href="hizmetler.html">Hizmetler</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="iletisim.html">İletişim</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Yasal</h4>
-                    <ul>
-                        <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
-                        <li><a href="kullanim-sartlari.html">Kullanım Şartları</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>İletişim</h4>
-                    <p>Email: info@grckobi.com</p>
-                    <p>Telefon: +90 212 XXX XX XX</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 GRCKobi. Tüm hakları saklıdır.</p>
-            </div>
+    <!-- Footer Bölümü -->
+    <footer>
+        <div class="container text-center">
+            <p>© 2025 GRCKobi. Tüm hakları saklıdır.</p>
+            <p class="mt-2">
+                <a href="gizlilik-politikasi.html">Gizlilik Politikası</a> |
+                <a href="kullanim-sartlari.html">Kullanım Şartları</a> |
+                <a href="iletisim.html">İletişim</a>
+            </p>
         </div>
     </footer>
 
@@ -206,8 +150,7 @@
     </div>
 
     <!-- Yukarı Çık Butonu -->
-    <button id="scrollTopBtn" title="Yukarı Çık" aria-label="Sayfanın başına dön">&uarr;</button>
+    <button id="scrollTopBtn" title="Yukarı Çık">&uarr;</button>
 
-    <script src="site-scripts.js"></script>
 </body>
 </html>
